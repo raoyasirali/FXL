@@ -17,3 +17,11 @@ Route::get('/', function () {
 Route::get('wellcome', function () {
     return view('wellcomeScreen');
 });
+
+Route::get('b_menu', function () {
+    return view('b_menu');
+});
+
+Route::get('b_add_p', "BusinessController@showAddPage");
+Route::get('b_home', "BusinessController@showHome");
+Route::post('add_p_server',"ProductController@create");

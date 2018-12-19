@@ -12,6 +12,15 @@ class BusinessController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function showAddPage(){
+        return view("b_add_p");
+    }
+
+    public function showHome(){
+        return redirect("b_menu");
+    }
+
     public function index()
     {
         //

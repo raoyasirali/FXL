@@ -7,25 +7,26 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-	<nav class="navbar navbar-expand-lg navbar-light " style="background-color: #bc5a45;height: 50px">
-    <style type="text/css">
-	.footer {
+	<style type="text/css">
+  .footer {
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
   height: 100px;
-  background-color: #bc5a45;
+  background-color: #984B17;
   color: white;
   text-align: center;
 }
  a{
-	text-decoration: none;
+  text-decoration: none;
 }
 
 </style>
+  <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #984B17;height: 50px">
+   
   <div class="collapse navbar-collapse" >
-    <a class="navbar-brand" href="#"><img src="logo.png" height="60px" width="150px"></a>
+    <a class="navbar-brand" href="b_home"><img src="logo.png" height="60px" width="150px"></a>
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0" style="margin-left: 920px">
       <!-- <li class="nav-item " style="margin-top: 20px">
         <a class="" href="" ><p style="font-size: 20px;color: white">Contact</p> </a>

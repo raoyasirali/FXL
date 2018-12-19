@@ -24,7 +24,26 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        // $file=Input::file('img');
+        // $file->move('uploads/',$file->getClientOriginalName());
+        // $p_image= $file->getClientOriginalName();
+      
+        // $p = new product;
+                   
+        // $p->p_Name=Input::get('p_name');
+        // $p->p_Desc=Input::get('p_description');
+        // $p->p_Img_Name= $imgName;
+        // $p->p_Price=Input::get('p_price');
+        // // $p->b_id=Input::get('name');
+        // $p->c_id=Input::get('p_category');
+
+
+
+        // $p->save();
+        // return redirect('show');
+     
+        
+
     }
 
     /**
