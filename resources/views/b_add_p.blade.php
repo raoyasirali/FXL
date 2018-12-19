@@ -43,7 +43,7 @@
 					</select></span> <br/>
 
 	
-	
+	<input type="hidden" name="_token" value="{{ csrf_token() }}">
 	<span style="margin-left: 10%"><label><b> Image: </b></label></span> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
 	<span style="margin-left: 20%"><input type="file" name="p_image" id="p_image" required="" /></span> <br/><br/>
     
