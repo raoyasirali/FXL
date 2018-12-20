@@ -32,7 +32,7 @@
         <a class="" href="" ><p style="font-size: 20px;color: white">Contact</p> </a>
       </li> -->
       <li class="nav-item" style="margin-top: 20px;margin-left: 20px">
-        <a class="" href="#"><p style="font-size: 20px;color: white">About Us</p></a>
+        <a class="" href="#"><p style="font-size: 20px;color: white">Information</p></a>
       </li>
       <li class="nav-item" style="margin-top: 20px;margin-left: 20px">
         <a class=" " href="#"><p style="font-size: 20px;color: white">Login</p></a>
@@ -47,7 +47,15 @@
 
 </head>
 <body>
-    
+      <div style="width: 150px;height: 220px;border:solid thin black;float: left;">
+    <!-- <a href="" class="a" >Current Orders</a> </br></br> -->
+    <a href="b_add_p"  class="w3-button w3">Add Product</a>    </br>
+    <a href="#"  class="w3-button w3-blue" >Delete Product</a></br>
+    <a href="p_view_p"  class="w3-button w3-blue" >View Products</a></br>
+    <a href="#"  class="w3-button w3-blue" >Update Product</a></br></br>
+    <!-- <a href=""  class="a" >View Sales</a></br></br> -->
+
+    </div>
      <div class="container">
       	
       	@yield('content') 

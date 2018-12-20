@@ -1,4 +1,4 @@
-@include('master')
+@include('b_master')
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <!DOCTYPE html>
 <html lang="en">
@@ -8,15 +8,15 @@
 	<!-- <link rel="stylesheet" type="text/css" href="style.css">				 -->
 </head>
 <body >
-<div style="width: 150px;height: 220px;border:solid thin black;float: left;">
+<!-- <div style="width: 150px;height: 220px;border:solid thin black;float: left;"> -->
     <!-- <a href="" class="a" >Current Orders</a> </br></br> -->
-    <a href="#"  class="w3-button w3">Add Product</a>    </br>
+    <!-- <a href="#"  class="w3-button w3">Add Product</a>    </br>
     <a href="#"  class="w3-button w3-blue" >Delete Product</a></br>
     <a href="#"  class="w3-button w3-blue" >View Products</a></br>
-    <a href="#"  class="w3-button w3-blue" >Update Product</a></br></br>
+    <a href="#"  class="w3-button w3-blue" >Update Product</a></br></br> -->
     <!-- <a href=""  class="a" >View Sales</a></br></br> -->
 
-    </div>
+    <!-- </div> -->
 
 
 <div style="width: 100%;height: 620px;padding-top:10px ">

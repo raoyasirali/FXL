@@ -29,23 +29,15 @@ class ProductController extends Controller
         $file=Input::file('p_image');
         $file->move('uploads/',$file->getClientOriginalName());
         $p_image= $file->getClientOriginalName();
-      
-        $p = new product;
-                   
+        $p = new product;   
         $p->p_Name=Input::get('p_name');
         $p->p_Desc=Input::get('p_description');
         $p->p_Img_Name= $p_image;
         $p->p_Price=Input::get('p_price');
         // $p->b_id=Input::get('name');
         $p->c_id=Input::get('p_category');
-
-
-
-         $p->save();
+        $p->save();
         // return redirect('show');
-     
-        
-
     }
 
     /**
@@ -65,9 +57,10 @@ class ProductController extends Controller
      * @param  \App\product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(product $product)
+    public function viewProduct()
     {
-        //
+        $p=product::all();
+        return view('p_view_p')->with('p_data',$p);
     }
 
     /**
