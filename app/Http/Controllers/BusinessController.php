@@ -12,6 +12,17 @@ class BusinessController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function showLoginPage(){
+        return view("b_login");
+    }
+    
+     public function showSignupPage(){
+        return view("b_signup");
+    }
+
+     public function showResetpwdPage(){
+        return view("b_resetpwd");
+    }    
 
     public function showAddPage(){
         return view("b_add_p");

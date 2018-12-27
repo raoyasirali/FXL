@@ -31,12 +31,12 @@
       <!-- <li class="nav-item " style="margin-top: 20px">
         <a class="" href="" ><p style="font-size: 20px;color: white">Contact</p> </a>
       </li> -->
-      <li class="nav-item" style="margin-top: 20px;margin-left: 20px">
+      <!-- <li class="nav-item" style="margin-top: 20px;margin-left: 20px">
         <a class="" href="#"><p style="font-size: 20px;color: white">About Us</p></a>
       </li>
       <li class="nav-item" style="margin-top: 20px;margin-left: 20px">
         <a class=" " href="#"><p style="font-size: 20px;color: white">Login</p></a>
-      </li>
+      </li> -->
     </ul>
     <!-- <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -59,8 +59,9 @@
     <strong>Info!</strong> This alert box could indicate a neutral informative change or action.
   </div> -->
 <div class="footer">
-	 <button class="btn btn-secondary" id="feedback" data-toggle="modal" data-target="#myModal">Feedback</button>
+	 <button class="btn btn-secondary" id="feedback">Feedback</button>
 	 <button class="btn btn-secondary" id="contact">Contact</button>
+   
 	<div>
   <img src="fb.png"> &nbsp&nbsp<img src="email.png">
   <p>©FoodXPress 2019- All Rights Reserved  </p>

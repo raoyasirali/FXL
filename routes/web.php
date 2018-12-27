@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('master');
+    return view('welcome');
 });
 Route::get('wellcome', function () {
     return view('wellcomeScreen');
@@ -21,8 +21,18 @@ Route::get('wellcome', function () {
 Route::get('b_menu', function () {
     return view('b_menu');
 });
+Route::get('master', function () {
+    return view('master');
+});
 
+
+Route::get('b_signup', "BusinessController@showSignupPage");
+Route::get('b_resetpwd', "BusinessController@showResetpwdPage");
+Route::get('b_login', "BusinessController@showLoginPage");
 Route::get('b_add_p', "BusinessController@showAddPage");
 Route::get('b_home', "BusinessController@showHome");
 Route::post('add_p_server',"ProductController@create");
 Route::get('p_view_p', "ProductController@viewProduct");
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
