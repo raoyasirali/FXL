@@ -10,16 +10,16 @@
 <body background="bg.jpg">
 
 
-<?php
-$msg="";
-if( !empty($_GET['msg']))
-	$msg = $_GET['msg'];
+<!-- <?php
+//$msg="abc";
+//if( !empty($_GET['msg']))
+//	$msg = $_GET['msg'];
 
-?>
+?> -->
 
-<span><?php echo $msg; ?> </span>
+
 <div style="width: 100%;height: 840px;padding-top:10px ">
-<form action="server_business_signup.php" method="get">
+<form action="{{URL::to('b_register')}}" method="post" enctype="multipart/form-data">
 	<span style="margin-left: 47%;font-size: 30px;color: Black"><b> Business Admin Sign Up</b></span><br/><br/><br/>
 		<div id="err" style="color: red"></div>	
 	
@@ -44,7 +44,7 @@ if( !empty($_GET['msg']))
     
 	<span style="margin-left: 10%"><label><b> Email: </b></label></span> &nbsp &nbsp
 	<input type="email" name="b_email" id="b_email" required="" /> <br/><br/>
-
+    <input type="hidden" name="_token" value="{{csrf_token()}}">
 	<span style="margin-left: 10%"><label><b> Category: </b></label></span> &nbsp &nbsp
 	<select id="b_category" name="b_category">
 						<option value="1">Fast Food</option>

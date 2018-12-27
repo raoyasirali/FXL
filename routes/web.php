@@ -25,14 +25,24 @@ Route::get('master', function () {
     return view('master');
 });
 
+Route::get('b_chklogin', "BusinessController@chkBlogin");
+
+Route::post('b_register', "BusinessController@bregister");
 
 Route::get('b_signup', "BusinessController@showSignupPage");
+
 Route::get('b_resetpwd', "BusinessController@showResetpwdPage");
+
 Route::get('b_login', "BusinessController@showLoginPage");
+
 Route::get('b_add_p', "BusinessController@showAddPage");
+
 Route::get('b_home', "BusinessController@showHome");
+
 Route::post('add_p_server',"ProductController@create");
+
 Route::get('p_view_p', "ProductController@viewProduct");
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

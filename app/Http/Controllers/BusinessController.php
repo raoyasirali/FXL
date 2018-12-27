@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\business;
+use DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Http\RedirectResponse;
 
 class BusinessController extends Controller
 {
@@ -32,6 +35,37 @@ class BusinessController extends Controller
         return redirect("b_menu");
     }
 
+    
+    public function bregister(){
+      $b = new business;
+      $b->b_Name=Input::get('b_name');
+      $b->b_Address=Input::get('b_address');
+      $b->b_Fname=Input::get('b_first_name');
+      $b->b_Lname=Input::get('b_last_name');
+      $b->b_Phone=Input::get('b_phone');
+      $b->b_Email=Input::get('b_email');
+      $b->c_id=Input::get('b_category');
+      $b->b_Pwd=Input::get('b_password');
+      $b->save();
+        return redirect('b_login');
+    }    
+    
+
+    public function chkBlogin(Request $request){
+        $b_email=$request->b_email;
+        $b_pwd=$request->b_password;
+        $b_data=DB::table('businesses')->where('b_Email',$b_email)->Where('b_Pwd',$b_pwd);
+        // $bus_id=$b_data->b_id;
+        // echo $bus_id;exit();
+        $b_count=$b_data->count();
+        if( $b_count>0 ){
+            // $_SESSION["business_email"] = $t1;
+            return view('b_menu');
+        }
+        else
+            return view('b_login');
+       
+    }
     public function index()
     {
         //
