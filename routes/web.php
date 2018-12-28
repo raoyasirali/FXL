@@ -11,6 +11,17 @@
 |
 */
 
+//Route::get('b_details_pdf', "AdminController@b_details_pdf");
+
+Route::get('a_login', "AdminController@login");
+
+Route::get('b_details_pdf', "AdminController@viewBusinesses");
+
+Route::get('b_download_pdf', "AdminController@b_download_pdf");
+
+
+Route::get('a_chklogin', "AdminController@chkAlogin");
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -21,6 +32,11 @@ Route::get('wellcome', function () {
 Route::get('b_menu', function () {
     return view('b_menu');
 });
+
+Route::get('a_menu', function () {
+    return view('a_menu');
+});
+
 Route::get('master', function () {
     return view('master');
 });

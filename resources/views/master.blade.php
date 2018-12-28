@@ -26,7 +26,7 @@
   <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #984B17;height: 50px">
    
   <div class="collapse navbar-collapse" >
-    <a class="navbar-brand" href="b_home"><img src="logo.png" height="60px" width="150px"></a>
+    <a class="navbar-brand" href=""><img src="logo.png" height="60px" width="150px"></a>
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0" style="margin-left: 920px">
       <!-- <li class="nav-item " style="margin-top: 20px">
         <a class="" href="" ><p style="font-size: 20px;color: white">Contact</p> </a>
