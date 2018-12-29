@@ -15,6 +15,10 @@
 //Admin Routes
 Route::get('a_login', "AdminController@login");
 
+Route::get('a_menu', function () {
+    return view('a_menu');
+});
+
 Route::get('b_details_pdf', "AdminController@viewBusinesses");
 
 Route::get('b_download_pdf', "AdminController@b_download_pdf");
@@ -33,6 +37,14 @@ Route::get('s_download_excel', "AdminController@s_download_excel");
 
 Route::get('a_chklogin', "AdminController@chkAlogin");
 
+
+
+// Customer routes
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -40,17 +52,12 @@ Route::get('wellcome', function () {
     return view('wellcomeScreen');
 });
 
-Route::get('b_menu', function () {
-    return view('b_menu');
-});
-
-Route::get('a_menu', function () {
-    return view('a_menu');
-});
 
 Route::get('master', function () {
     return view('master');
 });
+
+
 
 // Business Admin Routes
 Route::get('b_chklogin', "BusinessController@chkBlogin");
@@ -63,6 +70,10 @@ Route::get('b_resetpwd', "BusinessController@showResetpwdPage");
 
 Route::get('b_login', "BusinessController@showLoginPage");
 
+Route::get('b_menu', function () {
+    return view('b_menu');
+});
+
 Route::get('b_add_p', "BusinessController@showAddPage");
 
 Route::get('b_home', "BusinessController@showHome");
@@ -71,6 +82,3 @@ Route::post('add_p_server',"ProductController@create");
 
 Route::get('p_view_p', "ProductController@viewProduct");
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

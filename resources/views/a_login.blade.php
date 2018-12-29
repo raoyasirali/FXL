@@ -7,7 +7,7 @@
 	<title>Admin Login</title>
 	<link rel="stylesheet" type="text/css" href="style.css">				
 </head>
-<body background="bg.jpg">
+<body>
 	
 
 
