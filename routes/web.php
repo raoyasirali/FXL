@@ -11,7 +11,6 @@
 |
 */
 
-//Route::get('b_details_pdf', "AdminController@b_details_pdf");
 
 //Admin Routes
 Route::get('a_login', "AdminController@login");
@@ -20,7 +19,6 @@ Route::get('b_details_pdf', "AdminController@viewBusinesses");
 
 Route::get('b_download_pdf', "AdminController@b_download_pdf");
 
-<<<<<<< HEAD
 //Email Routes
 Route::get('feedback', "SendEmailController@index");
 
@@ -28,11 +26,10 @@ Route::post('sendEmail', "SendEmailController@send");
 
 
 
-=======
 Route::get('viewSales', "AdminController@viewSales");
 
 Route::get('s_download_excel', "AdminController@s_download_excel");
->>>>>>> 9ade98ba72bfc498c4491ccad0fedf57e55f8cd5
+
 
 Route::get('a_chklogin', "AdminController@chkAlogin");
 
