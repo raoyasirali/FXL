@@ -19,6 +19,13 @@ Route::get('b_details_pdf', "AdminController@viewBusinesses");
 
 Route::get('b_download_pdf', "AdminController@b_download_pdf");
 
+//Email Routes
+Route::get('feedback', "SendEmailController@index");
+
+Route::post('sendEmail', "SendEmailController@send");
+
+
+
 
 Route::get('a_chklogin', "AdminController@chkAlogin");
 
