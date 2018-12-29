@@ -40,6 +40,14 @@ class ProductController extends Controller
         return redirect('b_menu');
     }
 
+    public function deleteProduct($id){
+    // {   echo $id;
+        // $p = new product; 
+        $p=product::find($id);
+        $p->delete();
+        return redirect('b_home');
+
+   }
     /**
      * Store a newly created resource in storage.
      *

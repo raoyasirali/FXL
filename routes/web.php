@@ -82,3 +82,4 @@ Route::post('add_p_server',"ProductController@create");
 
 Route::get('p_view_p', "ProductController@viewProduct");
 
+Route::get('delete/{id}', "ProductController@deleteProduct");
