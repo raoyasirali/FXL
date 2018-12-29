@@ -37,7 +37,7 @@ class ProductController extends Controller
         // $p->b_id=Input::get('name');
         $p->c_id=Input::get('p_category');
         $p->save();
-        // return redirect('show');
+        return redirect('b_menu');
     }
 
     /**
