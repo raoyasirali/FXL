@@ -13,12 +13,16 @@
 
 //Route::get('b_details_pdf', "AdminController@b_details_pdf");
 
+//Admin Routes
 Route::get('a_login', "AdminController@login");
 
 Route::get('b_details_pdf', "AdminController@viewBusinesses");
 
 Route::get('b_download_pdf', "AdminController@b_download_pdf");
 
+Route::get('viewSales', "AdminController@viewSales");
+
+Route::get('s_download_excel', "AdminController@s_download_excel");
 
 Route::get('a_chklogin', "AdminController@chkAlogin");
 
@@ -41,6 +45,7 @@ Route::get('master', function () {
     return view('master');
 });
 
+// Business Admin Routes
 Route::get('b_chklogin', "BusinessController@chkBlogin");
 
 Route::post('b_register', "BusinessController@bregister");

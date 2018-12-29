@@ -33,7 +33,7 @@
         <a href="" class="btn btn-secondary" style="font-size: 18px;color: white" >Pending Requests</a>
         <a href="" class="btn btn-secondary" style="font-size: 18px;color: white" >View User Details</a>
         <a href="b_details_pdf" class="btn btn-secondary" style="font-size: 18px;color: white" >View Business Details</a>
-        <a href="" class="btn btn-secondary" style="font-size: 18px;color: white" >View Sales</a>
+        <a href="viewSales" class="btn btn-secondary" style="font-size: 18px;color: white" >View Sales</a>
         <a href="" class="btn btn-secondary" style="font-size: 18px;color: white" >Logout</a>
       </li>
       <!-- <li class="nav-item" style="margin-top: 20px;margin-left: 20px">

@@ -17,7 +17,6 @@ class CreateCategoriesTable extends Migration
             $table->increments('cat_id');
             $table->string('cat_Name');
             $table->longText('cat_Desc');
-            $table->string('cat_Img_Name');
             $table->timestamps();
         });
     }
