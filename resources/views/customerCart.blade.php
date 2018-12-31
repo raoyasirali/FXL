@@ -17,7 +17,7 @@
           Name: {{$row->p_Name}} <br>
           Description:  {{$row->p_Desc}}<br>
           Price:  {{$row->p_Price}}<br>
-         <a href="Remove From Cart/{{$row->id}}" class="btn btn-primary">Remove From cart</a>
+         <a href="RemoveCart/{{$row->id}}" class="btn btn-primary">Remove From cart</a>
         
           
                  

@@ -27,21 +27,7 @@ class CartController extends Controller
       $results = DB::select( DB::raw("select carts.p_id,carts.id,products.p_Name,products.p_Desc,products.p_Img_Name,products.p_Price from (carts 
         inner join products on carts.p_id=products.id) where u_id=$userId ") );
 
-      // $users = DB::table('carts')
-      //       ->join('carts', 'carts.p_id', '=', 'products.id')
-      //       ->join('products', 'users.id', '=', 'orders.user_id')
-      //       ->select('products.p_Name', 'products.p_Img_Name', 'products.p_Price')
-      //       ->get();
-
-        // $c = DB::table('carts')
-        // ->join('products', function ($join) {
-        //     $join->on('carts.p_id', '=', 'products.id')->select('products.p_Name')
-        //          ->where('carts.u_id', '=', 1);
-        // })
-        // ->get();
-       // exit();
-     //$product = cart::find('1')->product;
-     //  exit();
+      
       
       return view('customerCart')->with('p_data',$results);
 
