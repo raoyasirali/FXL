@@ -21,8 +21,12 @@ class CartController extends Controller
 
     public function viewCart(){
       $userId = Auth::id();
+      $productId = session('product_id');
 
-     // $c=cart::all()->where('u_id',$userId);
+      $c=cart::all()->where('u_id',$userId);
+      $results = DB::select( DB::raw("select carts.p_id,carts.id,products.p_Name,products.p_Desc,products.p_Img_Name,products.p_Price from (carts 
+        inner join products on carts.p_id=products.id) where u_id=$userId ") );
+
       // $users = DB::table('carts')
       //       ->join('carts', 'carts.p_id', '=', 'products.id')
       //       ->join('products', 'users.id', '=', 'orders.user_id')
@@ -38,17 +42,19 @@ class CartController extends Controller
        // exit();
      //$product = cart::find('1')->product;
      //  exit();
-      return view('customerCart')->with('p_data',$c);
+      
+      return view('customerCart')->with('p_data',$results);
 
     }
 
     //products added into cart table after clicking on add to cart button 
      public function addToCart($id){
-          // echo $id; exit();
-        
+       // echo $id; exit();
+        session(['product_id' => $id]);
+        //$value = session('cat_id');
         
        // echo $value;
-      //  exit();
+       //  exit();
         $userId = Auth::id();
         $cart = new cart;
         $cart->p_id = $id;

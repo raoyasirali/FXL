@@ -17,7 +17,6 @@ class AdminController extends Controller
 	    private $a_email="asd@gmail.com";
     	private $a_password="asd";
         
-
         public function login()
        	{
        		return view ('a_login');

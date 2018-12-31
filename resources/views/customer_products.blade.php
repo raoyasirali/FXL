@@ -11,7 +11,7 @@
 
                 <div class="card-body">
                     
-                   @foreach( $p_data as $row )
+                   @foreach( $p_data as $row)
           <div id="img_div"style="margin-top: 20px ;margin-left:20px;float: left;border: solid thin gray">
            <img src="uploads/{{$row->p_Img_Name}}" height="150" width="200"/><br>
           Name: {{$row->p_Name}} <br>
