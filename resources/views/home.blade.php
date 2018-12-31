@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">Order Best food from your surrounding restaurants</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -13,8 +13,18 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    You are logged in!
+                   <form action="{{URL::to('foodCategory')}}" method="POST" enctype="multipart/form-data">
+                   <h2>Search Food by Category</h2>
+                   <select id="p_category" name="p_category">
+                        <option value="1">Fast Food</option>
+                        <option value="2">Chinese</option>
+                        <option value="3">Itaian</option>
+                        <option value="4">Desi</option>
+                    </select></span> 
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <input type="submit" name="" value="Search">
+                    </form>
+                   
                 </div>
             </div>
         </div>

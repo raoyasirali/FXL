@@ -17,8 +17,12 @@
     <!-- <a href=""  class="a" >View Sales</a></br></br> -->
 
     <!-- </div> -->
-
-
+<?php
+   
+   $value = session('business_id');
+  // echo $value;  
+?>
+     
 <div style="width: 100%;height: 620px;padding-top:10px ">
 <form action="{{URL::to('add_p_server')}}" method="post" enctype="multipart/form-data">
 	<span style="margin-left: 40%;font-size: 30px;color: Black"><b> Add Product</b></span><br/>
@@ -30,6 +34,7 @@
 	
 	<span style="margin-left: 10%"><label><b> Price: </b></label></span>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
 	<input type="text" name="p_price" id="p_price" required="" /> <br/><br/>
+	<input type="hidden" name="b_id" value='<?= $value ?>'>
 
 	<span style="margin-left: 10%"><label><b> Description: </b></label></span> &nbsp 
 	<input type="text" name="p_description" id="p_description" required="" /> <br/><br/>

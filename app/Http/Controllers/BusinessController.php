@@ -54,12 +54,17 @@ class BusinessController extends Controller
     public function chkBlogin(Request $request){
         $b_email=$request->b_email;
         $b_pwd=$request->b_password;
+        
         $b_data=DB::table('businesses')->where('b_Email',$b_email)->Where('b_Pwd',$b_pwd);
-        // $bus_id=$b_data->b_id;
-        // echo $bus_id;exit();
+        $b_id = DB::table('businesses')->select('b_id')->where('b_Email',$b_email)->Where('b_Pwd',$b_pwd)->get();
+        foreach( $b_id as $row ){
+           $bu_id = $row->b_id;
+        }
+        
         $b_count=$b_data->count();
         if( $b_count>0 ){
-            // $_SESSION["business_email"] = $t1;
+         session(['business_id' => $bu_id]);
+
             return view('b_menu');
         }
         else

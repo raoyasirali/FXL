@@ -1,15 +1,6 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+
 
 
 //Admin Routes
@@ -44,6 +35,23 @@ Route::get('a_chklogin', "AdminController@chkAlogin");
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//Customer products view route
+Route::post('foodCategory','ProductController@ViewProducts');
+
+Route::get('viewCustMenuAgain','ProductController@ViewMenu');
+
+
+
+//Route::get('', 'ProductController@viewProductMenu');
+
+
+
+//Add to cart route
+Route::get('addToCart/{id}','CartController@addToCart');
+
+//View Cart Route 
+Route::get('viewCart','CartController@viewCart');
 
 Route::get('/', function () {
     return view('welcome');

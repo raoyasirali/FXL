@@ -9,7 +9,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
-
+        <link href="https://fonts.googleapis.com/css?family=Charm|Russo+One" rel="stylesheet">
         <!-- Styles -->
         <style>
             html, body {
@@ -80,9 +80,14 @@
                 </div>
             @endif
 
-            <div style="margin-top: -50px" class="content">
-                <div style="color: black" class="title m-b-md">
+           
+            <div style="margin-top: -250px ;background-color: " class="content">
+                <div style="color: brown ;font-family:'Righteous', cursive" class="title m-b-md">
                     <b>Welcome to Food Xpress</b>
+                    
+                </div>
+                <div>
+                    
                     <a href="b_login"><button class="btn btn-secondary" id="partner"> Partner With Us</button></a>
                 </div>
 

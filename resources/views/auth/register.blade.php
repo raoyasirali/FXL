@@ -4,8 +4,8 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+            <div class="" style="border: solid thin black">
+                <div class="card-header">{{ __('Customer Register') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
@@ -52,6 +52,15 @@
                                 @endif
                             </div>
                         </div>
+
+                         <div class="form-group row{{ $errors->has('mobile') ? ' has-error' : '' }}">
+                            <label for="contact" class="col-md-4 control-label" style="margin-left: 20px">Contact Number</label>
+
+                            <div class="col-md-6">                                
+                                <input type="text" name="mobile" id="mobile" class="form-control" required>
+                            </div>
+                        </div>
+
 
                         <div class="form-group row">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>

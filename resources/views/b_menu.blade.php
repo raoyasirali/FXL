@@ -1,6 +1,10 @@
 @include('b_master')
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <br/><div ><b> Business Dashboard </b></div>
+<!-- <?php
+   //$value = session('business_email');
+   //echo $value;
+?> -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
