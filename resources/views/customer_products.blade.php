@@ -5,10 +5,11 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Products of your searched category
-                 <a href="viewCart" style="margin-left: 370px">View Cart</a>
+                <div class="card-header" style="float: left"><h5>Products of your searched category</h5>
+                 <a href="viewCart" style="margin-left: 370px"><h4>View Cart</h4></a>
+                 <div>  <a href="foodCategory"><h4>Back</h4></a></div>
                 </div>
-
+                 
                 <div class="card-body">
                     
                    @foreach( $p_data as $row)

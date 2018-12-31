@@ -46,12 +46,14 @@ Route::get('viewCustMenuAgain','ProductController@ViewMenu');
 //Route::get('', 'ProductController@viewProductMenu');
 
 
-
+//Cart Routes
 //Add to cart route
 Route::get('addToCart/{id}','CartController@addToCart');
 
 //View Cart Route 
 Route::get('viewCart','CartController@viewCart');
+//remove item from cart route
+Route::get('RemoveCart/{id}','CartController@RemoveFromCart');
 
 Route::get('/', function () {
     return view('welcome');

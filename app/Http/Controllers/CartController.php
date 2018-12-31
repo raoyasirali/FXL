@@ -51,6 +51,12 @@ class CartController extends Controller
 
 
      }
+     public function RemoveFromCart($id){
+      
+       $cart = cart::find($id);
+       $cart->delete();
+            return redirect('viewCart');
+     }
 
     /**
      * Show the form for creating a new resource.
