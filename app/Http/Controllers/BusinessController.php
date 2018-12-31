@@ -54,7 +54,7 @@ class BusinessController extends Controller
     public function chkBlogin(Request $request){
         $b_email=$request->b_email;
         $b_pwd=$request->b_password;
-        
+        //sadasdasdas
         $b_data=DB::table('businesses')->where('b_Email',$b_email)->Where('b_Pwd',$b_pwd);
         $b_id = DB::table('businesses')->select('b_id')->where('b_Email',$b_email)->Where('b_Pwd',$b_pwd)->get();
         foreach( $b_id as $row ){
