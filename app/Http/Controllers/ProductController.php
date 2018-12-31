@@ -36,7 +36,7 @@ class ProductController extends Controller
         return redirect('b_menu');
     }
 
-<<<<<<< HEAD
+
       //View product on customer dashboard according to selected category from drop down
     public function ViewProducts(Request $request){
         $cat_id = $request->p_category;
@@ -45,7 +45,7 @@ class ProductController extends Controller
         $p=product::all()->where('c_id',$cat_id);
         return view('customer_products')->with('p_data',$p);
      }
-=======
+
     public function deleteProduct($id){
     // {   echo $id;
         // $p = new product; 
@@ -64,7 +64,7 @@ class ProductController extends Controller
     {
         //
     }
->>>>>>> 943e8875956469b9bd6d3a5578598e04b276d83e
+
 
      public function ViewMenu(){
         $value = session('cat_id');
