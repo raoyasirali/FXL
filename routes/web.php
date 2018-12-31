@@ -51,13 +51,12 @@ Route::get('viewCustMenuAgain','ProductController@ViewMenu')->middleware('authen
 Route::get('addToCart/{id}','CartController@addToCart')->middleware('authenticated');
 
 //View Cart Route 
-<<<<<<< HEAD
-Route::get('viewCart','CartController@viewCart');
-//remove item from cart route
-Route::get('RemoveCart/{id}','CartController@RemoveFromCart');
-=======
+
 Route::get('viewCart','CartController@viewCart')->middleware('authenticated');
->>>>>>> f9cab6ba2e1b2a51bb9ab295233d140d6bf7a06e
+//remove item from cart route
+Route::get('RemoveCart/{id}','CartController@RemoveFromCart')->middleware('authenticated');
+Route::get('viewCart','CartController@viewCart')->middleware('authenticated');
+
 
 Route::get('/', function () {
     return view('welcome');

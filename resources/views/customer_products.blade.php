@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header" style="float: left"><h5>Products of your searched category</h5>
                  <a href="viewCart" style="margin-left: 370px"><h4>View Cart</h4></a>
-                 <div>  <a href="foodCategory"><h4>Back</h4></a></div>
+                 <div>  <a href="home"><h4>Back</h4></a></div>
                 </div>
                  
                 <div class="card-body">

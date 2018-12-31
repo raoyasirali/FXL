@@ -35,6 +35,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                       <li> <img src=""></li>
+                      <li> <img src=""></li>
                     </ul>
  
                     <!-- Right Side Of Navbar -->

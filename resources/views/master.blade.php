@@ -59,7 +59,7 @@
     <strong>Info!</strong> This alert box could indicate a neutral informative change or action.
   </div> -->
 <div class="footer">
-	<a href="feedback"> <button class="btn btn-secondary" id="feedback">Feedback</button> </a>
+	<!-- <a href="feedback"> <button class="btn btn-secondary" id="feedback">Feedback</button> </a> -->
 	 <button class="btn btn-secondary" id="contact">Contact</button>
    
 	<div>

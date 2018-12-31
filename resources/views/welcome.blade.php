@@ -89,6 +89,7 @@
                 <div>
                     
                     <a href="b_login"><button class="btn btn-secondary" id="partner"> Partner With Us</button></a>
+                    &nbsp<a href="feedback"><button class="btn btn-secondary" id="partner"> Feed Back</button></a>
                 </div>
 
 
