@@ -35,7 +35,7 @@
         <a class="" href="#"><p style="font-size: 20px;color: white">Information</p></a>
       </li>
       <li class="nav-item" style="margin-top: 20px;margin-left: 20px">
-        <a class=" " href="#"><p style="font-size: 20px;color: white">Login</p></a>
+        <a class=" " href="#"><p style="font-size: 20px;color: white">Logout</p></a>
       </li>
     </ul>
     <!-- <form class="form-inline my-2 my-lg-0">
@@ -47,12 +47,12 @@
 
 </head>
 <body>
-      <div style="width: 150px;height: 220px;border:solid thin black;float: left;">
+      <div style="width: 150px;height: 220px;float: left;">
     <!-- <a href="" class="a" >Current Orders</a> </br></br> -->
-    <a href="b_add_p"  class="w3-button w3">Add Product</a>    </br>
-    <a href="#"  class="w3-button w3-blue" >Delete Product</a></br>
-    <a href="p_view_p"  class="w3-button w3-blue" >View Products</a></br>
-    <a href="#"  class="w3-button w3-blue" >Update Product</a></br></br>
+    <a href="b_add_p"><button  class="btn-secondary"> Add Product</button></a>  
+    <!-- <a href="#"  class="w3-button w3-blue" >Delete Product</a></br> -->
+    <a href="p_view_p"   ><button class="btn-secondary"> View Products</button></a></br>
+    <!-- <a href="#"  class="w3-button w3-blue" >Update Product</a></br></br> -->
     <!-- <a href=""  class="a" >View Sales</a></br></br> -->
 
     </div>
@@ -67,7 +67,7 @@
     <strong>Info!</strong> This alert box could indicate a neutral informative change or action.
   </div> -->
 <div class="footer">
-	 <button class="btn btn-secondary" id="feedback" data-toggle="modal" data-target="#myModal">Feedback</button>
+	 <button class="btn btn-secondary" id="feedback" data-toggle="modal" data-target="#myModal">Report Any Issue</button>
 	 <button class="btn btn-secondary" id="contact">Contact</button>
 	<div>
   <img src="fb.png"> &nbsp&nbsp<img src="email.png">
