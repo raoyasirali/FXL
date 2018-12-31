@@ -37,9 +37,9 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 //Customer products view route
-Route::post('foodCategory','ProductController@ViewProducts');
+Route::post('foodCategory','ProductController@ViewProducts')->middleware('authenticated');
 
-Route::get('viewCustMenuAgain','ProductController@ViewMenu');
+Route::get('viewCustMenuAgain','ProductController@ViewMenu')->middleware('authenticated');
 
 
 
@@ -48,10 +48,10 @@ Route::get('viewCustMenuAgain','ProductController@ViewMenu');
 
 
 //Add to cart route
-Route::get('addToCart/{id}','CartController@addToCart');
+Route::get('addToCart/{id}','CartController@addToCart')->middleware('authenticated');
 
 //View Cart Route 
-Route::get('viewCart','CartController@viewCart');
+Route::get('viewCart','CartController@viewCart')->middleware('authenticated');
 
 Route::get('/', function () {
     return view('welcome');
