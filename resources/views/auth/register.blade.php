@@ -39,6 +39,16 @@
                             </div>
                         </div>
 
+
+                         <div class="form-group row{{ $errors->has('mobile') ? ' has-error' : '' }}">
+                            <label for="contact" class="col-md-4 control-label" style="margin-left: 100px">Contact Number</label>
+
+                            <div class="col-md-6" style="margin-left: -100px">                                
+                                <input type="text" name="mobile" id="mobile" class="form-control" required>
+                            </div>
+                        </div>
+
+
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
@@ -53,13 +63,6 @@
                             </div>
                         </div>
 
-                         <div class="form-group row{{ $errors->has('mobile') ? ' has-error' : '' }}">
-                            <label for="contact" class="col-md-4 control-label" style="margin-left: 20px">Contact Number</label>
-
-                            <div class="col-md-6">                                
-                                <input type="text" name="mobile" id="mobile" class="form-control" required>
-                            </div>
-                        </div>
 
 
                         <div class="form-group row">
