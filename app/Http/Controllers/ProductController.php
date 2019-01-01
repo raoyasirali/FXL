@@ -54,6 +54,7 @@ class ProductController extends Controller
         return redirect('b_home');
 
    }
+  
     /**
      * Store a newly created resource in storage.
      *
@@ -65,7 +66,7 @@ class ProductController extends Controller
         //
     }
 
-
+  // menu again to customer  working same as ViewProducts
      public function ViewMenu(){
         $value = session('cat_id');
         $p=product::all()->where('c_id',$value);
