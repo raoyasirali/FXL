@@ -51,7 +51,7 @@ class BusinessController extends Controller
       $b->c_id=Input::get('b_category');
       $b->b_Pwd=Input::get('b_password');
       $b->save();
-        return redirect('b_login');
+        return redirect('b_login')->with('success', 'Signup Successfull !! Login Now');
     }    
     
 

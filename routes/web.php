@@ -38,6 +38,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //Customer products view route
 Route::post('foodCategory','ProductController@ViewProducts')->middleware('authenticated');
+Route::get('backToCat','ProductController@ViewProducts');
+
 
 Route::get('viewCustMenuAgain','ProductController@ViewMenu')->middleware('authenticated');
 
@@ -52,9 +54,16 @@ Route::get('addToCart/{id}','CartController@addToCart')->middleware('authenticat
 
 //View Cart Route 
 
+
+Route::get('viewCart','CartController@viewCart');
+//remove item from cart route
+Route::get('RemoveCart/{id}','CartController@RemoveFromCart');
+
+
 Route::get('viewCart','CartController@viewCart')->middleware('authenticated');
 //remove item from cart route
 Route::get('RemoveCart/{id}','CartController@RemoveFromCart')->middleware('authenticated');
+
 Route::get('viewCart','CartController@viewCart')->middleware('authenticated');
 
 

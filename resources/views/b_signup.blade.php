@@ -10,12 +10,6 @@
 <body background="bg.jpg">
 
 
-<!-- <?php
-//$msg="abc";
-//if( !empty($_GET['msg']))
-//	$msg = $_GET['msg'];
-
-?> -->
 
 
 <div style="width: 100%;height: 840px;padding-top:10px ">
