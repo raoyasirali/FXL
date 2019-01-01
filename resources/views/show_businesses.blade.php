@@ -11,19 +11,21 @@
 	 		<th>Last Name</th>
 	 		<th>Phone</th>
 	 		<th>Email</th>
+	 		<th> </th>
 
 	 	</tr>
 	 	 @foreach($businesses as $b)
 
                <tr>
                	
-                       <td>{{$b->b_id}}</td>
+                       <td>{{$b->id}}</td>
                        <td>{{$b->b_Name}}</td>
                        <td>{{$b->b_Address}}</td>
                        <td>{{$b->b_Fname}}</td>
                        <td>{{$b->b_Lname}}</td>
                        <td>{{$b->b_Phone}}</td>
                        <td>{{$b->b_Email}}</td>
+                       <td><a href="b_delete/{{$b->id}}"><button class="btn btn-secondary">Delete Business</button></a></td>
                        
 
                </tr>

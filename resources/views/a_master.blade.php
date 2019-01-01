@@ -31,7 +31,7 @@
       <li class="nav-item " style="margin-top: 20px">
         <a href="a_menu" class="btn btn-secondary" style="font-size: 18px;color: white" >Home</a>
         <a href="https://mailtrap.io/inboxes/518208/messages/1073103072" class="btn btn-secondary" style="font-size: 18px;color: white" >View Feed Back</a>
-        <a href="c_details_pdf" class="btn btn-secondary" style="font-size: 18px;color: white" >View User Details</a>
+        <a href="c_details_pdf" class="btn btn-secondary" style="font-size: 18px;color: white" >View Customer Details</a>
         <a href="b_details_pdf" class="btn btn-secondary" style="font-size: 18px;color: white" >View Business Details</a>
         <a href="viewSales" class="btn btn-secondary" style="font-size: 18px;color: white" >View Sales</a>
         <a href="a_login" class="btn btn-secondary" style="font-size: 18px;color: white" >Logout</a>

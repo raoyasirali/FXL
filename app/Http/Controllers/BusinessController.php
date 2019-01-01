@@ -75,10 +75,10 @@ class BusinessController extends Controller
         $p=$request->b_password;
         $b_pwd=md5($p);
         $b_data=DB::table('businesses')->where('b_Email',$b_email)->Where('b_Pwd',$b_pwd);
-        $b_id = DB::table('businesses')->select('b_id')->where('b_Email',$b_email)->Where('b_Pwd',$b_pwd)->get();
+        $b_id = DB::table('businesses')->select('id')->where('b_Email',$b_email)->Where('b_Pwd',$b_pwd)->get();
         session(['b_id' => $b_id]);
         foreach( $b_id as $row ){
-           $bu_id = $row->b_id;
+           $bu_id = $row->id;
         }
         
         $b_count=$b_data->count();

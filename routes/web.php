@@ -12,9 +12,13 @@ Route::get('a_menu', function () {
 
 Route::get('b_details_pdf', "AdminController@viewBusinesses");
 
+Route::get('b_delete/{id}', "AdminController@deleteBusinesses");
+
 Route::get('b_download_pdf', "AdminController@b_download_pdf");
 
 Route::get('c_details_pdf', "AdminController@viewCustomers");
+
+Route::get('c_delete/{id}', "AdminController@deleteCustomers");
 
 Route::get('c_download_pdf', "AdminController@c_download_pdf");
 

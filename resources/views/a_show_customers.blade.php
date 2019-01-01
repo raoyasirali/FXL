@@ -8,7 +8,7 @@
 	 		<th>Name</th>
 	 		<th>Email</th>
 	 		<th>Contact Number</th>
-	 		
+	 		<th> </th>
 
 	 	</tr>
 	 	 @foreach($customers as $c)
@@ -19,7 +19,7 @@
                        <td>{{$c->name}}</td>
                        <td>{{$c->email}}</td>
                        <td>{{$c->mobile}}</td>
-                       
+                       <td><a href="c_delete/{{$c->id}}"><button class="btn btn-secondary">Delete Customer</button></a></td>
                        
                        
 
