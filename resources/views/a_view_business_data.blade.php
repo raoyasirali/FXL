@@ -15,7 +15,7 @@
 
                <tr>
                	
-                       <td>{{$b->b_id}}</td>
+                       <td>{{$b->id}}</td>
                        <td>{{$b->b_Name}}</td>
                        <td>{{$b->b_Address}}</td>
                        <td>{{$b->b_Fname}}</td>

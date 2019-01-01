@@ -53,6 +53,42 @@ class AdminController extends Controller
 
    	  }
 
+
+      public function deleteBusinesses($id){
+       //$b = new business;
+        $b = business::find($id);
+        $b->delete();
+        return redirect('b_details_pdf');
+
+     }
+
+
+      public function viewCustomers(){
+       //$b = new business;
+       $c = User::all();
+
+        return view('a_show_customers')->with('customers',$c);
+
+     }
+
+
+      public function c_download_pdf(){
+      $customer_data = DB::table('users')->get();
+      $pdf = PDF::loadView("a_view_customer_data", ["customers"=>$customer_data]);
+      return $pdf->download("Customer Data.pdf");
+      //return $airline_data->download("flights Data.pdf");
+
+      }
+
+       public function deleteCustomers($id){
+       //$b = new business;
+        $c = User::find($id);
+        $c->delete();
+        return redirect('c_details_pdf');
+
+     }
+
+
        public function viewSales(){
        //$b = new business;
        $s = DB::table('sales')->get();

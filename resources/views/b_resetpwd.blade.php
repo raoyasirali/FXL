@@ -19,7 +19,7 @@ if( !empty($_GET['msg']))
 
 
 <div style="width: 1200px;height: 620px;padding-top:40px ">
-<form action="server_business_reset.php" method="get">
+<form action="{{URL::to('b_resest_pwd')}}" method="get" enctype="multipart/form-data">
 	<span style="margin-left: 45%;font-size: 30px;color: Black"><b> Business Reset Password </b></span><br/><br/><br/>
 		<div id="err" style="color: red"></div>	
 	
@@ -29,7 +29,7 @@ if( !empty($_GET['msg']))
 	
 	<span style="margin-left: 10%"><label><b> Phone: </b></label></span>  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
 	<input type="text" name="b_phone" id="b_phone" required="" /> <br/><br/>
-	
+	<input type="hidden" name="_token" value="{{csrf_token()}}">
 
 	<span style="margin-left: 10%"><label><b>New Password: </b></label></span>&nbsp
 	<input type="password" name="b_password" id="b_password" required="" /> <br/><br/>
