@@ -17,7 +17,7 @@
 	<span style="margin-left: 45%;font-size: 30px;color: Black"><b> Business Admin Login</b></span><br/><br/><br/>
 
 	
-	<div style="width: 370px;height: 265px;margin-left: 45%;padding-top: 30px;padding-bottom: 80px;background-color: white;border: solid thick black">
+	<div style="width: 370px;height: 275px;margin-left: 45%;padding-top: 30px;padding-bottom: 80px;background-color: white;border: solid thick black">
 				<div style="color: red; margin-left: 50px">
 	@if($message = Session::get('success'))
      <div>

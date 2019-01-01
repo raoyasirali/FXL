@@ -14,6 +14,10 @@ Route::get('b_details_pdf', "AdminController@viewBusinesses");
 
 Route::get('b_download_pdf', "AdminController@b_download_pdf");
 
+Route::get('c_details_pdf', "AdminController@viewCustomers");
+
+Route::get('c_download_pdf', "AdminController@c_download_pdf");
+
 //Email Routes
 Route::get('feedback', "SendEmailController@index");
 
@@ -89,6 +93,10 @@ Route::post('b_register', "BusinessController@bregister");
 Route::get('b_signup', "BusinessController@showSignupPage");
 
 Route::get('b_resetpwd', "BusinessController@showResetpwdPage");
+
+Route::get('b_resest_pwd', "BusinessController@resetPwd");
+
+
 
 Route::get('b_login', "BusinessController@showLoginPage");
 

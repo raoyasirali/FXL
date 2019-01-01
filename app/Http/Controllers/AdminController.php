@@ -53,6 +53,23 @@ class AdminController extends Controller
 
    	  }
 
+      public function viewCustomers(){
+       //$b = new business;
+       $c = User::all();
+
+        return view('a_show_customers')->with('customers',$c);
+
+     }
+
+
+      public function c_download_pdf(){
+      $customer_data = DB::table('users')->get();
+      $pdf = PDF::loadView("a_view_customer_data", ["customers"=>$customer_data]);
+      return $pdf->download("Customer Data.pdf");
+      //return $airline_data->download("flights Data.pdf");
+
+      }
+
        public function viewSales(){
        //$b = new business;
        $s = DB::table('sales')->get();
