@@ -35,7 +35,7 @@
         <a class="" href="#"><p style="font-size: 20px;color: white">Information</p></a>
       </li>
       <li class="nav-item" style="margin-top: 20px;margin-left: 20px">
-        <a class=" " href="#"><p style="font-size: 20px;color: white">Logout</p></a>
+        <a class=" " href="b_login"><p style="font-size: 20px;color: white">Logout</p></a>
       </li>
     </ul>
     <!-- <form class="form-inline my-2 my-lg-0">
@@ -67,7 +67,7 @@
     <strong>Info!</strong> This alert box could indicate a neutral informative change or action.
   </div> -->
 <div class="footer">
-	 <button class="btn btn-secondary" id="feedback" data-toggle="modal" data-target="#myModal">Report Any Issue</button>
+	 <a href="feedback"><button class="btn btn-secondary" id="feedback" data-toggle="modal" data-target="#myModal">Report Any Issue</button></a>
 	 <button class="btn btn-secondary" id="contact">Contact</button>
 	<div>
   <img src="fb.png"> &nbsp&nbsp<img src="email.png">
