@@ -23,7 +23,7 @@ class CreateProductsTable extends Migration
             $table->unsignedInteger('b_id');
             $table->unsignedInteger('c_id');
             $table->foreign('c_id')->references('cat_id')->on('categories');
-            $table->foreign('b_id')->references('b_id')->on('businesses');
+            $table->foreign('b_id')->references('id')->on('businesses');
             $table->timestamps();
         });
     }

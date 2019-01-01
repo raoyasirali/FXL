@@ -21,7 +21,7 @@ class CreateSalesTable extends Migration
             $table->integer('Quantity');
             $table->integer('Price');
             $table->unsignedInteger('b_id');
-            $table->foreign('b_id')->references('b_id')->on('businesses');
+            $table->foreign('b_id')->references('id')->on('businesses');
 
             $table->timestamps();
         });
