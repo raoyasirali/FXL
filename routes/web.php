@@ -46,6 +46,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //Customer products view route
 Route::post('foodCategory','ProductController@ViewProducts')->middleware('authenticated');
+
 Route::get('backToCat','ProductController@ViewProducts');
 
 
@@ -53,7 +54,6 @@ Route::get('viewCustMenuAgain','ProductController@ViewMenu')->middleware('authen
 
 
 
-//Route::get('', 'ProductController@viewProductMenu');
 
 
 //Cart Routes
@@ -119,4 +119,5 @@ Route::get('edit/{id}', "ProductController@showEditProduct");
 Route::get('delete/{id}', "ProductController@deleteProduct");
 
 //GoogleCharts Library
+
 Route::get('sales_chart',"LaravelGoogleGraph@index");
