@@ -26,7 +26,7 @@
   <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #984B17;height: 50px">
    
   <div class="collapse navbar-collapse" >
-    <a class="navbar-brand" href=""><img src="logo.png" height="60px" width="150px"></a>
+    <a class="navbar-brand" href=""><img src="{{ URL::asset('logo.png') }}" height="60px" width="150px"></a>
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0" style="margin-left: 920px">
       <!-- <li class="nav-item " style="margin-top: 20px">
         <a class="" href="" ><p style="font-size: 20px;color: white">Contact</p> </a>
@@ -35,8 +35,9 @@
         <a class="" href="#"><p style="font-size: 20px;color: white">Information</p></a>
       </li>
       <li class="nav-item" style="margin-top: 20px;margin-left: 20px">
-        <a class=" " href="b_login"><p style="font-size: 20px;color: white">Logout</p></a>
+        <a class=" " href="{{URL::to('b_login')}}"><p style="font-size: 20px;color: white">Logout</p></a>
       </li>
+      
     </ul>
     <!-- <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -49,9 +50,9 @@
 <body>
       <div style="width: 150px;height: 220px;float: left;">
     <!-- <a href="" class="a" >Current Orders</a> </br></br> -->
-    <a href="b_add_p"><button  class="btn-secondary"> Add Product</button></a>  
+    <a href="{{URL::to('b_add_p')}}"><button  class="btn-secondary"> Add Product</button></a>  
     <!-- <a href="#"  class="w3-button w3-blue" >Delete Product</a></br> -->
-    <a href="p_view_p"   ><button class="btn-secondary"> View Products</button></a></br>
+    <a href="{{URL::to('p_view_p')}}"   ><button class="btn-secondary"> View Products</button></a></br>
     <!-- <a href="#"  class="w3-button w3-blue" >Update Product</a></br></br> -->
     <!-- <a href=""  class="a" >View Sales</a></br></br> -->
 
@@ -67,10 +68,10 @@
     <strong>Info!</strong> This alert box could indicate a neutral informative change or action.
   </div> -->
 <div class="footer">
-	 <a href="feedback"><button class="btn btn-secondary" id="feedback" data-toggle="modal" data-target="#myModal">Report Any Issue</button></a>
-	 <button class="btn btn-secondary" id="contact">Contact</button>
+	 <a href="{{URL::to('feedback')}}"><button class="btn btn-secondary" id="feedback" data-toggle="modal" data-target="#myModal">Report Any Issue</button></a>
+	 <!-- <button class="btn btn-secondary" id="contact">Contact</button> -->
 	<div>
-  <img src="fb.png"> &nbsp&nbsp<img src="email.png">
+  <a href="https://facebook.com/"><img src="{{ URL::asset('fb.png')}}"></a> &nbsp&nbsp<a href="https://accounts.google.com/signin/v2/identifier?service=mail&passive=true&rm=false&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ss=1&scc=1&ltmpl=default&ltmplcache=2&emr=1&osid=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin"><img src="{{ URL::asset('email.png')}}"></a>
   <p>©FoodXPress 2019- All Rights Reserved  </p>
     </div>
   

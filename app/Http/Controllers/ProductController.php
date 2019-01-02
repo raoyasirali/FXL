@@ -83,7 +83,25 @@ class ProductController extends Controller
         return view('p_view_p')->with('p_data',$p);
     }
    
+    public function showEditProduct($id){
+         $p=product::find($id);
+        return view('p_edit_p')->with('p',$p);
+    }
     
+    public function updateProduct(Request $request,$id){
+        $p = new product;         
+        $p=product::find($id); 
+        $p->p_Name=$request->p_name;
+        $p->p_Desc=$request->p_description;
+        // $p->p_Img_Name=$request->p_image;
+        $p->p_Price=$request->p_price;
+        $p->c_id=$request->p_category;
+
+        $p->save();
+        return redirect('p_view_p');
+
+    }
+
     public function edit(product $product)
     {
         

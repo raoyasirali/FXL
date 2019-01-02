@@ -116,6 +116,10 @@ Route::post('add_p_server',"ProductController@create");
 
 Route::get('p_view_p', "ProductController@viewProduct");
 
+Route::post('update/{id}', "ProductController@updateProduct");
+
+Route::get('edit/{id}', "ProductController@showEditProduct");
+
 Route::get('delete/{id}', "ProductController@deleteProduct");
 
 //GoogleCharts Library
