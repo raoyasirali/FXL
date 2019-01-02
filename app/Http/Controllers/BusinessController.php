@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\business;
 use DB;
+use Excel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Http\RedirectResponse;
@@ -93,11 +94,38 @@ class BusinessController extends Controller
     }
 
     public function showSales(){
-         $value = session('business_id');
+        $value = session('business_id');
         $s = DB::table('sales')->where('b_id',$value)->get();
         return view('b_show_sales')->with('sales',$s);
 
     }
+
+    public function b_s_download_excel()
+         {
+           $value = session('business_id');
+           $sales_data = DB::table('sales')->where('b_id',$value)->get()->toArray();
+           $sales_array[] = array('id', 'Date', 'Customer_Name', 'Product', 'Quantity', 'Price');
+           foreach($sales_data as $s_data)
+           {
+            $sales_array[] = array(
+             'id'  => $s_data->id,
+             'Date'   => $s_data->Date,
+             'Customer_Name'    => $s_data->Customer_Name,
+             'Product'    => $s_data->Product,
+             'Quantity'    => $s_data->Quantity,
+             'Price'    => $s_data->Price,
+             // 'b_id'    => $s_data->b_id,
+         
+            );
+           }
+           Excel::create('Sales Data', function($excel) use ($sales_array){
+            $excel->setTitle('Sales Data');
+            $excel->sheet('Sales Data', function($sheet) use ($sales_array){
+             $sheet->fromArray($sales_array, null, 'A1', false, false);
+            });
+           })->download('xlsx');
+
+         }
 
     public function index()
     {

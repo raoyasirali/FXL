@@ -1,6 +1,8 @@
 @include('b_master')
 <body>
-	 
+	<br/>
+	<br/>
+	 <a href="b_s_download_excel"><button class="btn btn-secondary">Download as Excel File</button></a>
 	 <table border="1" width="90%" align="center" style="border-collapse: collapse" class="table">
 	 	<thead class="thead-dark">
 	 	<tr>

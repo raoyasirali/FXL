@@ -100,6 +100,8 @@ Route::get('b_sales_p', "BusinessController@showSales");
 
 Route::get('b_login', "BusinessController@showLoginPage");
 
+Route::get('b_s_download_excel', "BusinessController@b_s_download_excel");
+
 Route::get('b_menu', function () {
     return view('b_menu');
 });
