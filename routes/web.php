@@ -54,14 +54,18 @@ Route::get('viewCustMenuAgain','ProductController@ViewMenu')->middleware('authen
 //Review Routes
 
  Route::get('Reviews/{id}','ReviewController@showReviewScreen');
-
+ 
 // //Add Review Form 
-// Route::get('ReviewShown','ReviewController@showReviewScreen');
+
+Route::get('yourReview','ReviewController@showReviewForm');
+
+Route::post('addReview','ReviewController@addNewReview');
 
 
-//Route::get('AddReviews','ReviewController@showReviewForm');
 
-
+// Route::get('yourReview', function () {
+//     return view('AddReviewForm');
+// });
 
 
 

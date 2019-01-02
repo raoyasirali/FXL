@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Review;
 use Illuminate\Http\Request;
 use App\product;
+use Auth;
+use Illuminate\Support\Facades\Input;
 
 class ReviewController extends Controller
 {
@@ -20,18 +22,36 @@ class ReviewController extends Controller
 
     public function showReviewScreen($id)
     {
-        echo $id;
-        exit();
-         //  $p = new product; 
-        // $p=product::find($id);
-       // $pro = new product;
-       //$pro=product::find($id);
-       //return view ('ReviewForm')->with('pro',$pro);
+        $proid=$id;
+        session(['proID' => $proid]);         
+        $rev=Review::all()->where('product_id',$proid); 
+      return view ('ReviewView')->with('rev',$rev);
 
     }
     public function showReviewForm()
     {
+        
         return view ('AddReviewForm');
+    }
+    public function addNewReview(){
+        
+        // $value = session('proID');
+        // echo $value;exit();
+         $userId = Auth::id();
+         $r = new Review;   
+
+        $r->review=Input::get('message');
+        $r->user_name=Input::get('name');
+        $r->product_id=Input::get('pro_ID');
+        $pid=Input::get('pro_ID');
+        $r->user_id=$userId;
+        
+        $r->save();
+        
+    
+            return redirect('home');
+
+
     }
 
    

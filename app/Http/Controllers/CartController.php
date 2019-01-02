@@ -24,7 +24,7 @@ class CartController extends Controller
       $productId = session('product_id');
 
       $c=cart::all()->where('u_id',$userId);
-      $results = DB::select( DB::raw("select carts.p_id,carts.cart_id,products.p_Name,products.p_Desc,products.p_Img_Name,products.p_Price from (carts 
+      $results = DB::select( DB::raw("select carts.p_id,carts.id,products.p_Name,products.p_Desc,products.p_Img_Name,products.p_Price from (carts 
         inner join products on carts.p_id=products.id) where u_id=$userId ") );
 
       
