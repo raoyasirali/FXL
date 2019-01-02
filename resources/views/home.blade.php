@@ -6,7 +6,15 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Order Best food from your surrounding restaurants</div>
+                            <div style="color: red; margin-left: 50px">
+                                @if($message = Session::get('msg'))
+                                 <div>
+                                    
+                                    {{$message}}
+                                 </div>
 
+                                @endif
+                             </div><br/>
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">

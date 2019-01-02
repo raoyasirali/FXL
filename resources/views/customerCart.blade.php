@@ -6,7 +6,9 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header" style=""><h3>Your Cart</h3>
-                  <div><a href="viewCustMenuAgain" style="font-size: 20px">Back</a></div>
+                  <div style="float: left;"><a href="placeorder" class="btn btn-primary" >Place Order</a></div>
+                  <div style="float: left; margin-left: 400px"><a href="viewCustMenuAgain" class="btn btn-primary">Back</a></div>
+
                  
                 </div>
 
@@ -18,7 +20,7 @@
           Name: {{$row->p_Name}} <br>
           Description:  {{$row->p_Desc}}<br>
           Price:  {{$row->p_Price}}<br>
-         <a href="RemoveCart/{{$row->id}}" class="btn btn-primary">Remove From cart</a>
+         <span style="margin-left:30px "><a href="RemoveCart/{{$row->id}}" class="btn btn-danger">Remove From cart</a></span>
         
           
                  

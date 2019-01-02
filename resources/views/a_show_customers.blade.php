@@ -1,7 +1,8 @@
 @include('a_master')
 <body>
 	 <a href="c_download_pdf"><button class="btn btn-secondary">Download PDF</button></a><br/><br/>
-	 <table border="1" width="90%" align="center" style="border-collapse: collapse">
+	 <table border="1" width="90%" align="center" style="border-collapse: collapse" class="table">
+	 	 <thead class="thead-dark">
 	 	<tr>
 	 		
 	 		<th>ID</th>
@@ -11,6 +12,7 @@
 	 		<th> </th>
 
 	 	</tr>
+	 </thead>
 	 	 @foreach($customers as $c)
 
                <tr>

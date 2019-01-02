@@ -51,6 +51,7 @@ Route::get('viewCustMenuAgain','ProductController@ViewMenu')->middleware('authen
 
 
 
+
 //Review Routes
 
  Route::get('Reviews/{id}','ReviewController@showReviewScreen');
@@ -70,17 +71,14 @@ Route::post('addReview','ReviewController@addNewReview');
 
 
 
+
 //Cart Routes
 //Add to cart route
 Route::get('addToCart/{id}','CartController@addToCart')->middleware('authenticated');
 
 //View Cart Route 
 
-
-Route::get('viewCart','CartController@viewCart');
-//remove item from cart route
-Route::get('RemoveCart/{id}','CartController@RemoveFromCart');
-
+Route::get('placeorder','CartController@placeOrder')->middleware('authenticated');
 
 Route::get('viewCart','CartController@viewCart')->middleware('authenticated');
 //remove item from cart route
@@ -114,9 +112,11 @@ Route::get('b_resetpwd', "BusinessController@showResetpwdPage");
 
 Route::get('b_resest_pwd', "BusinessController@resetPwd");
 
-
+Route::get('b_sales_p', "BusinessController@showSales");
 
 Route::get('b_login', "BusinessController@showLoginPage");
+
+Route::get('b_s_download_excel', "BusinessController@b_s_download_excel");
 
 Route::get('b_menu', function () {
     return view('b_menu');
@@ -130,7 +130,12 @@ Route::post('add_p_server',"ProductController@create");
 
 Route::get('p_view_p', "ProductController@viewProduct");
 
+Route::post('update/{id}', "ProductController@updateProduct");
+
+Route::get('edit/{id}', "ProductController@showEditProduct");
+
 Route::get('delete/{id}', "ProductController@deleteProduct");
 
 //GoogleCharts Library
+
 Route::get('sales_chart',"LaravelGoogleGraph@index");
