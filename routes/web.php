@@ -1,8 +1,4 @@
 <?php
-
-
-
-
 //Admin Routes
 Route::get('a_login', "AdminController@login");
 
@@ -47,10 +43,30 @@ Route::get('/home', 'HomeController@index')->name('home');
 //Customer products view route
 Route::post('foodCategory','ProductController@ViewProducts')->middleware('authenticated');
 
+
 Route::get('backToCat','ProductController@ViewProducts');
 
 
 Route::get('viewCustMenuAgain','ProductController@ViewMenu')->middleware('authenticated');
+
+
+
+
+//Review Routes
+
+ Route::get('Reviews/{id}','ReviewController@showReviewScreen');
+ 
+// //Add Review Form 
+
+Route::get('yourReview','ReviewController@showReviewForm');
+
+Route::post('addReview','ReviewController@addNewReview');
+
+
+
+// Route::get('yourReview', function () {
+//     return view('AddReviewForm');
+// });
 
 
 

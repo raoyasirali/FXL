@@ -26,7 +26,7 @@
                 <!-- <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'FoodXpress') }}
                 </a> -->
-                <a href=""><img src="logo.png" height="60px" width="150px"></a>
+                <a href="{{URL::to('home')}}"><img src="{{URL::asset('logo.png')}}" height="60px" width="150px"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>

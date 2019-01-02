@@ -55,6 +55,7 @@ class BusinessController extends Controller
       $password= md5($p);
       $b->b_Pwd=$password;
       $b->save();
+        
         return redirect('b_login')->with('success', 'Signup Successfull !! Login Now');
     }    
 

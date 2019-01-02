@@ -26,7 +26,12 @@
           Name: {{$row->p_Name}} <br>
           Description:  {{$row->p_Desc}}<br>
           Price:  {{$row->p_Price}}<br>
+<<<<<<< HEAD
+         <a href="addToCart/{{$row->id}}" class="btn btn-primary">Add to cart</a>
+         <a href="Reviews/{{$row->id}}" class="btn btn-primary">Reviews</a>
+=======
          <span style="margin-left:30px "><a href="addToCart/{{$row->id}}" class="btn btn-primary">Add to cart</a></span>
+>>>>>>> e45b2a0372af9c5688a0f4162c89aec9576d78ed
         
           
                  
