@@ -96,7 +96,7 @@ Route::get('b_resetpwd', "BusinessController@showResetpwdPage");
 
 Route::get('b_resest_pwd', "BusinessController@resetPwd");
 
-
+Route::get('b_sales_p', "BusinessController@showSales");
 
 Route::get('b_login', "BusinessController@showLoginPage");
 

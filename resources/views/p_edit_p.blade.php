@@ -25,10 +25,10 @@
      
 <div style="width: 100%;height: 620px;padding-top:10px ">
 <form action="../update/{{$p->id}}" method="post" enctype="multipart/form-data">
-	<span style="margin-left: 40%;font-size: 30px;color: Black"><b> Update Product</b></span><br/>
+	<span style="margin-left: 30%;font-size: 30px;color: Black"><b> Update Product</b></span><br/>
 		<div id="err" style="color: red"></div>	
 <br/>	
-	<div style="width: 25%;height: 100%;margin-left: 45%;padding-top: 30px;padding-bottom: 80px;background-color: white;border: solid thick black">
+	<div style="width: 28%;height: 100%;margin-left: 45%;padding-top: 30px;padding-bottom: 80px;background-color: white;border: solid thick black">
 	<span style="margin-left: 10%"><label><b> Item Name: </b></label></span>&nbsp  &nbsp
 	<input type="text" name="p_name" id="p_name" required="" value="{{$p->p_Name}}" /> <br/><br/>
 	

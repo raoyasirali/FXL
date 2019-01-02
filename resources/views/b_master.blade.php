@@ -48,11 +48,12 @@
 
 </head>
 <body>
-      <div style="width: 150px;height: 220px;float: left;">
+      <div style="width: 350px;height: 40px;float: left;">
     <!-- <a href="" class="a" >Current Orders</a> </br></br> -->
-    <a href="{{URL::to('b_add_p')}}"><button  class="btn-secondary"> Add Product</button></a>  
+    <a href="{{URL::to('b_add_p')}}"><button  class="btn-secondary"> Add Product</button></a> 
     <!-- <a href="#"  class="w3-button w3-blue" >Delete Product</a></br> -->
-    <a href="{{URL::to('p_view_p')}}"   ><button class="btn-secondary"> View Products</button></a></br>
+    <a href="{{URL::to('p_view_p')}}"   ><button class="btn-secondary"> View Products</button></a>
+    <a href="{{URL::to('b_sales_p')}}"   ><button class="btn-secondary"> View Sales</button></a></br>
     <!-- <a href="#"  class="w3-button w3-blue" >Update Product</a></br></br> -->
     <!-- <a href=""  class="a" >View Sales</a></br></br> -->
 

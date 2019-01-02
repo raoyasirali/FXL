@@ -1,4 +1,6 @@
 @include('b_master')
+<br/>
+<br/>
 <div style="margin-left: 20px">
         @foreach( $p_data as $row )
           <div id="img_div"style="margin-top: 20px ;margin-left:20px;float: left;border: solid thin gray">

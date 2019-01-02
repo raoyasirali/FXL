@@ -76,7 +76,7 @@ class BusinessController extends Controller
         $b_pwd=md5($p);
         $b_data=DB::table('businesses')->where('b_Email',$b_email)->Where('b_Pwd',$b_pwd);
         $b_id = DB::table('businesses')->select('id')->where('b_Email',$b_email)->Where('b_Pwd',$b_pwd)->get();
-        session(['b_id' => $b_id]);
+        // session(['b_id' => $b_id]);
         foreach( $b_id as $row ){
            $bu_id = $row->id;
         }
@@ -91,6 +91,14 @@ class BusinessController extends Controller
             return view('b_login');
        
     }
+
+    public function showSales(){
+         $value = session('business_id');
+        $s = DB::table('sales')->where('b_id',$value)->get();
+        return view('b_show_sales')->with('sales',$s);
+
+    }
+
     public function index()
     {
         //
