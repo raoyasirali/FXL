@@ -33,6 +33,11 @@ class CartController extends Controller
 
     }
 
+    public function placeOrder(){
+        cart::truncate();
+        return redirect('home')->with('msg','Order Placed Successfully');
+    }
+
     //products added into cart table after clicking on add to cart button 
      public function addToCart($id){
        // echo $id; exit();
@@ -47,7 +52,7 @@ class CartController extends Controller
         $cart->u_id = $userId;
         $cart ->save();
     
-      return redirect ('viewCustMenuAgain');
+      return redirect ('viewCustMenuAgain')->with('msg','Item Added Into Cart');
 
 
      }

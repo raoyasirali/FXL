@@ -6,10 +6,18 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header" style="float: left"><h5>Products of your searched category</h5>
-                 <a href="viewCart" style="margin-left: 370px"><h4>View Cart</h4></a>
-                 <div>  <a href="home"><h4>Back</h4></a></div>
+                 <div style="float: left;"><a href="viewCart"  class="btn btn-primary">View Cart</a></div>
+                 <div style="float: left;">  <a href="home" class="btn btn-primary" style="margin-left: 470px">Back</a></div>
                 </div>
-                 
+                  <div style="color: red; margin-left: 50px">
+                                @if($message = Session::get('msg'))
+                                 <div>
+                                    
+                                    {{$message}}
+                                 </div>
+
+                                @endif
+                             </div><br/>
                 <div class="card-body">
                     
                    @foreach( $p_data as $row)
@@ -18,7 +26,7 @@
           Name: {{$row->p_Name}} <br>
           Description:  {{$row->p_Desc}}<br>
           Price:  {{$row->p_Price}}<br>
-         <a href="addToCart/{{$row->id}}" class="btn btn-primary">Add to cart</a>
+         <span style="margin-left:30px "><a href="addToCart/{{$row->id}}" class="btn btn-primary">Add to cart</a></span>
         
           
                  
