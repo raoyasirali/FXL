@@ -26,7 +26,7 @@
   <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #984B17;height: 60px">
    
   <div class="collapse navbar-collapse" >
-    <a class="navbar-brand" href=""><img src="logo.png" height="60px" width="150px"></a>
+    <a class="navbar-brand" href="{{URL::to('a_menu')}}"><img src="logo.png" height="60px" width="150px"></a>
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0" style="margin-left: 440px;margin-top: -20px">
       <li class="nav-item " style="margin-top: 20px">
         <a href="a_menu" class="btn btn-secondary" style="font-size: 18px;color: white" >Home</a>
