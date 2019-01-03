@@ -26,19 +26,17 @@
           Name: {{$row->p_Name}} <br>
           Description:  {{$row->p_Desc}}<br>
           Price:  {{$row->p_Price}}<br>
-<<<<<<< HEAD
+
 
          <a href="addToCart/{{$row->id}}" class="btn btn-primary">Add to cart</a>
          <a href="Reviews/{{$row->id}}" class="btn btn-primary">Reviews</a>
 
         
-=======
-         <a href="addToCart/{{$row->id}}" class="btn btn-primary">Add to cart</a>
-         <a href="Reviews/{{$row->id}}" class="btn btn-primary">Reviews</a>
 
+        
          
 
->>>>>>> 256ca39ec84964a00333cb0f30af1ebfee00cd74
+
         
           
                  

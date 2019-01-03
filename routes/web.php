@@ -43,8 +43,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 //Customer products view route
 Route::post('foodCategory','ProductController@ViewProducts')->middleware('authenticated');
 
-Route::get('viewAllProducts', 'ProductController@AllCatProducts');
-Route::get('backToCat','ProductController@ViewProducts');
+Route::get('viewAllProducts', 'ProductController@AllCatProducts')->middleware('authenticated');
+Route::get('backToCat','ProductController@ViewProducts')->middleware('authenticated');
 
 
 Route::get('viewCustMenuAgain','ProductController@ViewMenu')->middleware('authenticated');
@@ -54,13 +54,13 @@ Route::get('viewCustMenuAgain','ProductController@ViewMenu')->middleware('authen
 
 //Review Routes
 
- Route::get('Reviews/{id}','ReviewController@showReviewScreen');
+ Route::get('Reviews/{id}','ReviewController@showReviewScreen')->middleware('authenticated');
  
 // //Add Review Form 
 
-Route::get('yourReview','ReviewController@showReviewForm');
+Route::get('yourReview','ReviewController@showReviewForm')->middleware('authenticated');
 
-Route::post('addReview','ReviewController@addNewReview');
+Route::post('addReview','ReviewController@addNewReview')->middleware('authenticated');
 
 
 

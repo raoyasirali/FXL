@@ -50,9 +50,9 @@
 <body>
       <div style="width: 550px;height: 40px;float: left;">
     
-    <a href="{{URL::to('b_add_p')}}" class="btn btn-primary">Add Products</a> 
-    <a href="{{URL::to('p_view_p')}}" class="btn btn-primary"  >View Products</a>
-    <a href="{{URL::to('b_sales_p')}}"  class="btn btn-primary"  >View   Sales</a>
+    <a href="{{URL::to('b_add_p')}}" class="btn btn-secondary">Add Products</a> 
+    <a href="{{URL::to('p_view_p')}}" class="btn btn-secondary"  >View Products</a>
+    <a href="{{URL::to('b_sales_p')}}"  class="btn btn-secondary"  >View   Sales</a>
     
 
     </div>
