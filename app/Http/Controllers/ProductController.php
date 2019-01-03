@@ -4,19 +4,16 @@ namespace App\Http\Controllers;
 
 use App\product;
 use App\cart;
+use App\Review;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Http\RedirectResponse;
 use Auth;
+use DB;
 
 class ProductController extends Controller
 {
-   
-    public function index()
-    {
-        //
-    }
 
     //Save products into database by business admin after filling add product form on its dashboard.
     public function create()
@@ -41,30 +38,19 @@ class ProductController extends Controller
     public function ViewProducts(Request $request){
         $cat_id = $request->p_category;
         session(['cat_id' => $cat_id]);
-        // $cat_id= session('cat_id');
         $p=product::all()->where('c_id',$cat_id);
         return view('customer_products')->with('p_data',$p);
      }
 
     public function deleteProduct($id){
-    // {   echo $id;
-        // $p = new product; 
+        DB::table('reviews')->where('product_id', '=', $id)->delete();
         $p=product::find($id);
         $p->delete();
         return redirect('b_home');
 
    }
   
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+    
 
   // menu again to customer  working same as ViewProducts
      public function ViewMenu(){
@@ -74,6 +60,12 @@ class ProductController extends Controller
 
      }
 
+     //view all category products to customer
+     public function AllCatProducts(){
+          $pr=product::all();
+          return view('all_products')->with('p_data',$pr);
+
+     }
 
      
     //show products to business dashboard according to its business Id.
@@ -103,31 +95,5 @@ class ProductController extends Controller
 
     }
 
-    public function edit(product $product)
-    {
-        
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\product  $product
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, product $product)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\product  $product
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(product $product)
-    {
-        //
-    }
+    
 }

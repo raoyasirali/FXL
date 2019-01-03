@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header" style="float: left"><h5>Products of your searched category</h5>
+                <div class="card-header" style="float: left"><h5>Products of All category</h5>
                  <div style="float: left;"><a href="viewCart"  class="btn btn-primary">View Cart</a></div>
                  <div style="float: left;">  <a href="home" class="btn btn-primary" style="margin-left: 470px">Back</a></div>
                 </div>
@@ -18,7 +18,7 @@
 
                                 @endif
                              </div><br/>
-                <div class="card-body">
+                <div class="card-body" style="width: 900px">
                     
                    @foreach( $p_data as $row)
           <div id="img_div"style="margin-top: 20px ;margin-left:20px;float: left;border: solid thin gray">
@@ -26,19 +26,11 @@
           Name: {{$row->p_Name}} <br>
           Description:  {{$row->p_Desc}}<br>
           Price:  {{$row->p_Price}}<br>
-<<<<<<< HEAD
-
-         <a href="addToCart/{{$row->id}}" class="btn btn-primary">Add to cart</a>
-         <a href="Reviews/{{$row->id}}" class="btn btn-primary">Reviews</a>
-
-        
-=======
          <a href="addToCart/{{$row->id}}" class="btn btn-primary">Add to cart</a>
          <a href="Reviews/{{$row->id}}" class="btn btn-primary">Reviews</a>
 
          
 
->>>>>>> 256ca39ec84964a00333cb0f30af1ebfee00cd74
         
           
                  

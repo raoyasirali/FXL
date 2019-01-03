@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header" style=""><h3>Previous Customer Reviews</h3>
                   <a href="{{URL::to('yourReview')}}"><h3>Add Your Review</h3> </a>
-                  <div><a href="viewCustMenuAgain" style="font-size: 20px">Back</a></div>
+                  <div><a href="{{URL::to('home')}}" style="font-size: 20px">Back</a></div>
                  
                 </div>
 
@@ -17,8 +17,8 @@
                               <div id="img_div"style="margin-top: 20px ;margin-left:20px;float: left;border: solid thick gray">
            
            
-           User Name:  {{$row->user_name}} <br>
-           Review:     {{$row->review}}
+          <b> User Name: </b> {{$row->user_name}} <br>
+          <b> Review:  </b>   {{$row->review}}
 
         
           

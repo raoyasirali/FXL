@@ -43,7 +43,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 //Customer products view route
 Route::post('foodCategory','ProductController@ViewProducts')->middleware('authenticated');
 
-
+Route::get('viewAllProducts', 'ProductController@AllCatProducts');
 Route::get('backToCat','ProductController@ViewProducts');
 
 

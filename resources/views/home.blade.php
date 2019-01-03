@@ -15,7 +15,7 @@
 
                                 @endif
                              </div><br/>
-                <div class="card-body">
+                <div class="card-body" >
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
@@ -30,10 +30,14 @@
                         <option value="4">Desi</option>
                     </select></span> 
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    <input type="submit" name="" value="Search">
+                    <input type="submit" name="" value="Search" class="btn btn-primary">
                     </form>
-                   
+                  <div ><br>
+                       <div> OR</div><br>
+                 <a href="viewAllProducts" class="btn btn-primary">View All Categories</a>
+                    </div> 
                 </div>
+
             </div>
         </div>
     </div>
