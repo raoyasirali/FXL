@@ -12,13 +12,7 @@ use Illuminate\Http\RedirectResponse;
 class BusinessController extends Controller
 {
 
-    // $b_id=session('b_id');
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function showLoginPage(){
         return view("b_login");
     }
@@ -65,7 +59,7 @@ class BusinessController extends Controller
       $p=$request->b_password;
       $b_pwd=md5($p);
       $b_data=DB::table('businesses')->where('b_Email', $b_email)->where('b_Phone', $b_phone)->update(['b_Pwd' => $b_pwd]);
-      // $b_data= DB::update('update businesses set b_Pwd = $b_pwd where b_Email=$b_email and b_Phone= $b_phone');
+      
 
         return redirect('b_login')->with('success', 'Password Reset Successfull !! Login Now');
     }    
