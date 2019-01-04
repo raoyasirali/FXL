@@ -117,7 +117,7 @@ class AdminController extends Controller
            Excel::create('Sales Data', function($excel) use ($sales_array){
             $excel->setTitle('Sales Data');
             $excel->sheet('Sales Data', function($sheet) use ($sales_array){
-             $sheet->fromArray($sales_array, null, 'A1', false, false);
+             $sheet->fromArray($sales_array, null, 'A5', false, false);
             });
            })->download('xlsx');
 
