@@ -27,9 +27,10 @@
    
   <div class="collapse navbar-collapse" >
     <a class="navbar-brand" href="{{URL::to('a_menu')}}"><img src="logo.png" height="60px" width="150px"></a>
-    <ul class="navbar-nav mr-auto mt-2 mt-lg-0" style="margin-left: 440px;margin-top: -20px">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0" style="margin-left: 170px;margin-top: -20px">
       <li class="nav-item " style="margin-top: 20px">
         <a href="a_menu" class="btn btn-secondary" style="font-size: 18px;color: white" >Home</a>
+        <a href="b_signup_request" class="btn btn-secondary" style="font-size: 18px;color: white" >View SignUp Requests</a>
         <a href="https://mailtrap.io/inboxes/518208/messages/1073103072" class="btn btn-secondary" style="font-size: 18px;color: white" >View Feed Back</a>
         <a href="c_details_pdf" class="btn btn-secondary" style="font-size: 18px;color: white" >View Customer Details</a>
         <a href="b_details_pdf" class="btn btn-secondary" style="font-size: 18px;color: white" >View Business Details</a>

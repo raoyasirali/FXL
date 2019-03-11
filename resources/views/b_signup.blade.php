@@ -19,7 +19,7 @@
 	
 	<div style="width: 25%;height: 100%;margin-left: 45%;padding-top: 30px;padding-bottom: 20px;background-color: white;border: solid thick black">
 
-	<span style="margin-left: 10%"><label><b> Restaurant Name: </b></label></span>&nbsp &nbsp
+	<span style="margin-left: 10%"><label><b> Restaurant Name: </b></label></span>&nbsp 
 	<input type="text" name="b_name" id="b_name" required="" /> <br/><br/>
 
 	<span style="margin-left: 10%"><label><b> Address: </b></label></span> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
@@ -51,6 +51,7 @@
 
 
 	<span style="margin-left: 70%"><input type="submit" value="Register" /></span>
+	<input type="hidden" name="b_status" value="0">
     </div>
 </form>
 </div>

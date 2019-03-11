@@ -44,13 +44,14 @@ class BusinessController extends Controller
       $b->b_Phone=Input::get('b_phone');
       $b->b_Email=Input::get('b_email');
       $b->c_id=Input::get('b_category');
+      $b->b_Status=Input::get('b_status');
       // $b->b_Pwd=Input::get('b_password');
       $p=Input::get('b_password');
       $password= md5($p);
       $b->b_Pwd=$password;
       $b->save();
         
-        return redirect('b_login')->with('success', 'Signup Successfull !! Login Now');
+        return redirect('b_login')->with('success', 'Signup Successfull !! Wait for Approval!');
     }    
 
     public function resetPwd(Request $request){
@@ -70,7 +71,7 @@ class BusinessController extends Controller
         $b_email=$request->b_email;
         $p=$request->b_password;
         $b_pwd=md5($p);
-        $b_data=DB::table('businesses')->where('b_Email',$b_email)->Where('b_Pwd',$b_pwd);
+        $b_data=DB::table('businesses')->where('b_Email',$b_email)->Where('b_Pwd',$b_pwd)->Where('b_Status','1');
         $b_id = DB::table('businesses')->select('id')->where('b_Email',$b_email)->Where('b_Pwd',$b_pwd)->get();
         // session(['b_id' => $b_id]);
         foreach( $b_id as $row ){

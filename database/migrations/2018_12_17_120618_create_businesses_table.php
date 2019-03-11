@@ -24,6 +24,7 @@ class CreateBusinessesTable extends Migration
             $table->unsignedInteger('c_id');
             $table->foreign('c_id')->references('cat_id')->on('categories');
             $table->string('b_Pwd');
+            $table->integer('b_Status');
             $table->timestamps();
         });
     }

@@ -8,6 +8,12 @@ Route::get('a_menu', function () {
 
 Route::get('b_details_pdf', "AdminController@viewBusinesses");
 
+Route::get('b_signup_request', "AdminController@viewSignupRequests");
+
+Route::get('b_approve/{id}', "AdminController@approveBusinesses");
+
+Route::get('b_disapprove/{id}', "AdminController@disapproveBusinesses");
+
 Route::get('b_delete/{id}', "AdminController@deleteBusinesses");
 
 Route::get('b_download_pdf', "AdminController@b_download_pdf");
@@ -139,3 +145,5 @@ Route::get('delete/{id}', "ProductController@deleteProduct");
 //GoogleCharts Library
 
 Route::get('sales_chart',"LaravelGoogleGraph@index");
+//Firebase Route
+Route::get('firebase','FirebaseController@index');

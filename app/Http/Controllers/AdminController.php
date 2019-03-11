@@ -44,6 +44,29 @@ class AdminController extends Controller
 
 	   }
 
+     public function viewSignupRequests(){
+       //$b = new business;
+       $b = DB::table('businesses')->where('b_Status', '0')->get();
+        return view('a_show_signuprequests')->with('businesses',$b);
+
+     }
+
+      public function approveBusinesses($id){
+        $b = new business;
+        $b = business::find($id);
+        $b->b_Status='1';
+        $b->save();
+        return redirect('b_signup_request');
+
+     }
+
+       public function disapproveBusinesses($id){
+        $b = new business;
+        $b = business::find($id);
+        $b->delete();
+        return redirect('b_signup_request');
+
+     }
 
 	    public function b_download_pdf(){
 	    $business_data = DB::table('businesses')->get();
@@ -52,6 +75,7 @@ class AdminController extends Controller
    		//return $airline_data->download("flights Data.pdf");
 
    	  }
+
 
 
       public function deleteBusinesses($id){
