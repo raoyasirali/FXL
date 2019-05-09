@@ -86,6 +86,8 @@ Route::get('addToCart/{id}','CartController@addToCart')->middleware('authenticat
 
 Route::get('placeorder','CartController@placeOrder')->middleware('authenticated');
 
+Route::get('c_checkout','CartController@checkout')->middleware('authenticated');
+
 Route::get('viewCart','CartController@viewCart')->middleware('authenticated');
 //remove item from cart route
 Route::get('RemoveCart/{id}','CartController@RemoveFromCart')->middleware('authenticated');
