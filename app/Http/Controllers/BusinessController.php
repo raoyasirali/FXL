@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\business;
+use App\checkout;
 use DB;
 use Excel;
 use Illuminate\Http\Request;
@@ -122,6 +123,59 @@ class BusinessController extends Controller
            })->download('xlsx');
 
          }
+
+         public function viewOrderRequests(){
+          //$b = new business;
+            $b_id = session('business_id');
+          //running query
+          // $o = DB::table('checkouts')->where('o_Status', '0')->where('b_id', $b_id)->get();
+        
+
+
+          // foreach($o as $s_data)
+          //  {
+          //   $id_array[] = array('id'  => $s_data->id);
+          //  }
+
+//Joins on Checkout+Users+Product Table
+
+$results = DB::table('checkouts')
+            ->join('products', 'checkouts.p_id', '=', 'products.id')
+            ->join('users', 'checkouts.u_id', '=', 'users.id')
+            ->select('checkouts.*', 'products.p_Name', 'products.p_Desc', 'products.p_Price', 'users.name')
+            ->where('checkouts.b_id', $b_id)
+            ->where('o_Status', '0')
+            ->get();
+      
+      
+      // return view('customerCart')->with('p_data',$results);
+
+
+
+
+
+  return view('o_view_o')->with('checkouts',$results);
+          // return view('o_view_o')->with('checkouts',$o);
+
+          }
+
+        public function approveOrder($id){
+        $o = new checkout;
+        $o = checkout::find($id);
+        $o->o_Status='1';
+        $o->save();
+        return redirect('o_view_o');
+
+          }
+
+       public function disapproveOrder($id){
+        $o = new checkout;
+        $o = checkout::find($id);
+        $o->delete();
+        return redirect('o_view_o');
+
+          }
+
 
     public function index()
     {

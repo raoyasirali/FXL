@@ -67,7 +67,17 @@ class ProductController extends Controller
 
      }
 
+
+//ViewBudgetProducts
+        public function ViewBudgetProducts(){
+           // $pr=product::all();
+           // return view('all_products')->with('p_data',$pr);
+            echo "Budget page";
+
+     }
      
+
+
     //show products to business dashboard according to its business Id.
     public function viewProduct()
     {
@@ -75,6 +85,7 @@ class ProductController extends Controller
         $p=product::all()->where('b_id',$value);
         return view('p_view_p')->with('p_data',$p);
     }
+
    
     public function showEditProduct($id){
          $p=product::find($id);

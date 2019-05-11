@@ -35,6 +35,7 @@
                   <div ><br>
                        <div> OR</div><br>
                  <a href="viewAllProducts" class="btn btn-primary">View All Categories</a>
+                 <a href="viewBudgetProducts" class="btn btn-primary">Want to see items with in your buduget?</a>
                     </div> 
                 </div>
 

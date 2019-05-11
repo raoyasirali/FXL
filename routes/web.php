@@ -55,7 +55,7 @@ Route::get('backToCat','ProductController@ViewProducts')->middleware('authentica
 
 Route::get('viewCustMenuAgain','ProductController@ViewMenu')->middleware('authenticated');
 
-
+Route::post('viewBudgetProducts','ProductController@ViewBudgetProducts')->middleware('authenticated');
 
 
 //Review Routes
@@ -123,6 +123,12 @@ Route::get('b_resest_pwd', "BusinessController@resetPwd");
 Route::get('b_sales_p', "BusinessController@showSales");
 
 Route::get('b_login', "BusinessController@showLoginPage");
+//Order 
+Route::get('o_view_o', "BusinessController@viewOrderRequests");
+
+Route::get('o_approve/{id}', "BusinessController@approveOrder");
+
+Route::get('o_disapprove/{id}', "BusinessController@disapproveOrder");
 
 Route::get('b_s_download_excel', "BusinessController@b_s_download_excel");
 
