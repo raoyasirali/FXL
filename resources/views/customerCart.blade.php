@@ -1,8 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-<head>
-  <title>Cart</title>
+<html>
+    <head>
+      <!-- old online payment gate way files -->
+        <!-- <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+
+        <!-- new online payment gateway files -->
+        <title>Cart</title>
+       
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body onload="bill()">
@@ -59,13 +67,14 @@
   <input type="hidden" name="_token" value="{{csrf_token()}}"><br/>
   <input type="hidden" name="tbill" id="tbill">
   <input type="hidden" name="ostatus" value="0">
+
   <input type="submit" class="btn btn-primary" value="CheckOut" style="margin-left: 35%">
 </form>
-</div>
 
-<!-- <a href="placeorder"><button id="Checkout" style="display: none;margin-left: 35%" class="btn btn-primary">Checkout</button></a> -->
-<!-- <input type="text" id="bill" readonly> -->
-<!-- <button onclick="bill()">Checkout</button> -->
+ 
+
+<a href="onlinePay"><button  class="btn btn-primary">Online Payment</button></a>
+</div>
 
 <script>
 
@@ -110,4 +119,5 @@
 
 </div>
 </body>
+</html>
 @endsection

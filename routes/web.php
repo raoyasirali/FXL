@@ -55,7 +55,11 @@ Route::get('backToCat','ProductController@ViewProducts')->middleware('authentica
 
 Route::get('viewCustMenuAgain','ProductController@ViewMenu')->middleware('authenticated');
 
-Route::post('viewBudgetProducts','ProductController@ViewBudgetProducts')->middleware('authenticated');
+Route::get('viewBudgetProducts','ProductController@ViewBProducts')->middleware('authenticated');
+//online payment routes
+Route::get('onlinePay', 'CartController@viewOnlineForm');
+Route::get('stripe', 'StripePaymentController@stripe');
+Route::post('stripe', 'StripePaymentController@stripePost')->name('stripe.post');
 
 
 //Review Routes

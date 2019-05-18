@@ -36,10 +36,18 @@ class ProductController extends Controller
 
       //View product on customer dashboard according to selected category from drop down
     public function ViewProducts(Request $request){
-        $cat_id = $request->p_category;
-        session(['cat_id' => $cat_id]);
-        $p=product::all()->where('c_id',$cat_id);
+ //by cat id
+        // $cat_id = $request->p_category;
+        // session(['cat_id' => $cat_id]);
+        // $p=product::all()->where('c_id',$cat_id);
+        // return view('customer_products')->with('p_data',$p);
+
+//by name
+       $search_name = $request->p_category;
+        session(['search_name' => $search_name]);
+        $p=product::all()->where('p_Name',$search_name);
         return view('customer_products')->with('p_data',$p);
+
      }
 
     public function deleteProduct($id){
@@ -62,17 +70,20 @@ class ProductController extends Controller
 
      //view all category products to customer
      public function AllCatProducts(){
-          $pr=product::all();
-          return view('all_products')->with('p_data',$pr);
+          // $pr=product::all();
+          // return view('all_products')->with('p_data',$pr);
+          $p=product::all();
+          return view('customer_products')->with('p_data',$p);
 
      }
 
 
 //ViewBudgetProducts
-        public function ViewBudgetProducts(){
+        public function ViewBProducts(){
            // $pr=product::all();
            // return view('all_products')->with('p_data',$pr);
             echo "Budget page";
+            exit();
 
      }
      
@@ -105,6 +116,8 @@ class ProductController extends Controller
         return redirect('p_view_p');
 
     }
+
+
 
     
 }

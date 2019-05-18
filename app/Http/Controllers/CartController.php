@@ -10,6 +10,10 @@ use App\checkout;
 use App\product;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Http\RedirectResponse;
+use Stripe\Stripe;
+use Stripe\Customer;
+use Stripe\Charge;
+
 
 class CartController extends Controller
 {
@@ -143,6 +147,12 @@ $list[] =array('oid'=>$oid,'u_id' => $userId,'p_id' => $pid[$x],'b_id' => $bid[$
        $cart->delete();
             return redirect('viewCart');
      }
+
+// //online payment
+    public function viewOnlineForm(){
+      return view('viewOnlineForm');
+    }
+
 
     
 

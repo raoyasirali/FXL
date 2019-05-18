@@ -30,7 +30,12 @@
 <br/>	
 	<div style="width: 28%;height: 100%;margin-left: 45%;padding-top: 30px;padding-bottom: 80px;background-color: white;border: solid thick black">
 	<span style="margin-left: 10%"><label><b> Item Name: </b></label></span>&nbsp  &nbsp
-	<input type="text" name="p_name" id="p_name" required="" /> <br/><br/>
+	<input type="text" name="p_name" id="p_name" required="" onkeyup="
+  var start = this.selectionStart;
+  var end = this.selectionEnd;
+  this.value = this.value.toUpperCase();
+  this.setSelectionRange(start, end);
+" /> <br/><br/>
 	
 	<span style="margin-left: 10%"><label><b> Price: </b></label></span>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
 	<input type="text" name="p_price" id="p_price" required="" /> <br/><br/>

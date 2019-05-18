@@ -1,6 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -21,22 +27,63 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                    <div id="mainForm">
                    <form action="{{URL::to('foodCategory')}}" method="POST" enctype="multipart/form-data">
-                   <h2>Search Food by Category</h2>
+<!--                    <h2>Search Food by Category</h2>
                    <select id="p_category" name="p_category">
                         <option value="1">Fast Food</option>
                         <option value="2">Chinese</option>
                         <option value="3">Itaian</option>
                         <option value="4">Desi</option>
-                    </select></span> 
+                    </select><br/> -->
+
+                    <h2>Search Food by Name</h2>
+                   <input type="text" style="width: 300px;border-top-left-radius: 10px;border-bottom-left-radius: 10px;height: 35px;margin-right: 0px;padding-right: 0px;" id="p_category" name="p_category" placeholder="   Enter Food Item: PIZZA, BURGER, ETC." onkeyup="
+                      var start = this.selectionStart;
+                      var end = this.selectionEnd;
+                      this.value = this.value.toUpperCase();
+                      this.setSelectionRange(start, end);
+                    ">
+
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    <input type="submit" name="" value="Search" class="btn btn-primary">
+                    <button type="submit" style="border-top-right-radius: 15px;border-bottom-right-radius: 15px;height: 35px;width: 8%;margin-left: -5px;padding-left: 0px;" class="btn btn-primary" name="" ><i class="fa fa-search"></i></button>
                     </form>
                   <div ><br>
                        <div> OR</div><br>
+
+                       
                  <a href="viewAllProducts" class="btn btn-primary">View All Categories</a>
-                 <a href="viewBudgetProducts" class="btn btn-primary">Want to see items with in your buduget?</a>
-                    </div> 
+                 
+                 <!-- <a href="viewBudgetProducts" class="btn btn-primary">Want to see items with in your buduget?</a>
+ -->            
+                <button class="btn btn-primary" id="budBtn">Want to see items with in your buduget?</button>   
+                </div>     
+
+
+                <div id="bForm" style="display: none;margin-top: 20px;">
+                    <form action="{{URL::to('foodCategory')}}" method="POST" enctype="multipart/form-data">
+                        <h2>Search Items Within your budget</h2>
+                      <label>Enter Item Name: </label>
+                      
+                      <input type="text" name="Search" style="width: 300px;height: 35px;" placeholder="   Enter Food Item: PIZZA, BURGER, ETC." onkeyup="
+                      var start = this.selectionStart;
+                      var end = this.selectionEnd;
+                      this.value = this.value.toUpperCase();
+                      this.setSelectionRange(start, end);
+                      "><br/>
+
+                           </form>
+                           </div>
+                <script>
+                 $("budBtn").click(function(){
+                    $("mainForm").hide();
+                    $("bForm").show();
+                    });
+                           </script>
+                       
+
+
+                </div> 
                 </div>
 
             </div>
