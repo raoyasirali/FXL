@@ -68,12 +68,12 @@
   <input type="hidden" name="tbill" id="tbill">
   <input type="hidden" name="ostatus" value="0">
 
-  <input type="submit" class="btn btn-primary" value="CheckOut" style="margin-left: 35%">
+  <input type="submit" class="btn btn-primary" value="CheckOut" style="margin-left: 45%">
 </form>
 
  
 
-<a href="onlinePay"><button  class="btn btn-primary">Online Payment</button></a>
+<a href="onlinePay"><button style="margin-top: -60px" class="btn btn-primary">Online Payment</button></a>
 </div>
 
 <script>

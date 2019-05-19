@@ -16,6 +16,8 @@ class ProductController extends Controller
 {
 
     //Save products into database by business admin after filling add product form on its dashboard.
+    private $bud;
+
     public function create()
     {
         $file=Input::file('p_image');
@@ -43,7 +45,7 @@ class ProductController extends Controller
         // return view('customer_products')->with('p_data',$p);
 
 //by name
-       $search_name = $request->p_category;
+        $search_name = $request->p_category;
         session(['search_name' => $search_name]);
         $p=product::all()->where('p_Name',$search_name);
         return view('customer_products')->with('p_data',$p);
@@ -62,8 +64,18 @@ class ProductController extends Controller
 
   // menu again to customer  working same as ViewProducts
      public function ViewMenu(){
-        $value = session('cat_id');
-        $p=product::all()->where('c_id',$value);
+        
+
+         $search_name = session('search_name');
+         $check = session('bud');
+         $budget = session('budget');
+        if ($check == 1) {              // to print again in ascending order
+          $p=product::orderBy('p_Price', 'ASC')->where('p_Name',$search_name)->where('p_Price', '<=' , $budget)->get();
+          
+        }
+       else {
+        $p=product::all()->where('p_Name',$search_name);
+        }
         return view('customer_products')->with('p_data',$p);
 
      }
@@ -79,11 +91,25 @@ class ProductController extends Controller
 
 
 //ViewBudgetProducts
-        public function ViewBProducts(){
+        public function searchBProducts(Request $request){
+           echo $this->bud;
+           $n=1;
+           // Session::put('variable', $n);
+           
+           // $this->bud=$n; 
+           // echo $this->bud;
+           // exit();
+           $search_name = $request->search;
+           $budget = $request->budget;
+           session(['search_name' => $search_name]);
+           session(['bud' => $n]);
+           session(['budget' => $budget]);
+           $p=product::orderBy('p_Price', 'ASC')->where('p_Name',$search_name)->where('p_Price', '<=' , $budget)->get();
+           return view('customer_products')->with('p_data',$p);
            // $pr=product::all();
            // return view('all_products')->with('p_data',$pr);
-            echo "Budget page";
-            exit();
+            // echo "Budget page";
+            // exit();
 
      }
      

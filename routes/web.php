@@ -54,8 +54,8 @@ Route::get('backToCat','ProductController@ViewProducts')->middleware('authentica
 
 
 Route::get('viewCustMenuAgain','ProductController@ViewMenu')->middleware('authenticated');
-
-Route::get('viewBudgetProducts','ProductController@ViewBProducts')->middleware('authenticated');
+//search in budget budget
+Route::post('searchBProducts','ProductController@searchBProducts')->middleware('authenticated');
 //online payment routes
 Route::get('onlinePay', 'CartController@viewOnlineForm');
 Route::get('stripe', 'StripePaymentController@stripe');

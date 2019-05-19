@@ -4,8 +4,7 @@
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 </head>
 <div class="container">
     <div class="row justify-content-center">
@@ -48,7 +47,7 @@
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <button type="submit" style="border-top-right-radius: 15px;border-bottom-right-radius: 15px;height: 35px;width: 8%;margin-left: -5px;padding-left: 0px;" class="btn btn-primary" name="" ><i class="fa fa-search"></i></button>
                     </form>
-                  <div ><br>
+                  <br>
                        <div> OR</div><br>
 
                        
@@ -56,29 +55,36 @@
                  
                  <!-- <a href="viewBudgetProducts" class="btn btn-primary">Want to see items with in your buduget?</a>
  -->            
-                <button class="btn btn-primary" id="budBtn">Want to see items with in your buduget?</button>   
+                <button class="btn btn-primary" id="budBtn" >Want to see items with in your buduget?</button>   
                 </div>     
 
 
-                <div id="bForm" style="display: none;margin-top: 20px;">
-                    <form action="{{URL::to('foodCategory')}}" method="POST" enctype="multipart/form-data">
+                <div id="bForm" style="display: none;">
+                    <form action="{{URL::to('searchBProducts')}}" method="POST" enctype="multipart/form-data">
                         <h2>Search Items Within your budget</h2>
-                      <label>Enter Item Name: </label>
+                      <label style="font-size: 18px;;margin-top: 4%;"><b>Enter Item Name: </b></label>
                       
-                      <input type="text" name="Search" style="width: 300px;height: 35px;" placeholder="   Enter Food Item: PIZZA, BURGER, ETC." onkeyup="
+                      <input type="text" name="search" style="width: 300px;height: 35px;" placeholder="   Enter Food Item: PIZZA, BURGER, ETC." onkeyup="
                       var start = this.selectionStart;
                       var end = this.selectionEnd;
                       this.value = this.value.toUpperCase();
                       this.setSelectionRange(start, end);
-                      "><br/>
+                      "><input type="hidden" name="_token" value="{{ csrf_token() }}"><br/>
+
+                      <label style="font-size: 18px;margin-top: 2%;"><b>Enter Budget: </b></label>
+                      
+                      <input type="number" name="budget" style="width: 300px;height: 35px;margin-left: 30px;" placeholder="   Enter budget:100,500,1000, ETC."/><br/>
+                      <input style="margin-left: 55%;margin-top: 2%;" type="submit" class="btn btn-primary" value="Search">
 
                            </form>
                            </div>
                 <script>
-                 $("budBtn").click(function(){
-                    $("mainForm").hide();
-                    $("bForm").show();
+                 $(document).ready(function(){
+                 $("#budBtn").click(function(){                    
+                     $("#mainForm").hide();
+                    $("#bForm").show();
                     });
+                 });
                            </script>
                        
 
