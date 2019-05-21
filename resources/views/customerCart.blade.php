@@ -33,7 +33,7 @@
            <img src="uploads/{{$row->p_Img_Name}}" height="150" width="200"/><br>
           Name: {{$row->p_Name}} <br>
           Description:  {{$row->p_Desc}}<br>
-          Price:  <span id="pro_price">{{$row->p_Price}}</span><br>
+          Price: Rs. <span id="pro_price">{{$row->p_Price}}</span><br>
          <span style="margin-left:30px "><a href="RemoveCart/{{$row->id}}" class="btn btn-danger" style="margin-bottom: 10px;margin-top: 10px;">Remove From cart</a></span>
         
           
@@ -46,15 +46,17 @@
         </div>
     </div>
 </div>
-<div style="width: 350px;padding-bottom: 50px;float: left;margin-left: -100px;border: solid thin #d6d8db;border-radius: 5px"><div style="float: left;width: 100%;border: solid thin #d6d8db;background-color: #eff2f7"><br/><h2 style="margin-left: 20px">Your Bill</h2><br/></div>
+<div style="width: 350px;padding-bottom: 50px;float: left;margin-left: -100px;border: solid thin #d6d8db;border-radius: 5px"><div style="float: left;width: 100%;border: solid thin #d6d8db;background-color: #eff2f7"><br/><h2 style="margin-left: 20px">Your Bill</h2><br/>
+<h4> &nbsp Item Name &nbsp &nbsp &nbsp &nbsp Price</h4>
+</div>
  <div style="float: left;margin-left: 7%">
  @foreach( $p_data as $row )
 
-          Name: {{$row->p_Name}}<span style="margin-left: 50px">
-          Price:  {{$row->p_Price}}</span><br>
+           {{$row->p_Name}}<span style="margin-left: 50px">
+          Rs.  {{$row->p_Price}}</span><br>
          @endforeach
 
-<span style="font-size: 30px;margin-left: 10px" ><b>Total Bill:</b></span><span id="bill" style="font-size: 30px;margin-left: 10px"><b>0</b></span><br/><br/>
+<span style="font-size: 30px;margin-left: 10px" ><b>Total Bill: Rs. </b></span><span id="bill" style="font-size: 30px;margin-left: 10px"><b>0</b></span><br/><br/>
 
 
 <form action="{{URL::to('c_checkout')}}" method="get" enctype="multipart/form-data">

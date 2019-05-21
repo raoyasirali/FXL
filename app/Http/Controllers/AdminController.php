@@ -115,7 +115,14 @@ class AdminController extends Controller
 
        public function viewSales(){
        //$b = new business;
-       $s = DB::table('sales')->get();
+       $s = DB::table('checkouts')
+            ->join('users', 'checkouts.u_id', '=', 'users.id')
+            ->join('products', 'checkouts.p_id', '=', 'products.id')
+            ->join('businesses', 'checkouts.b_id', '=', 'businesses.id')
+            ->select('checkouts.*', 'users.name', 'users.email', 'products.p_Name', 'products.p_Price', 'businesses.b_name', 'businesses.b_Address', 'businesses.b_Phone', 'businesses.b_Fname')
+            ->where('o_Status', '1')
+            ->get();
+       // $s = DB::table('sales')->get();
         return view('show_sales')->with('sales',$s);
 
      }
@@ -123,25 +130,37 @@ class AdminController extends Controller
 
       public function s_download_excel()
          {
-           $sales_data = DB::table('sales')->get()->toArray();
-           $sales_array[] = array('id', 'Date', 'Customer_Name', 'Product', 'Quantity', 'Price', 'b_id');
+           $sales_data = DB::table('checkouts')
+            ->join('users', 'checkouts.u_id', '=', 'users.id')
+            ->join('products', 'checkouts.p_id', '=', 'products.id')
+            ->join('businesses', 'checkouts.b_id', '=', 'businesses.id')
+            ->select('checkouts.*', 'users.name', 'users.email', 'products.p_Name', 'products.p_Price', 'businesses.b_name', 'businesses.b_Address', 'businesses.b_Phone', 'businesses.b_Fname')
+            ->where('o_Status', '1')
+            ->get();
+
+           $sales_array[] = array('Order Id', 'Business Name', 'Business Address', 'Business Owner Name', 'Business Contact No.', 'Customer Name', 'Email', 'Contact No', 'Address', 'Item Name', 'Price', 'Date & Time');
            foreach($sales_data as $s_data)
            {
             $sales_array[] = array(
-             'id'  => $s_data->id,
-             'Date'   => $s_data->Date,
-             'Customer_Name'    => $s_data->Customer_Name,
-             'Product'    => $s_data->Product,
-             'Quantity'    => $s_data->Quantity,
-             'Price'    => $s_data->Price,
-             'b_id'    => $s_data->b_id,
+             'Order Id'  => $s_data->oid,
+             'Business Name'   => $s_data->b_name,
+             'Business Address'    => $s_data->b_Address,
+             'Business Owner Name'    => $s_data->b_Fname,
+             'Business Contact No'    => $s_data->b_Phone,
+             'Customer Name'   => $s_data->name,
+             'Email'    => $s_data->email,
+             'Contact No'    => $s_data->contact,
+             'Address'    => $s_data->address,
+             'Item Name'    => $s_data->p_Name,
+             'Price'    => $s_data->p_Price,
+             'Date & Time'    => $s_data->updated_at,
          
             );
            }
            Excel::create('Sales Data', function($excel) use ($sales_array){
             $excel->setTitle('Sales Data');
             $excel->sheet('Sales Data', function($sheet) use ($sales_array){
-             $sheet->fromArray($sales_array, null, 'A5', false, false);
+             $sheet->fromArray($sales_array, null, 'A1', false, false);
             });
            })->download('xlsx');
 

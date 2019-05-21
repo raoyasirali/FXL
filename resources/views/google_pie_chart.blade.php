@@ -32,7 +32,7 @@
  </head>
  <body>
   <br />
-  <div class="container" style="height: 800px">
+  <div class="container" style="height: 600px">
    <h3 align="center">Products Sale Pie Chart</h3><br />
    
    <div class="panel panel-default">
@@ -40,7 +40,7 @@
      <h3 class="panel-title">Percentage of Products</h3>
     </div>
     <div class="panel-body" align="center">
-     <div id="pie_chart" style="width:750px; height:450px;">
+     <div id="pie_chart" style="width:750px; height:410px;">
 
      </div>
     </div>
