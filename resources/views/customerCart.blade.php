@@ -31,9 +31,11 @@
                    @foreach( $p_data as $row )
           <div id="img_div"style="margin-top: 20px ;margin-left:20px;float: left;border: solid thin gray">
            <img src="uploads/{{$row->p_Img_Name}}" height="150" width="200"/><br>
+         <div style="margin-left:10px;margin-top: 5px ">
           Name: {{$row->p_Name}} <br>
           Description:  {{$row->p_Desc}}<br>
           Price: Rs. <span id="pro_price">{{$row->p_Price}}</span><br>
+         </div>
          <span style="margin-left:30px "><a href="RemoveCart/{{$row->id}}" class="btn btn-danger" style="margin-bottom: 10px;margin-top: 10px;">Remove From cart</a></span>
         
           
@@ -52,7 +54,7 @@
  <div style="float: left;margin-left: 7%">
  @foreach( $p_data as $row )
 
-           {{$row->p_Name}}<span style="margin-left: 50px">
+          &nbsp &nbsp {{$row->p_Name}}<span style="margin-left: 85px">
           Rs.  {{$row->p_Price}}</span><br>
          @endforeach
 
