@@ -6,12 +6,14 @@
 	 <table border="1" width="90%" align="center" style="border-collapse: collapse" class="table">
 	 	<thead class="thead-dark">
 	 	<tr>
-	 		<th>ID</th>
-	 		<th>Date</th>
+	 		<th>OrderID</th>
 	 		<th>Customer Name</th>
-	 		<th>Product</th>
-	 		<th>Quantity</th>
+	 		<th>Email</th>
+	 		<th>Contact No.</th>
+	 		<th>Address</th>
+	 		<th>Item Name</th>
 	 		<th>Price</th>
+	 		<th>Date & Time</th>
 	 		
 	 		
 
@@ -21,12 +23,14 @@
 
                <tr>
                	
-                       <td>{{$s->id}}</td>
-                       <td>{{$s->Date}}</td>
-                       <td>{{$s->Customer_Name}}</td>
-                       <td>{{$s->Product}}</td>
-                       <td>{{$s->Quantity}}</td>
-                       <td>{{$s->Price}}</td>
+                       <td>{{$s->oid}}</td>
+                       <td>{{$s->name}}</td>
+                       <td>{{$s->email}}</td>
+                       <td>{{$s->contact}}</td>
+                       <td>{{$s->address}}</td>
+                       <td>{{$s->p_Name}}</td>
+                       <td>{{$s->p_Price}}</td>
+                       <td>{{$s->updated_at}}</td>
                       
                       
                        
