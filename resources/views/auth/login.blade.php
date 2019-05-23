@@ -8,6 +8,9 @@
                 <div class="card-header">{{ __('Customer Login') }}</div>
 
                 <div class="card-body">
+                   <!--  <?php
+                    // session(['u_id' => '']);
+                    ?> -->
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 

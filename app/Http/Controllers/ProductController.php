@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\product;
 use App\cart;
 use App\Review;
-
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Http\RedirectResponse;
@@ -143,7 +143,18 @@ class ProductController extends Controller
 
     }
 
-
+    public function userOrderHistory(){
+      $user = Auth::id();
+      $s = DB::table('checkouts')
+            ->join('users', 'checkouts.u_id', '=', 'users.id')
+            ->join('products', 'checkouts.p_id', '=', 'products.id')
+            ->join('businesses', 'checkouts.b_id', '=', 'businesses.id')
+            ->select('checkouts.*', 'users.name', 'users.email', 'products.p_Name', 'products.p_Price', 'businesses.b_name', 'businesses.b_Address', 'businesses.b_Phone')->orderBy('oid', 'DESC')
+            ->where('o_Status', '1')
+            ->where('u_id', $user)
+            ->get();
+      return view('u_order_history')->with('sales',$s);
+    }
 
     
 }

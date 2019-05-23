@@ -164,6 +164,7 @@ $results = DB::table('checkouts')
             ->join('products', 'checkouts.p_id', '=', 'products.id')
             ->join('users', 'checkouts.u_id', '=', 'users.id')
             ->select('checkouts.*', 'products.p_Name', 'products.p_Desc', 'products.p_Price', 'users.name')
+            ->orderBy('oid', 'DESC')
             ->where('checkouts.b_id', $b_id)
             ->where('o_Status', '0')
             ->get();

@@ -50,6 +50,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::post('foodCategory','ProductController@ViewProducts')->middleware('authenticated');
 
 Route::get('viewAllProducts', 'ProductController@AllCatProducts')->middleware('authenticated');
+
+Route::get('orderHistory', 'ProductController@userOrderHistory')->middleware('authenticated');
 Route::get('backToCat','ProductController@ViewProducts')->middleware('authenticated');
 
 

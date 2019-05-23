@@ -48,6 +48,19 @@
                             </div>
                         </div>
 
+                        <div class="form-group row{{ $errors->has('address') ? ' has-error' : '' }}">
+                            <label for="address" class="col-md-4 control-label" style="margin-left: 150px">Address</label>
+
+                            <div class="col-md-6" style="margin-left: -150px">                                
+                                <input type="text" name="address" id="address" class="form-control" onkeyup="
+                                  var start = this.selectionStart;
+                                  var end = this.selectionEnd;
+                                  this.value = this.value.toUpperCase();
+                                  this.setSelectionRange(start, end);
+                                "required >
+                            </div>
+                        </div>
+
 
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
