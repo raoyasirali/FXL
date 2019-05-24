@@ -1,4 +1,11 @@
 <?php
+
+//main wellcome screen of website
+Route::get('main', function () {
+    return view('index');
+});
+
+
 //Admin Routes
 Route::get('a_login', "AdminController@login");
 

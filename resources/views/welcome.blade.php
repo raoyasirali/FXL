@@ -82,14 +82,14 @@
 
            
             <div style="margin-top: -250px ;background-color: " class="content">
-                <div style="color: brown ;font-family:'Righteous', cursive" class="title m-b-md">
+                <div style="font-size: 63px;color: #FFB03B ;font-family:'Righteous', cursive" class="title m-b-md">
                     <b>Welcome to Food Xpress</b>
                     
                 </div>
                 <div>
                     
-                    <a href="b_login"><button class="btn btn-secondary" id="partner"> Partner With Us</button></a>
-                    &nbsp<a href="feedback"><button class="btn btn-secondary" id="partner"> Feed Back</button></a>
+                    
+                   
                 </div>
 
 

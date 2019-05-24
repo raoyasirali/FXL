@@ -14,7 +14,7 @@
   bottom: 0;
   width: 100%;
   height: 100px;
-  background-color: #984B17;
+  background-color: #222;
   color: white;
   text-align: center;
 }
@@ -23,10 +23,10 @@
 }
 
 </style>
-  <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #984B17;height: 50px">
+  <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #35494f;height: 50px">
    
   <div class="collapse navbar-collapse" >
-    <a class="navbar-brand" href="{{URL::to('/')}}"><img src="logo.png" height="60px" width="150px"></a>
+    <a class="navbar-brand" href="{{URL::to('main')}}"><img src="logo.png" height="60px" width="150px"></a>
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0" style="margin-left: 920px">
       <!-- <li class="nav-item " style="margin-top: 20px">
         <a class="" href="" ><p style="font-size: 20px;color: white">Contact</p> </a>
@@ -60,7 +60,7 @@
   </div> -->
 <div class="footer">
 	<!-- <a href="feedback"> <button class="btn btn-secondary" id="feedback">Feedback</button> </a> -->
-	 <button class="btn btn-secondary" id="contact">Contact</button>
+	<!--  <button class="btn btn-secondary" id="contact">Contact</button> -->
    
 	<div>
   <img src="fb.png"> &nbsp&nbsp<img src="email.png">

@@ -14,7 +14,7 @@
                 <div class="card-body">
                     
                     @foreach( $rev as $row ) 
-                              <div id="img_div"style="margin-top: 20px ;margin-left:20px;float: left;border: solid thick gray">
+                              <div id="img_div"style="margin-top: 20px ;margin-left:20px;border: 1px solid  gray">
            
            
           <b> User Name: </b> {{$row->user_name}} <br>

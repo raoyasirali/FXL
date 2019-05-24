@@ -14,7 +14,7 @@
   bottom: 0;
   width: 100%;
   height: 100px;
-  background-color: #984B17;
+  background-color: #222;
   color: white;
   text-align: center;
 }
@@ -23,7 +23,7 @@
 }
 
 </style>
-  <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #984B17;height: 50px">
+  <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #222;height: 50px">
    
   <div class="collapse navbar-collapse" >
     <a class="navbar-brand" href="{{URL::to('b_menu')}}"><img src="{{ URL::asset('logo.png') }}" height="60px" width="150px"></a>
@@ -31,9 +31,7 @@
       <!-- <li class="nav-item " style="margin-top: 20px">
         <a class="" href="" ><p style="font-size: 20px;color: white">Contact</p> </a>
       </li> -->
-      <li class="nav-item" style="margin-top: 20px;margin-left: 20px">
-        <a class="" href="#"><p style="font-size: 20px;color: white">Information</p></a>
-      </li>
+      
       <li class="nav-item" style="margin-top: 20px;margin-left: 20px">
         <a class=" " href="{{URL::to('b_login')}}"><p style="font-size: 20px;color: white">Logout</p></a>
       </li>
@@ -48,7 +46,7 @@
 
 </head>
 <body>
-      <div style="width: 550px;height: 40px;float: left;">
+      <div style="width: 550px;height: 40px;float: left;" class="container">
     
     <a href="{{URL::to('b_add_p')}}" class="btn btn-secondary">Add Products</a> 
     <a href="{{URL::to('p_view_p')}}" class="btn btn-secondary">View Products</a>

@@ -5,54 +5,68 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Business Admin Sign Up </title>
-	<link rel="stylesheet" type="text/css" href="style.css">				
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+				
 </head>
-<body background="bg.jpg">
+<body  style="max-width: 100%;height: auto;">
 
 
 
+<div class="container" style="border: solid thin black;height: 900px;width: 600px;margin-top: 60px;margin-bottom: 60px">
+<form action="{{URL::to('b_register')}}" method="post" enctype="multipart/form-data" style="width:500px; margin: auto; height: 900px">
+  <div class="form-group">
+    <h3> <b>&nbsp &nbsp &nbsp &nbsp Business Admin Signup form</b></h3>
 
-<div style="width: 100%;height: 840px;padding-top:10px ">
-<form action="{{URL::to('b_register')}}" method="post" enctype="multipart/form-data">
-	<span style="margin-left: 47%;font-size: 30px;color: Black"><b> Business Admin Sign Up</b></span><br/><br/><br/>
-		<div id="err" style="color: red"></div>	
-	
-	<div style="width: 25%;height: 100%;margin-left: 45%;padding-top: 30px;padding-bottom: 20px;background-color: white;border: solid thick black">
+   </div> 
 
-	<span style="margin-left: 10%"><label><b> Restaurant Name: </b></label></span>&nbsp 
-	<input type="text" name="b_name" id="b_name" required="" /> <br/><br/>
-
-	<span style="margin-left: 10%"><label><b> Address: </b></label></span> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-	<input type="text" name="b_address" id="b_address" required="" /> <br/><br/>
-
-	<span style="margin-left: 10%"><label><b> First Name: </b></label></span> &nbsp &nbsp
-	<input type="text" name="b_first_name" id="b_first_name" required="" /> <br/><br/>
-	
-
-	<span style="margin-left: 10%"><label><b> Last Name: </b></label></span> &nbsp &nbsp
-	<input type="text" name="b_last_name" id="b_last_name" required="" /> <br/><br/>
-
-	
-	<span style="margin-left: 10%"><label><b> Phone Number: </b></label></span>  &nbsp &nbsp &nbsp
-	<input type="text" name="b_phone" id="u_phone" required="" /> <br/><br/>
+   <div class="form-group">
+    <label>First Name:</label>
+    <input type="text"  class="form-control " name="b_first_name" id="b_first_name" required="">
+   </div>   
     
-	<span style="margin-left: 10%"><label><b> Email: </b></label></span> &nbsp &nbsp
-	<input type="email" name="b_email" id="b_email" required="" /> <br/><br/>
+   <div class="form-group">
+    <label>Last Name:</label>
+    <input type="text"  class="form-control " name="b_last_name" id="b_last_name" required="">
+   </div>
+   <div class="form-group">
+    <label>Resturant Name:</label>
+    <input type="text"  class="form-control" name="b_name" id="b_name" required="">
+   </div>
+   <div class="form-group">
+    <label>Resturant Category:</label>
+    
+    <select id="b_category" name="b_category" class="form-control">
+    	<option value="1">Fast Food</option>
+		<option value="2">Chinese</option>
+		<option value="3">Itaian</option>
+		<option value="4">Desi</option>
+
+    </select>
+   </div>
+
+   <div class="form-group">
+    <label>Address:</label>
+    <input type="text" name="b_address" id="b_address" class="form-control"  id="u_phone" required="">
+   </div>
+
+   <div class="form-group">
+    <label>Phone:</label>
+    <input type="text"  class="form-control" name="b_phone" id="u_phone" required="">
+   </div>
+   <div class="form-group">
+    <label>Email:</label>
+    <input type="text"  class="form-control" name="b_email" id="b_email" required="">
+   </div>
+
+   <div class="form-group">
+    <label>Password:</label>
+    <input type="password"  class="form-control" name="b_password" id="b_password" required="">
+   </div>
+    <input type="hidden" name="b_status" value="0">
     <input type="hidden" name="_token" value="{{csrf_token()}}">
-	<span style="margin-left: 10%"><label><b> Category: </b></label></span> &nbsp &nbsp
-	<select id="b_category" name="b_category">
-						<option value="1">Fast Food</option>
-						<option value="2">Chinese</option>
-						<option value="3">Itaian</option>
-						<option value="4">Desi</option>
-					</select></span> <br/>
-	<span style="margin-left: 10%"><label><b> Password: </b></label></span> &nbsp &nbsp
-	<input type="password" name="b_password" id="b_password" required="" /> <br/><br/>
 
-
-	<span style="margin-left: 70%"><input type="submit" value="Register" /></span>
-	<input type="hidden" name="b_status" value="0">
-    </div>
+    <input type="submit" value="Register" class="btn btn-primary" />
 </form>
 </div>
 </body>
