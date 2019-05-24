@@ -91,26 +91,47 @@ class BusinessController extends Controller
     }
 
     public function showSales(){
-        $value = session('business_id');
-        $s = DB::table('sales')->where('b_id',$value)->get();
+        $b_id = session('business_id');
+        // $s = DB::table('sales')->where('b_id',$value)->get();
+        $s =DB::table('checkouts')
+            ->join('users', 'checkouts.u_id', '=', 'users.id')
+            ->join('products', 'checkouts.p_id', '=', 'products.id')
+            ->select('checkouts.*', 'users.name', 'users.email', 'products.p_Name', 'products.p_Price')
+            ->where('checkouts.b_id', $b_id)
+            ->where('o_Status', '1')
+            ->get();
         return view('b_show_sales')->with('sales',$s);
 
     }
 
     public function b_s_download_excel()
          {
-           $value = session('business_id');
-           $sales_data = DB::table('sales')->where('b_id',$value)->get()->toArray();
-           $sales_array[] = array('id', 'Date', 'Customer_Name', 'Product', 'Quantity', 'Price');
+           $b_id = session('business_id');
+           $sales_data = DB::table('checkouts')
+            ->join('users', 'checkouts.u_id', '=', 'users.id')
+            ->join('products', 'checkouts.p_id', '=', 'products.id')
+            ->select('checkouts.*', 'users.name', 'users.email', 'products.p_Name', 'products.p_Price')
+            ->where('checkouts.b_id', $b_id)
+            ->where('o_Status', '1')->get()->toArray();
+
+
+
+
+
+
+
+           $sales_array[] = array('Order Id', 'Customer Name', 'Email', 'Contact No', 'Address', 'Item Name', 'Price', 'Date & Time');
            foreach($sales_data as $s_data)
            {
             $sales_array[] = array(
-             'id'  => $s_data->id,
-             'Date'   => $s_data->Date,
-             'Customer_Name'    => $s_data->Customer_Name,
-             'Product'    => $s_data->Product,
-             'Quantity'    => $s_data->Quantity,
-             'Price'    => $s_data->Price,
+             'Order Id'  => $s_data->oid,
+             'Customer Name'   => $s_data->name,
+             'Email'    => $s_data->email,
+             'Contact No'    => $s_data->contact,
+             'Address'    => $s_data->address,
+             'Item Name'    => $s_data->p_Name,
+             'Price'    => $s_data->p_Price,
+             'Date & Time'    => $s_data->updated_at,
              // 'b_id'    => $s_data->b_id,
          
             );
@@ -143,6 +164,7 @@ $results = DB::table('checkouts')
             ->join('products', 'checkouts.p_id', '=', 'products.id')
             ->join('users', 'checkouts.u_id', '=', 'users.id')
             ->select('checkouts.*', 'products.p_Name', 'products.p_Desc', 'products.p_Price', 'users.name')
+            ->orderBy('oid', 'DESC')
             ->where('checkouts.b_id', $b_id)
             ->where('o_Status', '0')
             ->get();

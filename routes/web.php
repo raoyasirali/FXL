@@ -57,12 +57,18 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::post('foodCategory','ProductController@ViewProducts')->middleware('authenticated');
 
 Route::get('viewAllProducts', 'ProductController@AllCatProducts')->middleware('authenticated');
+
+Route::get('orderHistory', 'ProductController@userOrderHistory')->middleware('authenticated');
 Route::get('backToCat','ProductController@ViewProducts')->middleware('authenticated');
 
 
 Route::get('viewCustMenuAgain','ProductController@ViewMenu')->middleware('authenticated');
-
-Route::post('viewBudgetProducts','ProductController@ViewBudgetProducts')->middleware('authenticated');
+//search in budget budget
+Route::post('searchBProducts','ProductController@searchBProducts')->middleware('authenticated');
+//online payment routes
+Route::get('onlinePay', 'CartController@viewOnlineForm');
+Route::get('stripe', 'StripePaymentController@stripe');
+Route::post('stripe', 'StripePaymentController@stripePost')->name('stripe.post');
 
 
 //Review Routes

@@ -28,7 +28,19 @@
 	<div class="form-group">
 	    <span style="margin-left: 30%;font-size: 30px;color: Black"><b> Add Product</b></span><br/>
 		<div id="err" style="color: red"></div>	
+<<<<<<< HEAD
     </div>
+=======
+<br/>	
+	<div style="width: 28%;height: 100%;margin-left: 45%;padding-top: 30px;padding-bottom: 80px;background-color: white;border: solid thick black">
+	<span style="margin-left: 10%"><label><b> Item Name: </b></label></span>&nbsp  &nbsp
+	<input type="text" name="p_name" id="p_name" required="" onkeyup="
+  var start = this.selectionStart;
+  var end = this.selectionEnd;
+  this.value = this.value.toUpperCase();
+  this.setSelectionRange(start, end);
+" /> <br/><br/>
+>>>>>>> 0b058e2b4c4add5d6e24541c2a061573ae0f81f1
 	
 	<div class="form-group">
 	   <span ><label><b> Item Name: </b></label></span>&nbsp  &nbsp

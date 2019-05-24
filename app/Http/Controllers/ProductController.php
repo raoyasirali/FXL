@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\product;
 use App\cart;
 use App\Review;
-
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Http\RedirectResponse;
@@ -16,6 +16,8 @@ class ProductController extends Controller
 {
 
     //Save products into database by business admin after filling add product form on its dashboard.
+    private $bud;
+
     public function create()
     {
         $file=Input::file('p_image');
@@ -36,10 +38,18 @@ class ProductController extends Controller
 
       //View product on customer dashboard according to selected category from drop down
     public function ViewProducts(Request $request){
-        $cat_id = $request->p_category;
-        session(['cat_id' => $cat_id]);
-        $p=product::all()->where('c_id',$cat_id);
+ //by cat id
+        // $cat_id = $request->p_category;
+        // session(['cat_id' => $cat_id]);
+        // $p=product::all()->where('c_id',$cat_id);
+        // return view('customer_products')->with('p_data',$p);
+
+//by name
+        $search_name = $request->p_category;
+        session(['search_name' => $search_name]);
+        $p=product::all()->where('p_Name',$search_name);
         return view('customer_products')->with('p_data',$p);
+
      }
 
     public function deleteProduct($id){
@@ -54,25 +64,52 @@ class ProductController extends Controller
 
   // menu again to customer  working same as ViewProducts
      public function ViewMenu(){
-        $value = session('cat_id');
-        $p=product::all()->where('c_id',$value);
+        
+
+         $search_name = session('search_name');
+         $check = session('bud');
+         $budget = session('budget');
+        if ($check == 1) {              // to print again in ascending order
+          $p=product::orderBy('p_Price', 'ASC')->where('p_Name',$search_name)->where('p_Price', '<=' , $budget)->get();
+          
+        }
+       else {
+        $p=product::all()->where('p_Name',$search_name);
+        }
         return view('customer_products')->with('p_data',$p);
 
      }
 
      //view all category products to customer
      public function AllCatProducts(){
-          $pr=product::all();
-          return view('all_products')->with('p_data',$pr);
+          // $pr=product::all();
+          // return view('all_products')->with('p_data',$pr);
+          $p=product::all();
+          return view('customer_products')->with('p_data',$p);
 
      }
 
 
 //ViewBudgetProducts
-        public function ViewBudgetProducts(){
+        public function searchBProducts(Request $request){
+           echo $this->bud;
+           $n=1;
+           // Session::put('variable', $n);
+           
+           // $this->bud=$n; 
+           // echo $this->bud;
+           // exit();
+           $search_name = $request->search;
+           $budget = $request->budget;
+           session(['search_name' => $search_name]);
+           session(['bud' => $n]);
+           session(['budget' => $budget]);
+           $p=product::orderBy('p_Price', 'ASC')->where('p_Name',$search_name)->where('p_Price', '<=' , $budget)->get();
+           return view('customer_products')->with('p_data',$p);
            // $pr=product::all();
            // return view('all_products')->with('p_data',$pr);
-            echo "Budget page";
+            // echo "Budget page";
+            // exit();
 
      }
      
@@ -104,6 +141,19 @@ class ProductController extends Controller
         $p->save();
         return redirect('p_view_p');
 
+    }
+
+    public function userOrderHistory(){
+      $user = Auth::id();
+      $s = DB::table('checkouts')
+            ->join('users', 'checkouts.u_id', '=', 'users.id')
+            ->join('products', 'checkouts.p_id', '=', 'products.id')
+            ->join('businesses', 'checkouts.b_id', '=', 'businesses.id')
+            ->select('checkouts.*', 'users.name', 'users.email', 'products.p_Name', 'products.p_Price', 'businesses.b_name', 'businesses.b_Address', 'businesses.b_Phone')->orderBy('oid', 'DESC')
+            ->where('o_Status', '1')
+            ->where('u_id', $user)
+            ->get();
+      return view('u_order_history')->with('sales',$s);
     }
 
     
