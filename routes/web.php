@@ -1,11 +1,11 @@
 <?php
 
 //main wellcome screen of website
-Route::get('main', function () {
+Route::get('/', function () {
     return view('index');
 });
-
-
+//Sentimental Analysis route
+Route::get('sentimental', 'ReviewController@sentiment');
 //Admin Routes
 Route::get('a_login', "AdminController@login");
 
@@ -81,6 +81,14 @@ Route::get('yourReview','ReviewController@showReviewForm')->middleware('authenti
 
 Route::post('addReview','ReviewController@addNewReview')->middleware('authenticated');
 
+Route::get('AllReview','ReviewController@showAllReviewScreen')->middleware('authenticated');
+
+Route::get('PosReview','ReviewController@showPosReviewScreen')->middleware('authenticated');
+
+Route::get('NegReview','ReviewController@showNegReviewScreen')->middleware('authenticated');
+
+Route::get('NeuReview','ReviewController@showNeuReviewScreen')->middleware('authenticated');
+
 
 
 // Route::get('yourReview', function () {
@@ -108,7 +116,7 @@ Route::get('RemoveCart/{id}','CartController@RemoveFromCart')->middleware('authe
 Route::get('viewCart','CartController@viewCart')->middleware('authenticated');
 
 
-Route::get('/', function () {
+Route::get('welcome', function () {
     return view('welcome');
 });
 Route::get('wellcome', function () {

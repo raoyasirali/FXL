@@ -19,6 +19,11 @@ class CreateReviewsTable extends Migration
             $table->string('user_name');
             $table->unsignedInteger('user_id');
             $table->unsignedInteger('product_id');
+
+            $table->unsignedInteger('pos');
+            $table->unsignedInteger('neg');
+            $table->unsignedInteger('neu');
+
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('product_id')->references('id')->on('products');
 

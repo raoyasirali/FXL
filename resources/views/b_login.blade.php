@@ -13,10 +13,11 @@
 
 
 
-<div style="width: 570px;height: 310px;background-color: white;border: solid thin black;margin-top: 100px" class="container">
+<div style="width: 38%;height: 370px;background-color: white;border: solid thin grey;border-radius: 10px;margin-top: 100px" class="container">
 <form action="{{URL::to('b_chklogin')}}" method="get" enctype="multipart/form-data">
 	<div class="form-group">
-    <h3> <b style="padding-left: 145px"> Business Admin Login</b></h3>
+        <br/>
+    <h3 style="text-align: center;"> <b> Business Admin Login</b></h3>
 <br>
      <div style="color: red; margin-left: 50px">
 	    @if($message = Session::get('success'))
@@ -28,12 +29,12 @@
 	@endif</div><br/>
 	
 	<div class="form-group">
-   
+    <label><b> Email: </b></label>
     <input type="email"  class="form-control" name="b_email" id="b_email" required="" placeholder="Email">
    </div>   
-    <br>
+
    <div class="form-group">
-    
+   <label><b> Password: </b></label> 
     <input type="password" name="b_password" id="b_password" class="form-control"  required="" placeholder="Password">
    </div>
    

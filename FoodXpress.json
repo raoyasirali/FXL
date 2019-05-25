@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "foodxpress1",
+  "private_key_id": "47c830d8d698bbe2c3155d15f35e21e486bc94ed",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDwLmxlTMxvORBg\nRmZW9uNuqJVtGgVsEEgXMTllOVDldGIX574bOYWXO76NIS2SbH0AIzzZAKtIg8qS\nx8Lx0l7kTky4IhCn/HTA844pvULGMpmdP9D8uExjp7f02l0KhOj2qVc+ii9H0nl6\n0iqZmG1SKbkk4skkziMBa517dB9ew0iEB2PpalMY54Wxhpqk7RTdXLi1IjI30w0q\nbDJCJH0aJXIS2I//Li/csBk7xgNNqf0gkcFX9A7OzxsUKmD1wt3EaT7TkFtyNJ7p\nM2eKFKs0s9Uo4Z5JfSc4WGo1TYSmKxZm1KJK2RUgkhl3tqQt6DcAP3WLjkLIMP66\nJZMneA95AgMBAAECggEAFASmg63qNxXwO7n6YyKqM4mpBKIf1BEqVQaFBF8J00oH\nN/tYcK/zZrazy9L5V6QjqfyF4IdJ/13+pwuvv5R7VLeC9PDf5wRnXcKe9XMhCuBi\nRcUxH7MjqMWskyOVECCiQxa7nwqI5MlR1y8HnmwiJnA0TnL5dVAaAk8MHeNAjxb5\n0XAMKS+OOPfCN+6NpMBQWBVuOQp2TI3P760oMecaeHKQTMDVARtSzetCFV2E+SJv\njyGzShC8WDGeuaTrXramMvk/8wr5G6BQAXVZOutibUxKDGnvrw6TKXQRWgHBdvoC\nHZpkMGO1jGgE04uGaYUfbOlY/etKGo+llXAF++UUYQKBgQD4GHy5kP1uSEX2fjem\nZFimfRLZT5Kc6+Sxh9deh2rD9m2AwS0lk6g4Y5DpYbdFkVAIy/fhVAxNnsB7yB2j\nZ0GDxNQPMJcM347FNKYweeIOdtdY3d3NIKiqLrwEO5cMRW5WxaTpzcRMyK/m7L15\nCIA8hBkR6oxADhcoT5qlZ8OZMQKBgQD31WK64OpuhW8EIv9kxBdKnA4CSmeH8E/1\njxqLhxxcbBdsP5WcRB26BNpuxt9UtgRRr8fX/Q+/jPkOMh0erry8fuBUVOKXvU/4\nz/bJQ7MGESVQAXso3CSt9ytvK2wL6pwl7HRnCDYGqNHpc1j3ixUwsmjH739DEiEM\nXjYsVP9IyQKBgQC/YkR08gBOnro52Ewds7MfW8S6lsPHAcI9oUjmxxf5a5Q1is/E\n+Q7/0O7s2lCC/gH7hz0FOczz488grdMPRownliLwRM+BQsPkJSU+qAdWmR6ukxiT\nMOprvfmUWlO/R6BCl90L74vKn9XyEhZn08L46/5a79CZaUU794yYpF8jQQKBgCDV\n4cXWxNitzx6iMGo+XMOi12xQRVVKbp2fPyobVZOdMqFB72WL1NBvki05Jh/IGdxk\nyLqCKdL8L4dE9ny5NAJZYQlrUbY++9iAXTcfRBnarbHi8FliiW2PIO8StrcBd3zC\nzk1UViwds+oVQUVS5RTVnnJW9eqB/WTxGoZXIJeZAoGASvGS9YHqLs/FYO37pZms\n2Drt8w0LrGQJuwrGMWdx+7JzlKXuV+mQgwMh7hAjp4H9+2PEy1sUwzwdv6QjjvTU\nW7yd6r54Nce33bUF1MhREGundkfirLIhE3aDlYtdBz0fUB94qXcbovo96QZVfKJ8\nMwhaPFdwh6YntNKq5aPS90I=\n-----END PRIVATE KEY-----\n",
+  "client_email": "yasirrao@foodxpress1.iam.gserviceaccount.com",
+  "client_id": "102559579347234235016",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/yasirrao%40foodxpress1.iam.gserviceaccount.com"
+}

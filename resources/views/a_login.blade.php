@@ -5,28 +5,42 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Admin Login</title>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="style.css">				
 </head>
-<body>
+<body  style="max-width: 100%;height: auto;">
 	
 
 
 
-<div style="width: 1200px;height: 620px;padding-top:40px ">
+<div  style="width: 38%;height: 355px;background-color: white;border: solid thin gray;border-radius: 10px;margin-top: 100px" class="container">
+
 <form action="{{URL::to('a_chklogin')}}" method="get" enctype="multipart/form-data">
-	<span style="margin-left: 45%;font-size: 30px;color: Black"><b>  Admin Login</b></span><br/><br/><br/>
-		<div id="err" style="color: red"></div>	
+	<div class="form-group">
+		<br/>
+	<h3 style="text-align: center;"> <b>  Admin Login</b></h3><br/>
+    
 	
-	<div style="width: 370px;height: 240px;margin-left: 45%;padding-top: 30px;padding-bottom: 80px;background-color: white;border: solid thick black">
-	<span style="margin-left: 10%"><label><b> Email: </b></label></span>&nbsp &nbsp &nbsp &nbsp
-	<input type="email" name="a_email" id="a_email" required="" /> <br/><br/>
+		<div id="err" style="color: red"></div>
+    </div>
+	
+	
+	<div class="form-group">
+	<label><b> Email: </b></label>
+	<!-- <div style="width: 370px;height: 240px;margin-left: 45%;padding-top: 30px;padding-bottom: 80px;background-color: white;border: solid thick black"> -->
+	
+	<input type="email" class="form-control" placeholder="Email" name="a_email" id="a_email" required="" />
+	</div>
+
+	<div class="form-group">
+	<label><b> Password: </b></label>
 	<input type="hidden" name="_token" value="{{csrf_token()}}">
-	<span style="margin-left: 10%"><label><b> Password: </b></label></span>&nbsp
-	<input type="password" name="a_password" id="a_password" required="" /> <br/>
+	<input type="password" class="form-control" placeholder="Password" name="a_password" id="a_password" required="" /> 
+	</div>
     <!-- <span style="margin-left: 45%"><b><a href="b_signup">Dont have account?</a></b></span>	<br/><br/> -->
 
-	<span style="margin-left: 38%">
-	<input type="submit" value="Login" class="btn btn-secondary"/></span><br/><br/><br/>
+    <div class="form-group">
+	<input type="submit" style="margin-left: 88%" value="Login" class="btn btn-primary"/><br/><br/>
 	<span style="color: red; margin-left: 150px"> </span>
     </div>
 </form>

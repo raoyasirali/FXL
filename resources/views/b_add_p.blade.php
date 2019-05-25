@@ -23,29 +23,29 @@
   // echo $value;  
 ?>
      
-<div style="width: 450px;height: 620px;margin-top:50px;border: solid thin black " class="container">
+<div style="width: 30%;height: 550px;margin-top:50px;border: solid 2px grey;border-radius: 10px;" class="container">
 <form action="{{URL::to('add_p_server')}}" method="post" enctype="multipart/form-data">
 	<div class="form-group">
 	    <span style="margin-left: 30%;font-size: 30px;color: Black"><b> Add Product</b></span><br/>
 		<div id="err" style="color: red"></div>	
-<<<<<<< HEAD
+
     </div>
-=======
 <br/>	
-	<div style="width: 28%;height: 100%;margin-left: 45%;padding-top: 30px;padding-bottom: 80px;background-color: white;border: solid thick black">
-	<span style="margin-left: 10%"><label><b> Item Name: </b></label></span>&nbsp  &nbsp
-	<input type="text" name="p_name" id="p_name" required="" onkeyup="
+	<!-- <div style="height: 100%;padding-top: 30px;padding-bottom: 80px;background-color: white"> -->
+		<div class="form-group">
+	<label><b> Item Name: </b></label>&nbsp  &nbsp
+	<input type="text" name="p_name" id="p_name" required=""  class="form-control"  onkeyup="
   var start = this.selectionStart;
   var end = this.selectionEnd;
   this.value = this.value.toUpperCase();
   this.setSelectionRange(start, end);
-" /> <br/><br/>
->>>>>>> 0b058e2b4c4add5d6e24541c2a061573ae0f81f1
+" /> 
+</div>
 	
-	<div class="form-group">
+<!-- 	<div class="form-group">
 	   <span ><label><b> Item Name: </b></label></span>&nbsp  &nbsp
 	   <input type="text" name="p_name" id="p_name" required="" class="form-control" /> 
-	</div>
+	</div> -->
 
 	<div class="form-group">
 	    <span ><label><b> Price: </b></label></span>
@@ -64,7 +64,27 @@
 						<option value="1">Fast Food</option>
 						<option value="2">Chinese</option>
 						<option value="3">Itaian</option>
-						<option value="4">Desi</option>
+						<option value="5">Desi</option>
+						<option value="6">Fast Food</option>
+						<option value="7">Chinese</option>
+						<option value="8">Itaian</option>
+						<option value="9">Desi</option>
+						<option value="10">Fast Food</option>
+						<option value="11">Chinese</option>
+						<option value="12">Itaian</option>
+						<option value="13">Desi</option>
+						<option value="14">Fast Food</option>
+						<option value="15">Chinese</option>
+						<option value="16">Itaian</option>
+						<option value="17">Desi</option>
+						<option value="18">Fast Food</option>
+						<option value="19">Chinese</option>
+						<option value="20">Itaian</option>
+						<option value="21">Desi</option>
+						<option value="22">Fast Food</option>
+						<option value="23">Chinese</option>
+						<option value="24">Itaian</option>
+						<option value="25">Desi</option>
 					</select></span> 
     </div>
 	
@@ -75,11 +95,12 @@
 	    <span style="margin-left: 20%"><input type="file" name="p_image" id="p_image" required="" class="form-control" /></span> 
     </div>
 
-	<span style="margin-left: 70%"><input type="submit" value="Add Item" /></span>
+    <div class="form-group">
+	<span style="margin-left: 77%"><input type="submit" class="btn btn-primary " value="Add Item" /></span>
     </div>
 </form>
 </div>
-
+<br/><br/><br/>
 
 </body>
 </html>

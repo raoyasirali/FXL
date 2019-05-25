@@ -96,7 +96,8 @@ class BusinessController extends Controller
         $s =DB::table('checkouts')
             ->join('users', 'checkouts.u_id', '=', 'users.id')
             ->join('products', 'checkouts.p_id', '=', 'products.id')
-            ->select('checkouts.*', 'users.name', 'users.email', 'products.p_Name', 'products.p_Price')
+            ->select('checkouts.*', 'users.name', 'users.email', 'products.p_Name', 'products.p_Price') 
+            ->orderBy('oid', 'DESC')
             ->where('checkouts.b_id', $b_id)
             ->where('o_Status', '1')
             ->get();
@@ -110,7 +111,8 @@ class BusinessController extends Controller
            $sales_data = DB::table('checkouts')
             ->join('users', 'checkouts.u_id', '=', 'users.id')
             ->join('products', 'checkouts.p_id', '=', 'products.id')
-            ->select('checkouts.*', 'users.name', 'users.email', 'products.p_Name', 'products.p_Price')
+            ->select('checkouts.*', 'users.name', 'users.email', 'products.p_Name', 'products.p_Price') 
+            ->orderBy('oid', 'DESC')
             ->where('checkouts.b_id', $b_id)
             ->where('o_Status', '1')->get()->toArray();
 

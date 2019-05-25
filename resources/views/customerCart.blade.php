@@ -29,8 +29,8 @@
                 <div class="card-body">
                     
                    @foreach( $p_data as $row )
-          <div id="img_div"style="margin-top: 20px ;margin-left:20px;float: left;border: solid thin gray">
-           <img src="uploads/{{$row->p_Img_Name}}" height="150" width="200"/><br>
+          <div id="img_div"style="width: 30%;margin-top: 20px ;margin-left:20px;float: left;border: solid thin gray">
+           <img src="uploads/{{$row->p_Img_Name}}" height="150" width="100%"/><br>
          <div style="margin-left:10px;margin-top: 5px ">
           Name: {{$row->p_Name}} <br>
           Description:  {{$row->p_Desc}}<br>
@@ -63,10 +63,17 @@
 
 <form action="{{URL::to('c_checkout')}}" method="get" enctype="multipart/form-data">
   <label><b>Delivery Address:</b></label><br/>
-  <input type="text" id="address" name="address" placeholder="Delivery Address." required="" style="width: 300px;"><br/>
-  <!-- <span id="errAddress" style="color: red;"></span><br/> -->
+<?php
+use App\User;
+$userId = Auth::id();
+$user = User::find($userId);
+
+
+ echo " <input type='text' id='address' name='address' placeholder='Delivery Address.' required='' value=$user->address style='width: 300px;'><br/>
+  <!-- <span id='errAddress' style='color: red;'></span><br/> -->
   <label><b>Contact Number:</b></label><br/>
-  <input type="text" id="contact" name="contact" placeholder="Contact Number." required=""><br/>
+  <input type='text' id='contact' value=$user->mobile name='contact' placeholder='Contact Number.' required=''><br/>";
+  ?>
   <!-- <span id="errContact" style="color: red;"></span><br/> -->
   <input type="hidden" name="_token" value="{{csrf_token()}}"><br/>
   <input type="hidden" name="tbill" id="tbill">

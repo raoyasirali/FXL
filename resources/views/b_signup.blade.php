@@ -13,61 +13,90 @@
 
 
 
-<div class="container" style="border: solid thin black;height: 900px;width: 600px;margin-top: 60px;margin-bottom: 60px">
-<form action="{{URL::to('b_register')}}" method="post" enctype="multipart/form-data" style="width:500px; margin: auto; height: 900px">
+<div class="container" style="border: solid thin gray;border-radius: 10px;height: 840px;width: 40%;margin-top: 60px;margin-bottom: 60px">
+<form action="{{URL::to('b_register')}}" method="post" enctype="multipart/form-data" style="width:500px; margin: auto; height: 850px"><br/>
   <div class="form-group">
-    <h3> <b>&nbsp &nbsp &nbsp &nbsp Business Admin Signup form</b></h3>
+    <h3 style="text-align: center;"> <b> Business Admin Signup form</b></h3>
 
    </div> 
 
    <div class="form-group">
-    <label>First Name:</label>
+    <label><b>First Name:</b></label>
     <input type="text"  class="form-control " name="b_first_name" id="b_first_name" required="">
    </div>   
     
    <div class="form-group">
-    <label>Last Name:</label>
+    <label><b>Last Name:</b></label>
     <input type="text"  class="form-control " name="b_last_name" id="b_last_name" required="">
    </div>
+
    <div class="form-group">
-    <label>Resturant Name:</label>
+    <label><b>Resturant Name:</b></label>
     <input type="text"  class="form-control" name="b_name" id="b_name" required="">
    </div>
+
    <div class="form-group">
-    <label>Resturant Category:</label>
+    <label><b>Resturant Category:</b></label>
     
     <select id="b_category" name="b_category" class="form-control">
-    	<option value="1">Fast Food</option>
-		<option value="2">Chinese</option>
-		<option value="3">Itaian</option>
-		<option value="4">Desi</option>
+            <option value="1">Fast Food</option>
+            <option value="2">Chinese</option>
+            <option value="3">Itaian</option>
+            <option value="5">Desi</option>
+            <option value="6">Fast Food</option>
+            <option value="7">Chinese</option>
+            <option value="8">Itaian</option>
+            <option value="9">Desi</option>
+            <option value="10">Fast Food</option>
+            <option value="11">Chinese</option>
+            <option value="12">Itaian</option>
+            <option value="13">Desi</option>
+            <option value="14">Fast Food</option>
+            <option value="15">Chinese</option>
+            <option value="16">Itaian</option>
+            <option value="17">Desi</option>
+            <option value="18">Fast Food</option>
+            <option value="19">Chinese</option>
+            <option value="20">Itaian</option>
+            <option value="21">Desi</option>
+            <option value="22">Fast Food</option>
+            <option value="23">Chinese</option>
+            <option value="24">Itaian</option>
+            <option value="25">Desi</option>
 
     </select>
    </div>
 
    <div class="form-group">
-    <label>Address:</label>
+    <label><b>Address:</b></label>
     <input type="text" name="b_address" id="b_address" class="form-control"  id="u_phone" required="">
    </div>
 
    <div class="form-group">
-    <label>Phone:</label>
+    <label><b>Phone:</b></label>
     <input type="text"  class="form-control" name="b_phone" id="u_phone" required="">
    </div>
+
    <div class="form-group">
-    <label>Email:</label>
+    <label><b>Email:</b></label>
     <input type="text"  class="form-control" name="b_email" id="b_email" required="">
    </div>
 
    <div class="form-group">
-    <label>Password:</label>
+    <label><b>Password:</b></label>
     <input type="password"  class="form-control" name="b_password" id="b_password" required="">
    </div>
+
+   <div class="form-group">
     <input type="hidden" name="b_status" value="0">
     <input type="hidden" name="_token" value="{{csrf_token()}}">
 
-    <input type="submit" value="Register" class="btn btn-primary" />
+    <input style="margin-left: 83%" type="submit" value="Register" class="btn btn-primary" />
+  </div>
+
 </form>
 </div>
+<br/><br/><br/>
+
 </body>
 </html>

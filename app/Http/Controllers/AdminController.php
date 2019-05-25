@@ -120,6 +120,7 @@ class AdminController extends Controller
             ->join('products', 'checkouts.p_id', '=', 'products.id')
             ->join('businesses', 'checkouts.b_id', '=', 'businesses.id')
             ->select('checkouts.*', 'users.name', 'users.email', 'products.p_Name', 'products.p_Price', 'businesses.b_name', 'businesses.b_Address', 'businesses.b_Phone', 'businesses.b_Fname')
+            ->orderBy('oid', 'DESC')
             ->where('o_Status', '1')
             ->get();
        // $s = DB::table('sales')->get();
@@ -135,6 +136,7 @@ class AdminController extends Controller
             ->join('products', 'checkouts.p_id', '=', 'products.id')
             ->join('businesses', 'checkouts.b_id', '=', 'businesses.id')
             ->select('checkouts.*', 'users.name', 'users.email', 'products.p_Name', 'products.p_Price', 'businesses.b_name', 'businesses.b_Address', 'businesses.b_Phone', 'businesses.b_Fname')
+            ->orderBy('oid', 'DESC')
             ->where('o_Status', '1')
             ->get();
 

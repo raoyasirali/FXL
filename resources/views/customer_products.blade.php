@@ -21,9 +21,10 @@
                 <div class="card-body">
                     
                    @foreach( $p_data as $row)
-          <div id="img_div"style="margin-top: 20px ;margin-left:20px;float: left;border: solid thin gray">
-           <img src="uploads/{{$row->p_Img_Name}}" height="150" width="200"/><br>
-          <div style="margin-left:10px;margin-top: 5px "> Name: {{$row->p_Name}} <br>
+          <div id="img_div"style="width: 30%;margin-top: 20px ;margin-left:20px;float: left;border: solid thin gray">
+           <img src="uploads/{{$row->p_Img_Name}}" height="150" width="100%"/><br>
+          <div style="margin-left:10px;margin-top: 5px "> 
+          Name: {{$row->p_Name}} <br>
           Description:  {{$row->p_Desc}}<br>
           Price: Rs.  {{$row->p_Price}}<br>
           </div>

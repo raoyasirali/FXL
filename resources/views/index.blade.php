@@ -29,7 +29,7 @@
             <p>It's the food you love, delivered !!</p>
             
            <div class="contacts-btn-pad">
-                <a href="{{URL::to('/')}}"><button class="btn btn-secondary" id="partner"><h4><b> Order Food Online</b></h4></button></a>
+                <a href="{{URL::to('welcome')}}"><button class="btn btn-secondary" id="partner"><h4><b> Order Food Online</b></h4></button></a>
               </div><br>
             <div class="contacts-btn-pad">
                 <a href="{{URL::to('b_login')}}"><button class="btn btn-secondary" id="partner"><h4><b> Partner With Us</b></h4></button></a>
@@ -67,7 +67,7 @@
             </div>
           </div>
           <div class="col-md-6 col-sm-6">
-            <img src="newlogo.jpg" alt="" class="img-responsive">
+            <img src="newlogo.png" alt="" class="img-responsive">
           </div>
         </div>
         <div class="col-md-1"></div>
