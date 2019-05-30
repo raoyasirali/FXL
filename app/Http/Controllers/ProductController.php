@@ -47,7 +47,13 @@ class ProductController extends Controller
 //by name
         $search_name = $request->p_category;
         session(['search_name' => $search_name]);
-        $p=product::all()->where('p_Name',$search_name);
+       $p=DB::table('products')
+            ->join('businesses', 'products.b_id', '=', 'businesses.id')
+            ->select('products.*', 'businesses.b_Name', 'businesses.b_Address') 
+            ->where('p_Name', $search_name)
+            ->get();
+
+        // $p=product::all()->where('p_Name',$search_name);
         return view('customer_products')->with('p_data',$p);
 
      }
@@ -70,8 +76,14 @@ class ProductController extends Controller
          $check = session('bud');
          $budget = session('budget');
         if ($check == 1) {              // to print again in ascending order
-          $p=product::orderBy('p_Price', 'ASC')->where('p_Name',$search_name)->where('p_Price', '<=' , $budget)->get();
-          
+          // $p=product::orderBy('p_Price', 'ASC')->where('p_Name',$search_name)->where('p_Price', '<=' , $budget)->get();
+          $p=DB::table('products')
+            ->join('businesses', 'products.b_id', '=', 'businesses.id')
+            ->select('products.*', 'businesses.b_Name', 'businesses.b_Address')
+            ->orderBy('p_Price', 'ASC')
+            ->where('p_Name',$search_name)
+            ->where('p_Price', '<=' , $budget) 
+            ->get();
         }
        else {
         $p=product::all()->where('p_Name',$search_name);
@@ -84,7 +96,10 @@ class ProductController extends Controller
      public function AllCatProducts(){
           // $pr=product::all();
           // return view('all_products')->with('p_data',$pr);
-          $p=product::all();
+          $p=DB::table('products')
+            ->join('businesses', 'products.b_id', '=', 'businesses.id')
+            ->select('products.*', 'businesses.b_Name', 'businesses.b_Address') 
+            ->get();
           return view('customer_products')->with('p_data',$p);
 
      }
@@ -104,7 +119,15 @@ class ProductController extends Controller
            session(['search_name' => $search_name]);
            session(['bud' => $n]);
            session(['budget' => $budget]);
-           $p=product::orderBy('p_Price', 'ASC')->where('p_Name',$search_name)->where('p_Price', '<=' , $budget)->get();
+
+           $p=DB::table('products')
+            ->join('businesses', 'products.b_id', '=', 'businesses.id')
+            ->orderBy('p_Price', 'ASC')
+            ->select('products.*', 'businesses.b_Name', 'businesses.b_Address') 
+            ->where('p_Name',$search_name)
+            ->where('p_Price', '<=' , $budget)
+            ->get();
+            // product::orderBy('p_Price', 'ASC')->where('p_Name',$search_name)->where('p_Price', '<=' , $budget)->get();
            return view('customer_products')->with('p_data',$p);
            // $pr=product::all();
            // return view('all_products')->with('p_data',$pr);

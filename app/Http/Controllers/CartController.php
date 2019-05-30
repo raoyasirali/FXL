@@ -42,10 +42,16 @@ class CartController extends Controller
       $userId = Auth::id();
       $productId = session('product_id');
 
-      $c=cart::all()->where('u_id',$userId);
-      $results = DB::select( DB::raw("select carts.p_id,carts.id,products.p_Name,products.p_Desc,products.p_Img_Name,products.p_Price from (carts 
-        inner join products on carts.p_id=products.id) where u_id=$userId ") );
+      // $c=cart::all()->where('u_id',$userId);
+      // $results = DB::select( DB::raw("select carts.p_id,carts.id,products.p_Name,products.p_Desc,products.p_Img_Name,products.p_Price from (carts 
+        // inner join products on carts.p_id=products.id) where u_id=$userId ") );
 
+      $results=DB::table('carts')
+            ->join('products', 'carts.p_id', '=', 'products.id')
+            ->join('businesses', 'products.b_id', '=', 'businesses.id')
+            ->select('products.*','carts.p_id','carts.id', 'businesses.b_Name', 'businesses.b_Address') 
+            ->where('u_id', $userId)
+            ->get();
       
       
       return view('customerCart')->with('p_data',$results);
@@ -126,17 +132,27 @@ class CartController extends Controller
 
              // $j++;
            }
-$list[] =array('oid'=>$oid,'u_id' => $userId,'p_id' => $pid[$x],'b_id' => $bid[$x],'address' => $address,'contact' => $contact,'bill' => $bill,'o_Status' => $o_Status);
-                   
+          $list[] =array('oid'=>$oid,'u_id' => $userId,'p_id' => $pid[$x],'b_id' => $bid[$x],'address' => $address,'contact' => $contact,'bill' => $bill,'o_Status' => $o_Status);
+                             
         }
 
         //Saving data in checkout table
         checkout::insert($list);
-        
+        //deleting placed order items
+         DB::table('carts')->where('u_id', '=',$userId)->delete();
+         $t_data= cart::all();
+         $t_count=$t_data->count();
+        if( $t_count>0 ){//checking if the cart is empty or not for all users
+
+            return redirect('home')->with('msg','NOTE: Order Placed Successfully! Wait for your order confirmation by the restaurant. You can see it in your previous orders as it is confirmed.');
+        }
+        else{
         //Emptying Cart table
         cart::truncate();
+        return redirect('home')->with('msg','NOTE: Order Placed Successfully! Wait for your order confirmation by the restaurant. You can see it in your previous orders as it is confirmed.');
+        }
+       // echo " alert('Order Placed Successfully!  Wait for your order confirmation by the restaurant. You can see it in your previous orders as it is confirmed.')";
         
-        return redirect('home')->with('msg','Order Placed Successfully');
 
      }
 

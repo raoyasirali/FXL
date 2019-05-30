@@ -37,7 +37,7 @@
                     </select><br/> -->
 
                     <h2>Search Food by Name</h2>
-                   <input type="text" style="width: 300px;border-top-left-radius: 10px;border-bottom-left-radius: 10px;height: 35px;margin-right: 0px;padding-right: 0px;" id="p_category" name="p_category" placeholder="   Enter Food Item: PIZZA, BURGER, ETC." onkeyup="
+                   <input type="text" style="width: 43%;border-top-left-radius: 10px;border-bottom-left-radius: 10px;height: 35px;margin-right: 0px;padding-right: 0px;" id="p_category" name="p_category" placeholder="   Enter Food Item: PIZZA, BURGER, ETC." required="" onkeyup="
                       var start = this.selectionStart;
                       var end = this.selectionEnd;
                       this.value = this.value.toUpperCase();
