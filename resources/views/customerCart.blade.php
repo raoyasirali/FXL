@@ -87,7 +87,10 @@ $user = User::find($userId);
  
 
 <!-- <a href="onlinePay" > -->
-  <button style="margin-top: -60px" id="online"   class="btn btn-primary" onclick="verify1()">Online Payment</button>
+  <form action="{{URL::to('onlinePay')}}" method="get" enctype="multipart/form-data">
+    <input type="hidden" name="t_bill" id="t_bill"  />
+  <input type="submit" value="Online Payment" style="margin-top: -60px" id="online"   class="btn btn-primary" onclick="verify1()"/>
+</form>
 <!-- </a> -->
 </div>
 
@@ -130,11 +133,13 @@ $user = User::find($userId);
           if (total_bill==0) {
             alert("First add an Item in order to placeorder.");
              returnToPreviousPage();
-             
+             return false;
              }
           else{
+            document.getElementById("t_bill").value =total_bill;
+            return true;
            // document.getElementById("online").onclick = function () {
-          location.href = "onlinePay";
+          // location.href = "onlinePay";
     // };
           }
 

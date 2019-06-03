@@ -29,7 +29,7 @@
   
 <div class="container">
   
-    <h1>Online Payment</h1>
+    <h1 style="text-align: center;">Online Payment</h1>
   
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
@@ -96,10 +96,17 @@
                                     again.</div>
                             </div>
                         </div>
-  
+                        
+                        <div>
+                                    
+                        <input type="hidden" name="t_bill" value="{{$t_bill}}">
+                            </div>
+
+                               
+
                         <div class="row">
                             <div class="col-xs-12">
-                                <button class="btn btn-primary btn-lg btn-block" type="submit">Pay Now</button>
+                                <button class="btn btn-primary btn-lg btn-block" type="submit">Pay Now (Rs. {{$t_bill}})</button>
                             </div>
                         </div>
                           

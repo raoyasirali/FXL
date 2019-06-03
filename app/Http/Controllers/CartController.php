@@ -166,7 +166,8 @@ class CartController extends Controller
 
 // //online payment
     public function viewOnlineForm(){
-      return view('viewOnlineForm');
+      $bill =Input::get('t_bill');
+      return view('viewOnlineForm')->with('t_bill',$bill);;
     }
 
 

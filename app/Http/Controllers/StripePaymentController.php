@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 use Session;
 use Stripe;
 
@@ -26,9 +27,10 @@ class StripePaymentController extends Controller
      */
     public function stripePost(Request $request)
     {
+        $bill =Input::get('t_bill');
         Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
         Stripe\Charge::create ([
-                "amount" => 10 * 10,
+                "amount" => $bill,
                 "currency" => "usd",
                 "source" => $request->stripeToken,
                 "description" => "Test payment from Food Xpress." 
