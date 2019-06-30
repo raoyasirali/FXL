@@ -58,6 +58,7 @@ Route::post('foodCategory','ProductController@ViewProducts')->middleware('authen
 
 Route::get('viewAllProducts', 'ProductController@AllCatProducts')->middleware('authenticated');
 
+Route::get('viewAllProProducts', 'ProductController@AllProProducts')->middleware('authenticated');
 Route::get('orderHistory', 'ProductController@userOrderHistory')->middleware('authenticated');
 Route::get('backToCat','ProductController@ViewProducts')->middleware('authenticated');
 
@@ -168,6 +169,11 @@ Route::get('p_view_p', "ProductController@viewProduct");
 Route::post('update/{id}', "ProductController@updateProduct");
 
 Route::get('edit/{id}', "ProductController@showEditProduct");
+//promotion page
+Route::get('addPro/{id}', "ProductController@showPromoProduct");
+Route::post('promo/{id}', "ProductController@addpromoProduct");
+Route::get('b_pro_view_p', "ProductController@bviewProProduct");
+Route::get('removePro/{id}', "ProductController@removeProProduct");
 
 Route::get('delete/{id}', "ProductController@deleteProduct");
 

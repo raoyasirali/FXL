@@ -46,10 +46,13 @@
 
 </head>
 <body>
-      <div style="width: 550px;height: 40px;float: left;" class="container">
+      <div style="width: 50%;height: 40px;float: left;" class="container">
     
-    <a href="{{URL::to('b_add_p')}}" class="btn btn-secondary">Add Products</a> 
-    <a href="{{URL::to('p_view_p')}}" class="btn btn-secondary">View Products</a>
+    <a href="{{URL::to('b_add_p')}}" class="btn btn-secondary">Add Item</a> 
+    <a href="{{URL::to('p_view_p')}}" class="btn btn-secondary">Manage Items</a>
+
+    <a href="{{URL::to('b_pro_view_p')}}" class="btn btn-secondary">Remove Promotions</a>
+    
     <a href="{{URL::to('o_view_o')}}"  class="btn btn-secondary">Order Requests</a>
     <a href="{{URL::to('b_sales_p')}}"  class="btn btn-secondary">View   Sales</a>
     
@@ -69,7 +72,7 @@
 	 <a href="{{URL::to('feedback')}}"><button class="btn btn-secondary" id="feedback" data-toggle="modal" data-target="#myModal">Report Any Issue</button></a>
 	 <!-- <button class="btn btn-secondary" id="contact">Contact</button> -->
 	<div>
-  <a href="https://facebook.com/"><img src="{{ URL::asset('fb.png')}}"></a> &nbsp&nbsp<a href="https://accounts.google.com/signin/v2/identifier?service=mail&passive=true&rm=false&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ss=1&scc=1&ltmpl=default&ltmplcache=2&emr=1&osid=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin"><img src="{{ URL::asset('email.png')}}"></a>
+  <a href="https://www.facebook.com/FoodXpressContact/" target="blank"><img src="{{ URL::asset('fb.png')}}"></a> &nbsp&nbsp<a href="https://accounts.google.com/signin/v2/identifier?service=mail&passive=true&rm=false&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ss=1&scc=1&ltmpl=default&ltmplcache=2&emr=1&osid=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin" target="blank"><img src="{{ URL::asset('email.png')}}"></a>
   <p>©FoodXPress 2019- All Rights Reserved  </p>
     </div>
   

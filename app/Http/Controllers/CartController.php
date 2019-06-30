@@ -13,6 +13,7 @@ use Illuminate\Http\RedirectResponse;
 use Stripe\Stripe;
 use Stripe\Customer;
 use Stripe\Charge;
+use App\onlinepayment;
 
 
 class CartController extends Controller
@@ -49,7 +50,7 @@ class CartController extends Controller
       $results=DB::table('carts')
             ->join('products', 'carts.p_id', '=', 'products.id')
             ->join('businesses', 'products.b_id', '=', 'businesses.id')
-            ->select('products.*','carts.p_id','carts.id', 'businesses.b_Name', 'businesses.b_Address') 
+            ->select('products.*','carts.p_id','carts.id', 'businesses.b_Name', 'businesses.b_Address', 'businesses.b_DArea') 
             ->where('u_id', $userId)
             ->get();
       
@@ -87,16 +88,31 @@ class CartController extends Controller
         $userId = Auth::id();
         $cart = cart::all()->where('u_id',$userId);
         $checkout = new checkout;
-        
+        $pay=0;
         
         $oid =checkout::all()->last()->oid;
         $address =Input::get('address');
           $contact =Input::get('contact');
           $bill =Input::get('tbill');
           $o_Status =Input::get('ostatus');
-          
+          $area=session('user_area');
+          $checkout->c_area=$area;
          $oid=$oid+1;
-        // echo $oid."<br>";        
+        // echo $oid."<br>";  
+        $c=DB::table('onlinepayments')
+            ->select('onlinepayments.*') 
+            ->where('u_id', $userId)
+            ->where('o_id',$oid)
+            ->get();   
+        // $c=onlinepayment::find($oid)->where('u_id',$userId)->where('o_id',$oid);
+        if ($c->count()>0) {
+         $pay=1;
+        }
+        else{
+          $pay=0;
+        }
+        
+         
               
        $i=0;
        $lists = [];
@@ -132,7 +148,7 @@ class CartController extends Controller
 
              // $j++;
            }
-          $list[] =array('oid'=>$oid,'u_id' => $userId,'p_id' => $pid[$x],'b_id' => $bid[$x],'address' => $address,'contact' => $contact,'bill' => $bill,'o_Status' => $o_Status);
+          $list[] =array('oid'=>$oid,'u_id' => $userId,'p_id' => $pid[$x],'b_id' => $bid[$x],'address' => $address,'c_area'=>$area,'contact' => $contact,'bill' => $bill,'o_Status' => $o_Status,'online_Payment'=>$pay);
                              
         }
 

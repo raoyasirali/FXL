@@ -24,6 +24,11 @@ class CreateProductsTable extends Migration
             $table->unsignedInteger('c_id');
             $table->foreign('c_id')->references('cat_id')->on('categories');
             $table->foreign('b_id')->references('id')->on('businesses');
+            $table->integer('p_Status')->default('0');
+            $table->string('p_Percent')->default('NULL');
+            $table->double('p_Percent_Price')->default('0');
+            $table->double('p_PrePrice')->default('0');
+            $table->string('p_date')->default('NULL');
             $table->timestamps();
         });
     }

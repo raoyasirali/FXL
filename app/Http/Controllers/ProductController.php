@@ -44,13 +44,17 @@ class ProductController extends Controller
         // $p=product::all()->where('c_id',$cat_id);
         // return view('customer_products')->with('p_data',$p);
 
-//by name
+//search by name
         $search_name = $request->p_category;
+        $user_area = $request->carea;
         session(['search_name' => $search_name]);
+        session(['check' => '1']);
+        session(['user_area' => $user_area]);
        $p=DB::table('products')
             ->join('businesses', 'products.b_id', '=', 'businesses.id')
-            ->select('products.*', 'businesses.b_Name', 'businesses.b_Address') 
+            ->select('products.*', 'businesses.b_Name', 'businesses.b_Address', 'businesses.b_DArea') 
             ->where('p_Name', $search_name)
+            ->where('b_DArea', $user_area)
             ->get();
 
         // $p=product::all()->where('p_Name',$search_name);
@@ -72,22 +76,53 @@ class ProductController extends Controller
      public function ViewMenu(){
         
 
-         $search_name = session('search_name');
-         $check = session('bud');
-         $budget = session('budget');
-        if ($check == 1) {              // to print again in ascending order
-          // $p=product::orderBy('p_Price', 'ASC')->where('p_Name',$search_name)->where('p_Price', '<=' , $budget)->get();
-          $p=DB::table('products')
+         
+         // $check = session('bud');
+         $check=session('check');
+        
+
+         if ($check == 1) { //search menu again
+            $search_name = session('search_name');
+            $user_area = session('user_area');
+            $p=DB::table('products')
             ->join('businesses', 'products.b_id', '=', 'businesses.id')
-            ->select('products.*', 'businesses.b_Name', 'businesses.b_Address')
+            ->select('products.*', 'businesses.b_Name', 'businesses.b_Address', 'businesses.b_DArea') 
+            ->where('p_Name', $search_name)
+            ->where('b_DArea', $user_area)
+            ->get();
+         }
+
+         if ($check == 2) {
+           $p=DB::table('products')
+            ->join('businesses', 'products.b_id', '=', 'businesses.id')
+            ->select('products.*', 'businesses.b_Name', 'businesses.b_Address', 'businesses.b_DArea') 
+            ->get();
+         }
+
+         if ($check == 3) { // to view promotion items again
+           $p=DB::table('products')
+            ->join('businesses', 'products.b_id', '=', 'businesses.id')
+            ->select('products.*', 'businesses.b_Name', 'businesses.b_Address', 'businesses.b_DArea')
+            ->where('p_Status','1')
+            ->get();
+            
+         }
+
+        if ($check == 4) {                 // to print budget items again in ascending order
+           $search_name = session('bud_search_name');
+           $budget = session('budget');
+           $p=DB::table('products')
+            ->join('businesses', 'products.b_id', '=', 'businesses.id')
+            ->select('products.*', 'businesses.b_Name', 'businesses.b_Address', 'businesses.b_DArea')
             ->orderBy('p_Price', 'ASC')
             ->where('p_Name',$search_name)
             ->where('p_Price', '<=' , $budget) 
             ->get();
+         
         }
-       else {
-        $p=product::all()->where('p_Name',$search_name);
-        }
+       // else {
+       //  $p=product::all()->where('p_Name',$search_name);
+       //  }
         return view('customer_products')->with('p_data',$p);
 
      }
@@ -96,19 +131,33 @@ class ProductController extends Controller
      public function AllCatProducts(){
           // $pr=product::all();
           // return view('all_products')->with('p_data',$pr);
+            session(['check' => '2']);
           $p=DB::table('products')
             ->join('businesses', 'products.b_id', '=', 'businesses.id')
-            ->select('products.*', 'businesses.b_Name', 'businesses.b_Address') 
+            ->select('products.*', 'businesses.b_Name', 'businesses.b_Address', 'businesses.b_DArea') 
             ->get();
           return view('customer_products')->with('p_data',$p);
 
      }
 
+         public function AllProProducts(){
+          // $pr=product::all();
+          // return view('all_products')->with('p_data',$pr);
+          session(['check' => '3']);
+          $p=DB::table('products')
+            ->join('businesses', 'products.b_id', '=', 'businesses.id')
+            ->select('products.*', 'businesses.b_Name', 'businesses.b_Address', 'businesses.b_DArea')
+            ->where('p_Status','1')
+            ->get();
+          return view('customer_products')->with('p_data',$p);
+
+     }
 
 //ViewBudgetProducts
         public function searchBProducts(Request $request){
            echo $this->bud;
-           $n=1;
+           // $n=1;
+           session(['check' => '4']);
            // Session::put('variable', $n);
            
            // $this->bud=$n; 
@@ -116,14 +165,14 @@ class ProductController extends Controller
            // exit();
            $search_name = $request->search;
            $budget = $request->budget;
-           session(['search_name' => $search_name]);
-           session(['bud' => $n]);
+           session(['bud_search_name' => $search_name]);
+           // session(['bud' => $n]);
            session(['budget' => $budget]);
 
            $p=DB::table('products')
             ->join('businesses', 'products.b_id', '=', 'businesses.id')
             ->orderBy('p_Price', 'ASC')
-            ->select('products.*', 'businesses.b_Name', 'businesses.b_Address') 
+            ->select('products.*', 'businesses.b_Name', 'businesses.b_Address', 'businesses.b_DArea') 
             ->where('p_Name',$search_name)
             ->where('p_Price', '<=' , $budget)
             ->get();
@@ -151,8 +200,8 @@ class ProductController extends Controller
          $p=product::find($id);
         return view('p_edit_p')->with('p',$p);
     }
-    
-    public function updateProduct(Request $request,$id){
+
+     public function updateProduct(Request $request,$id){
         $p = new product;         
         $p=product::find($id); 
         $p->p_Name=$request->p_name;
@@ -165,6 +214,60 @@ class ProductController extends Controller
         return redirect('p_view_p');
 
     }
+
+    //promotion
+    public function showPromoProduct($id){
+         $p=product::find($id);
+        return view('p_Proedit_p')->with('p',$p);
+    }
+
+    
+
+    public function addpromoProduct(Request $request,$id){
+        $p = new product;         
+        $p=product::find($id); 
+        $p->p_Name=$request->p_name;
+        $p->p_Desc=$request->p_description;
+        // $p->p_Img_Name=$request->p_image;
+        $price=$request->p_price;
+        $p->p_Status='1';
+        $p->p_Percent=$request->p_Percent;
+        $percent=$request->p_Percent;
+        $percentprice=($price*$percent)/100;
+        $p->p_Percent_Price=$percentprice;
+        $p->p_date=$request->p_proDate;
+        $p->p_PrePrice=$request->p_price;
+        $p->p_Price=$price-$percentprice;
+        $p->save();
+        return redirect('p_view_p');
+
+    }
+
+    //View promotion items by business admin
+
+    public function bviewProProduct()
+    {
+        $value = session('business_id'); 
+        $p=product::all()->where('b_id',$value)->where('p_Status','1');
+        return view('b_pro_view_p')->with('p_data',$p);
+    }
+   
+
+
+   public function removeProProduct($id){
+        // DB::table('reviews')->where('product_id', '=', $id)->delete();
+        $p=product::find($id);
+        $p->p_Status='0';
+        $p->p_Percent='NULL';
+        $p->p_Percent_Price='0';
+        $p->p_date='NULL';
+        $p->p_Price=$p->p_PrePrice;
+        $p->p_PrePrice='0';
+        $p->save();
+        return redirect('b_pro_view_p');
+
+   }
+
 
     public function userOrderHistory(){
       $user = Auth::id();

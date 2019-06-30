@@ -17,6 +17,7 @@ class CreateBusinessesTable extends Migration
             $table->increments('id');
             $table->string('b_Name');
             $table->string('b_Address');
+            $table->string('b_DArea');
             $table->string('b_Fname');
             $table->string('b_Lname');
             $table->string('b_Phone');

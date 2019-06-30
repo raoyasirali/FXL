@@ -1,4 +1,4 @@
-@include('a_master')
+@include('a_master1')
 <body>
 	 <a href="s_download_excel"><button class="btn btn-secondary">Download Excel File</button></a> <a href="sales_chart"><button class="btn btn-secondary">Products sales in Pie Chart</button></a><br/><br/>
 	 <table border="1" width="90%" align="center" style="border-collapse: collapse" class="table">

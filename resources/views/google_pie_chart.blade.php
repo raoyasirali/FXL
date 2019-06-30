@@ -1,4 +1,4 @@
-@include('a_master')
+@include('a_master1')
 <!DOCTYPE html>
 <html>
  <head>

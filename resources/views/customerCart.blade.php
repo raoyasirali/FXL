@@ -29,14 +29,15 @@
                 <div class="card-body">
                     
                    @foreach( $p_data as $row )
-          <div id="img_div"style="width: 30%;margin-top: 20px ;margin-left:20px;float: left;border: solid thin gray;height: 370px">
+          <div id="img_div"style="width: 30%;margin-top: 20px ;margin-left:20px;float: left;border: solid thin gray;height: 390px">
            <img src="uploads/{{$row->p_Img_Name}}" height="150" width="100%"/><br>
-         <div style="margin-left:10px;margin-top: 5px ">
+         <div style="margin-left:10px;margin-top: 5px;min-height: 170px; ">
           <b>Name:</b> {{$row->p_Name}} <br>
           <b>Description:</b>  {{$row->p_Desc}}<br>
           <b>Price:</b> Rs.  <span id="pro_price">{{$row->p_Price}}</span><br>
           <b>Restuarant Name:</b>  {{$row->b_Name}}<br>
           <b>Address:</b>  {{$row->b_Address}}<br>
+          <b>Delivery Address:</b>  {{$row->b_DArea}}<br>
          </div>
          <span style="margin-left:30px "><a href="RemoveCart/{{$row->id}}" class="btn btn-danger" style="margin-bottom: 10px;margin-top: 10px;">Remove From cart</a></span>
         
@@ -100,16 +101,10 @@ $user = User::find($userId);
   function bill(){
   
  @foreach( $p_data as $row )
-
-          // var price =document.getElementById("pro_price").value;
            var price ={{$row->p_Price}};
-
           total_bill=document.getElementById("bill").innerHTML=parseInt(total_bill)+parseInt(price);
           document.getElementById("tbill").value=total_bill;
-          // alert(total_bill);
          @endforeach
-         // document.getElementById("Checkout").style.display = "block";
-         // document.getElementById("placeOrder").style.display = "none";
        }
        
        function returnToPreviousPage() {
@@ -125,7 +120,6 @@ $user = User::find($userId);
           else{
            return true;
           }
-
         }
 
 

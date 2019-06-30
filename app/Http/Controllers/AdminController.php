@@ -127,8 +127,6 @@ class AdminController extends Controller
         return view('show_sales')->with('sales',$s);
 
      }
-
-
       public function s_download_excel()
          {
            $sales_data = DB::table('checkouts')

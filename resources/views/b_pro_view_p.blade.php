@@ -11,11 +11,9 @@
           Description:  {{$row->p_Desc}}<br>
           Price:Rs.  {{$row->p_Price}}<br>
         </div>
-         <a href="edit/{{$row->id}}"  style="margin-top: 10px;margin-left: 13%; width: 35%" class="btn btn-primary">Edit</a>
-        
-          <a href="delete/{{$row->id}}" class="btn btn-danger" style="margin-top: 10px;">Delete</a><br/>
+         
                  
-          <a href="addPro/{{$row->id}}"  style="margin-bottom: 10px;margin-top: 2px;margin-left: 13%; width: 68%;" class="btn btn-secondary">Add Promotion</a>
+          <a href="removePro/{{$row->id}}"  style="margin-top: 15px;margin-bottom: 15px;margin-left: 14%; width: 68%;" class="btn btn-danger">Remove Promotion</a>
            </div>
          @endforeach
       </div>

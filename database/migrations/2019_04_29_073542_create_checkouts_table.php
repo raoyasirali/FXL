@@ -23,9 +23,11 @@ class CreateCheckoutsTable extends Migration
             $table->foreign('p_id')->references('id')->on('products');
             $table->foreign('b_id')->references('id')->on('businesses');
             $table->string('address');
+            $table->string('c_area');
             $table->string('contact');
             $table->string('bill');
             $table->integer('o_Status');
+            $table->integer('online_Payment')->default('0');;
             $table->timestamps();
         });
     }

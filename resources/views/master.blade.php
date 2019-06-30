@@ -63,7 +63,7 @@
 	<!--  <button class="btn btn-secondary" id="contact">Contact</button> -->
    
 	<div>
-  <img src="fb.png"> &nbsp&nbsp<img src="email.png">
+  <a href="https://www.facebook.com/FoodXpressContact/" target="blank"><img src="fb.png"></a> &nbsp&nbsp<a href="feedback"><img src="email.png"></a>
   <p>©FoodXPress 2019- All Rights Reserved  </p>
     </div>
   

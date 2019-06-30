@@ -34,7 +34,10 @@ use App\Review;
           <b>Description:</b>  {{$row->p_Desc}}<br>
           <b>Price:</b> Rs.  {{$row->p_Price}}<br>
           <b>Restuarant Name:</b>  {{$row->b_Name}}<br>
-          <b>Address:</b>  {{$row->b_Address}}<br><br><?php
+          <b>Address:</b>  {{$row->b_Address}}<br>
+          <b>Delivery Area:</b>  {{$row->b_DArea}}<br><br>
+            
+          <?php
           $r_data= Review::all()->where('product_id',$row->id);
           $posr_data= Review::all()->where('product_id',$row->id)->where('pos','1');
           $negr_data= Review::all()->where('product_id',$row->id)->where('neg','1');
@@ -52,7 +55,7 @@ use App\Review;
           ";
           echo "document.getElementById('reviewid.$i').style.backgroundColor = 'green';
           ";
-          echo "document.getElementById('reviewid.$i').title = 'Positive Reviews';
+          echo "document.getElementById('reviewid.$i').title = 'More Positive Reviews';
           ";
           echo "document.getElementById('reviewid.$i').style.color = 'white';
           ";
@@ -66,7 +69,7 @@ use App\Review;
           ";
           echo "document.getElementById('reviewid.$i').style.backgroundColor = 'red';
           ";
-          echo "document.getElementById('reviewid.$i').title = 'Negative Reviews';
+          echo "document.getElementById('reviewid.$i').title = 'More Negative Reviews';
           ";
           echo "document.getElementById('reviewid.$i').style.color = 'white';
           ";
@@ -80,7 +83,7 @@ use App\Review;
           ";
           echo "document.getElementById('reviewid.$i').style.backgroundColor = 'blue';
           ";
-          echo "document.getElementById('reviewid.$i').title = 'Neutral Reviews';
+          echo "document.getElementById('reviewid.$i').title = 'More Neutral Reviews';
           ";
           echo "document.getElementById('reviewid.$i').style.color = 'white';
           ";

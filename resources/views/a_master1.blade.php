@@ -13,7 +13,8 @@
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 100px;
+  height: 50px;
+  padding-top: 10px;
   background-color: #222;
   color: white;
   text-align: center;
@@ -55,7 +56,7 @@
       <div class="footer">
    
   <div>
-  <img src="fb.png"> &nbsp&nbsp<img src="email.png">
+  <!-- <img src="fb.png"> &nbsp&nbsp<img src="email.png"> -->
   <p>©FoodXPress 2019- All Rights Reserved  </p>
     </div>
   

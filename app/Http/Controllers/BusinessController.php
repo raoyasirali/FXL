@@ -40,6 +40,7 @@ class BusinessController extends Controller
       $b = new business;
       $b->b_Name=Input::get('b_name');
       $b->b_Address=Input::get('b_address');
+      $b->b_DArea=Input::get('darea');
       $b->b_Fname=Input::get('b_first_name');
       $b->b_Lname=Input::get('b_last_name');
       $b->b_Phone=Input::get('b_phone');

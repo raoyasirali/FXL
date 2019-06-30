@@ -1,6 +1,6 @@
 @extends('layouts.app')
-
 @section('content')
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -176,6 +176,7 @@ $(function() {
   
 });
 </script>
-</html>
 
+</html>
 @endsection
+

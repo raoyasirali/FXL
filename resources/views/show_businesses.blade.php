@@ -1,4 +1,4 @@
-@include('a_master')
+@include('a_master1')
 <body>
 	 <a href="b_download_pdf"><button class="btn btn-secondary">Download PDF</button></a><br/><br/>
 	 <table border="1" width="90%" align="center" style="border-collapse: collapse" class="table">

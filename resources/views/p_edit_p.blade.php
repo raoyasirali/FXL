@@ -93,7 +93,7 @@
 
 
     <div class="form-group">
-	<span style="margin-left: 77%"><input type="submit" class="btn btn-primary " value="Add Item" /></span>
+	<span style="margin-left: 72%"><input type="submit" class="btn btn-primary " value="Update Item" /></span>
     </div>
 </form>
 </div>

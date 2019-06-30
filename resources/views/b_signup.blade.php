@@ -13,8 +13,8 @@
 
 
 
-<div class="container" style="border: solid thin gray;border-radius: 10px;height: 840px;width: 40%;margin-top: 60px;margin-bottom: 60px">
-<form action="{{URL::to('b_register')}}" method="post" enctype="multipart/form-data" style="width:500px; margin: auto; height: 850px"><br/>
+<div class="container" style="border: solid thin gray;border-radius: 10px;height: 900px;width: 40%;margin-top: 60px;margin-bottom: 60px">
+<form action="{{URL::to('b_register')}}" method="post" enctype="multipart/form-data" style="width:500px; margin: auto; height: 890px"><br/>
   <div class="form-group">
     <h3 style="text-align: center;"> <b> Business Admin Signup form</b></h3>
 
@@ -22,17 +22,17 @@
 
    <div class="form-group">
     <label><b>First Name:</b></label>
-    <input type="text"  class="form-control " name="b_first_name" id="b_first_name" required="">
+    <input type="text"  class="form-control " placeholder="First Name" name="b_first_name" id="b_first_name" required="">
    </div>   
     
    <div class="form-group">
     <label><b>Last Name:</b></label>
-    <input type="text"  class="form-control " name="b_last_name" id="b_last_name" required="">
+    <input type="text"  class="form-control "  placeholder="Last Name" name="b_last_name" id="b_last_name" required="">
    </div>
 
    <div class="form-group">
     <label><b>Resturant Name:</b></label>
-    <input type="text"  class="form-control" name="b_name" id="b_name" required="">
+    <input type="text"  class="form-control"  placeholder="Resturant Name" name="b_name" id="b_name" required="">
    </div>
 
    <div class="form-group">
@@ -69,23 +69,47 @@
 
    <div class="form-group">
     <label><b>Address:</b></label>
-    <input type="text" name="b_address" id="b_address" class="form-control"  id="u_phone" required="">
+    <input type="text"  placeholder="Address" name="b_address" id="b_address" class="form-control"  id="u_phone" required="">
+   </div>
+
+      <div class="form-group">
+    <label><b>Delivery Area:</b></label>
+    <select required  name="darea" id="darea" class="form-control">
+      
+      <option value="">-Select-</option>;
+      <option value="wapdatown">Wapda Town</option>;
+      <option value="township">Township</option>;
+      <option value="modeltown">Model town</option>;
+      <option value="Walton">Walton</option>;
+
+       <option value="wapdatown">Wapda Town</option>;
+      <option value="township">Township</option>;
+      <option value="modeltown">Model town</option>;
+      <option value="Walton">Walton</option>;
+
+       <option value="wapdatown">Wapda Town</option>;
+      <option value="township">Township</option>;
+      <option value="modeltown">Model town</option>;
+      <option value="Walton">Walton</option>;
+      
+    </select>
    </div>
 
    <div class="form-group">
     <label><b>Phone:</b></label>
-    <input type="text"  class="form-control" name="b_phone" id="u_phone" required="">
+    <input type="text"  placeholder="Phone Number"  class="form-control" name="b_phone" id="u_phone" required="">
    </div>
 
    <div class="form-group">
     <label><b>Email:</b></label>
-    <input type="text"  class="form-control" name="b_email" id="b_email" required="">
+    <input type="text"  placeholder="Email Address"  class="form-control" name="b_email" id="b_email" required="">
    </div>
 
    <div class="form-group">
     <label><b>Password:</b></label>
-    <input type="password"  class="form-control" name="b_password" id="b_password" required="">
+    <input type="password"  placeholder="Password"  class="form-control" name="b_password" id="b_password" required="">
    </div>
+
 
    <div class="form-group">
     <input type="hidden" name="b_status" value="0">
