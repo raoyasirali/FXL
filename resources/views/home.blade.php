@@ -75,11 +75,11 @@
                        <div> OR</div><br>
 
                        
-                 <a href="viewAllProducts" ><button class="btn btn-primary" onclick="myFunction()"> View All Categories</button></a>
-                  <a href="viewAllProProducts" class="btn btn-primary">View Items in Promotion</a>
+                 <button class="btn btn-primary" onclick="allcat()"> View All Categories</button>
+                  <button  class="btn btn-primary" onclick="allPro()">View Items in Promotion</button>
                  <!-- <a href="viewBudgetProducts" class="btn btn-primary">Want to see items with in your buduget?</a>
  -->            
-                <button class="btn btn-primary" id="budBtn" >Want to see items with in your buduget?</button>   
+                <button class="btn btn-primary" id="budBtn" onclick="budget()">Want to see items with in your buduget?</button>   
                 </div>     
 
 
@@ -105,12 +105,76 @@
                            </form>
                            </div>
                 <script>
-                 $(document).ready(function(){
-                 $("#budBtn").click(function(){                    
-                     $("#mainForm").hide();
-                    $("#bForm").show();
-                    });
-                 });
+                 // $(document).ready(function(){
+                 // $("#budBtn").click(function(){                    
+                 //     $("#mainForm").hide();
+                 //    $("#bForm").show();
+                 //    });
+                 // });
+
+
+
+                 function allcat()
+                    {
+                    var e = document.getElementById("carea");
+                    var userarea = e.options[e.selectedIndex].value;
+
+                    // var strUser1 = e.options[e.selectedIndex].text;
+                      if(userarea=="")
+                      {
+
+                       alert("Please select your location first");
+                      }
+                      else{
+                          var date = new Date();
+                          date.setTime(date.getTime()+(60*60*1000));
+                          document.cookie = "user_area" + "=" + userarea + "; expires=" + date.toGMTString();
+                       location.href = "viewAllProducts"; 
+                      }
+                    }
+
+                    function allPro()
+                    {
+                    var e = document.getElementById("carea");
+                    var userarea = e.options[e.selectedIndex].value;
+
+                    // var strUser1 = e.options[e.selectedIndex].text;
+                      if(userarea=="")
+                      {
+
+                       alert("Please select your location first");
+                      }
+                      else{
+                          var date = new Date();
+                          date.setTime(date.getTime()+(60*60*1000));
+                          document.cookie = "user_area" + "=" + userarea + "; expires=" + date.toGMTString();
+                       location.href = "viewAllProProducts"; 
+                      }
+                    }
+
+                    function budget()
+                    {
+                    var e = document.getElementById("carea");
+                    var userarea = e.options[e.selectedIndex].value;
+
+                    // var strUser1 = e.options[e.selectedIndex].text;
+                      if(userarea=="")
+                      {
+
+                       alert("Please select your location first");
+                      }
+                      else{
+                          var date = new Date();
+                          date.setTime(date.getTime()+(60*60*1000));
+                          document.cookie = "user_area" + "=" + userarea + "; expires=" + date.toGMTString();
+                           
+                                               
+                               $("#mainForm").hide();
+                              $("#bForm").show();
+                           
+                           
+                      }
+                    }
                            </script>
                        
 

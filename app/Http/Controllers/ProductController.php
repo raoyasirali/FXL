@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Http\RedirectResponse;
 use Auth;
 use DB;
+use Cookie;
 
 class ProductController extends Controller
 {
@@ -76,7 +77,7 @@ class ProductController extends Controller
      public function ViewMenu(){
         
 
-         
+         $user_area = Cookie::get('user_area');
          // $check = session('bud');
          $check=session('check');
         
@@ -96,6 +97,7 @@ class ProductController extends Controller
            $p=DB::table('products')
             ->join('businesses', 'products.b_id', '=', 'businesses.id')
             ->select('products.*', 'businesses.b_Name', 'businesses.b_Address', 'businesses.b_DArea') 
+            ->where('b_DArea',$user_area)
             ->get();
          }
 
@@ -104,6 +106,7 @@ class ProductController extends Controller
             ->join('businesses', 'products.b_id', '=', 'businesses.id')
             ->select('products.*', 'businesses.b_Name', 'businesses.b_Address', 'businesses.b_DArea')
             ->where('p_Status','1')
+            ->where('b_DArea',$user_area)
             ->get();
             
          }
@@ -116,7 +119,8 @@ class ProductController extends Controller
             ->select('products.*', 'businesses.b_Name', 'businesses.b_Address', 'businesses.b_DArea')
             ->orderBy('p_Price', 'ASC')
             ->where('p_Name',$search_name)
-            ->where('p_Price', '<=' , $budget) 
+            ->where('p_Price', '<=' , $budget)
+            ->where('b_DArea',$user_area) 
             ->get();
          
         }
@@ -131,10 +135,14 @@ class ProductController extends Controller
      public function AllCatProducts(){
           // $pr=product::all();
           // return view('all_products')->with('p_data',$pr);
+            $user_area = Cookie::get('user_area');
+            // echo $user_area;
+            // exit();
             session(['check' => '2']);
           $p=DB::table('products')
             ->join('businesses', 'products.b_id', '=', 'businesses.id')
             ->select('products.*', 'businesses.b_Name', 'businesses.b_Address', 'businesses.b_DArea') 
+            ->where('b_DArea',$user_area)
             ->get();
           return view('customer_products')->with('p_data',$p);
 
@@ -143,11 +151,13 @@ class ProductController extends Controller
          public function AllProProducts(){
           // $pr=product::all();
           // return view('all_products')->with('p_data',$pr);
+          $user_area = Cookie::get('user_area');
           session(['check' => '3']);
           $p=DB::table('products')
             ->join('businesses', 'products.b_id', '=', 'businesses.id')
             ->select('products.*', 'businesses.b_Name', 'businesses.b_Address', 'businesses.b_DArea')
             ->where('p_Status','1')
+            ->where('b_DArea',$user_area)
             ->get();
           return view('customer_products')->with('p_data',$p);
 
@@ -163,6 +173,7 @@ class ProductController extends Controller
            // $this->bud=$n; 
            // echo $this->bud;
            // exit();
+           $user_area = Cookie::get('user_area');
            $search_name = $request->search;
            $budget = $request->budget;
            session(['bud_search_name' => $search_name]);
@@ -175,6 +186,7 @@ class ProductController extends Controller
             ->select('products.*', 'businesses.b_Name', 'businesses.b_Address', 'businesses.b_DArea') 
             ->where('p_Name',$search_name)
             ->where('p_Price', '<=' , $budget)
+            ->where('b_DArea',$user_area)
             ->get();
             // product::orderBy('p_Price', 'ASC')->where('p_Name',$search_name)->where('p_Price', '<=' , $budget)->get();
            return view('customer_products')->with('p_data',$p);
