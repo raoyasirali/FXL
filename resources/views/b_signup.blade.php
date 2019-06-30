@@ -31,12 +31,12 @@
    </div>
 
    <div class="form-group">
-    <label><b>Resturant Name:</b></label>
-    <input type="text"  class="form-control"  placeholder="Resturant Name" name="b_name" id="b_name" required="">
+    <label><b>Restaurant Name:</b></label>
+    <input type="text"  class="form-control"  placeholder="Restaurant Name" name="b_name" id="b_name" required="">
    </div>
 
    <div class="form-group">
-    <label><b>Resturant Category:</b></label>
+    <label><b>Restaurant Category:</b></label>
     
     <select id="b_category" name="b_category" class="form-control">
             <option value="1">Fast Food</option>

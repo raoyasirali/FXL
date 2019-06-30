@@ -7,7 +7,7 @@
 	<title></title>
 </head>
 <body>
-<h1 style="text-align: center;">Order History</h1>
+<h1 style="text-align: center;">Orders</h1>
 
 <table border="1" width="90%" align="center" style="border-collapse: collapse" class="table">
 	 	<thead class="thead-dark">
@@ -15,9 +15,6 @@
 	 		<th>OrderID</th>
 	 		<th>Business Name</th>
 	 		<th>Business Address</th>
-	 		<!-- <th>Owner Name</th>
-	 		<th>Contact No.</th>
- -->
 	 		<th>Customer Name</th>
 	 		<th>Email</th>
 	 		<th>Contact No.</th>
@@ -25,7 +22,7 @@
 	 		<th>Item Name</th>
 	 		<th>Price</th>
 	 		<th>Delivery Area</th>
-	 		<th>Date & Time</th>
+	 		<th>Cancel Order</th>
 	 		
 	 	</tr>
 	 </thead>
@@ -43,8 +40,7 @@
                        <td>{{$s->p_Name}}</td>
                        <td>{{$s->p_Price}}</td>
                        <td>{{$s->c_area}}</td>
-                       <td>{{$s->updated_at}}</td>
-                      
+                      <td><a href="u_cancel/{{$s->oid}}"><button class="btn btn-danger">Cancel </button></a></td>
                        
 
                </tr>

@@ -52,13 +52,14 @@
         </div>
         <div class="col-md-1"></div>
         <div class="col-md-10">
-          <div class="col-md-6 col-sm-6">
+          <div class="col-md-7 col-sm-7">
             <div class="about-info">
               <h2 class="heading"><b style="font-size: 30px">Following steps to place an order</b></h2>
               <p></p>
               <div class="details-list">
                 <ul>
-                  <li style="font-size: 20px"><i> <img src="chk1.png" width="20px" height="20px"></i>Search food of your favourite category</li>
+                  <li style="font-size: 20px"><i> <img src="chk1.png" width="20px" height="20px"></i>Select your area from where you want to order</li>
+                  <li style="font-size: 20px"><i> <img src="chk1.png" width="20px" height="20px"></i>Search your favourite food items through multiple ways </li>
                   <li style="font-size: 20px"><i><img src="chk1.png" width="20px" height="20px"></i>Add items into cart</li>
                   <li style="font-size: 20px"><i ><img src="chk1.png" width="20px" height="20px"></i>Select payment method</li>
                   <li style="font-size: 20px"><i ><img src="chk1.png" width="20px" height="20px"></i>Place an order</li>
@@ -66,8 +67,8 @@
               </div>
             </div>
           </div>
-          <div class="col-md-6 col-sm-6">
-            <img src="newlogo.png" alt="" class="img-responsive">
+          <div class="col-md-5 col-sm-5">
+            <img src="newlogo.png" alt="" style="margin-top: 10%;" class="img-responsive">
           </div>
         </div>
         <div class="col-md-1"></div>
@@ -94,14 +95,15 @@
                   <h2>Steps to register business</h2>
                   <div class="details-list">
                 <ul>
-                  <li style="font-size: 20px"><i> <img src="chk2.png" width="20px" height="20px"></i>Search food of your favourite category</li>
-                  <li style="font-size: 20px"><i><img src="chk2.png" width="20px" height="20px"></i>Add items into cart</li>
-                  <li style="font-size: 20px"><i ><img src="chk2.png" width="20px" height="20px"></i>Select payment method</li>
-                  <li style="font-size: 20px"><i ><img src="chk2.png" width="20px" height="20px"></i>Place an order</li>
+                  <li style="font-size: 22px"><i> <img src="chk2.png" width="25px" height="24px"></i>Select partner with us</li>
+                  <li style="font-size: 21px"><i> <img src="chk2.png" width="25px" height="24px"></i>Select register </li>
+                  <li style="font-size: 21px"><i><img src="chk2.png" width="25px" height="24px"></i>Fill the signup form</li>
+                  <li style="font-size: 21px"><i ><img src="chk2.png" width="25px" height="24px"></i>Select register</li>
+                  <li style="font-size: 21px"><i ><img src="chk2.png" width="25px" height="24px"></i>Wait for approval of your account.</li>
                 </ul>
               </div>
-                  
-                  <a class="btn btn-imfo btn-read-more" href="events-details.html">Read more</a>
+                 
+                  <!-- <a class="btn btn-imfo btn-read-more" href="events-details.html">Read more</a> -->
                 </div>
               </div>
             </div>
@@ -129,8 +131,8 @@
               <div class="contact-phone bg-1 text-center"><span class="phone-in-talk fa fa-phone"></span></div>
             </div>
             <div class="media-body">
-              <h4 class="dark-blue regular">Phone Numbers</h4>
-              <p class="light-blue regular alt-p">+923234345275 </p>
+              <h4 class="dark-blue regular">Call Us At:</h4>
+              <p class="light-blue regular alt-p"> 111-34-34-34  </p>
             </div>
           </div>
           <div class="media-2" >
@@ -145,7 +147,8 @@
           </div>
         </div>
         <div class="col-md-8 col-sm-8">
-          <form action="" method="post" role="form" class="contactForm">
+
+          <form action="{{URL::to('cReportIssue')}}" method="post" class="contactForm" enctype="multipart/form-data">
             <div id="sendmessage">Your booking request has been sent. Thank you!</div>
             <div id="errormessage"></div>
             <div class="col-md-6 col-sm-6 contact-form pad-form">
@@ -155,7 +158,7 @@
               </div>
 
             </div>
-            
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <div class="col-md-6 col-sm-6 contact-form pad-form">
               <div class="form-group">
                 <input type="email" class="form-control label-floating is-empty" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
@@ -163,12 +166,12 @@
               </div>
             </div>
             
-            <div class="col-md-6 col-sm-6 contact-form">
+            <!-- <div class="col-md-6 col-sm-6 contact-form">
               <div class="form-group">
                 <input type="text" class="form-control label-floating is-empty" name="phone" id="phone" placeholder="Phone" data-rule="required" data-msg="This field is required" />
                 <div class="validation"></div>
               </div>
-            </div>
+            </div> -->
             
             <div class="col-md-12 contact-form">
               <div class="form-group label-floating is-empty">
@@ -179,7 +182,7 @@
             </div>
             <div class="col-md-12 btnpad">
               <div class="contacts-btn-pad">
-                <button class="contacts-btn">Submit</button>
+                <input type="Submit" value="Submit" class="contacts-btn">
               </div>
             </div>
           </form>
@@ -197,8 +200,8 @@
             <h4 class="widget-title">FoodXpress</h4>
             <address>SST UMT<br>Lahore, Pakistan</address>
             <div class="social-list">
-              <a href="#"><img src="fb.png"></a>
-              <a href="#"><img src="email.png"></a>
+              <a href="https://www.facebook.com/FoodXpressContact/"  target="blank"><img src="fb.png"></a>
+              <a href="https://accounts.google.com/signin/v2/identifier?service=mail&passive=true&rm=false&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ss=1&scc=1&ltmpl=default&ltmplcache=2&emr=1&osid=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin" target="blank"><img src="email.png"></a>
             </div>
             <p class="copyright clear-float">
               © Food Xpress. All Rights Reserved

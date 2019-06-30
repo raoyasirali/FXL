@@ -35,6 +35,7 @@ Route::get('c_download_pdf', "AdminController@c_download_pdf");
 Route::get('feedback', "SendEmailController@index");
 
 Route::post('sendEmail', "SendEmailController@send");
+Route::post('cReportIssue', "SendEmailController@report");
 
 
 
@@ -60,6 +61,8 @@ Route::get('viewAllProducts', 'ProductController@AllCatProducts')->middleware('a
 
 Route::get('viewAllProProducts', 'ProductController@AllProProducts')->middleware('authenticated');
 Route::get('orderHistory', 'ProductController@userOrderHistory')->middleware('authenticated');
+Route::get('orderCancel', 'ProductController@userCancelOrderPage')->middleware('authenticated');
+Route::get('u_cancel/{oid}', 'ProductController@userCancelOrder')->middleware('authenticated');
 Route::get('backToCat','ProductController@ViewProducts')->middleware('authenticated');
 
 

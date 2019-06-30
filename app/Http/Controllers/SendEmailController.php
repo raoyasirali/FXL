@@ -23,4 +23,16 @@ class SendEmailController extends Controller
     	return back()->with('success', 'Thanks for contacting us');
 
     }
+    public function report(Request $request){
+    
+      $data = array (
+          'name'     =>  $request->name,
+          'message'  =>  $request->message,
+          'email'    =>  $request->email
+      );
+      Mail::to('Team_FoodXpress@gmail.com') -> send(new SendMail($data));
+      return back()->with('success', 'Thanks for contacting us');
+
+    }
+   
 }

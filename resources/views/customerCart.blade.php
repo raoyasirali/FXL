@@ -64,7 +64,7 @@
 <span style="font-size: 30px;margin-left: 10px" ><b>Total Bill: Rs. </b></span><span id="bill" style="font-size: 30px;margin-left: 10px"><b>0</b></span><br/><br/>
 
 
-<form action="{{URL::to('c_checkout')}}" method="get" enctype="multipart/form-data">
+<form action="{{URL::to('c_checkout')}}" method="get" enctype="multipart/form-data" onsubmit="return verify();">
   <label><b>Delivery Address:</b></label><br/>
 <?php
 use App\User;
@@ -82,15 +82,15 @@ $user = User::find($userId);
   <input type="hidden" name="tbill" id="tbill">
   <input type="hidden" name="ostatus" value="0">
 
-  <input type="submit" class="btn btn-primary" value="CheckOut" onclick="verify()" style="margin-left: 45%">
+  <input type="submit" class="btn btn-primary" value="CheckOut" style="margin-left: 45%">
 </form>
 
  
 
 <!-- <a href="onlinePay" > -->
-  <form action="{{URL::to('onlinePay')}}" method="get" enctype="multipart/form-data">
+  <form action="{{URL::to('onlinePay')}}" method="get" enctype="multipart/form-data"  onsubmit="return verify1();">
     <input type="hidden" name="t_bill" id="t_bill"  />
-  <input type="submit" value="Online Payment" style="margin-top: -60px" id="online"   class="btn btn-primary" onclick="verify1()"/>
+  <input type="submit" value="Online Payment" style="margin-top: -60px" id="online"   class="btn btn-primary"/>
 </form>
 <!-- </a> -->
 </div>

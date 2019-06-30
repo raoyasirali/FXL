@@ -63,6 +63,10 @@
                                         {{ __('Order History') }}
                                     </a>
 
+                                    <a class="dropdown-item" href="{{ URL::to('orderCancel') }}">
+                                        {{ __('Cancel Order') }}
+                                    </a>
+
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
