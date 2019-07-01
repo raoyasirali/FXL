@@ -35,7 +35,7 @@
         <a href="c_details_pdf" class="btn btn-secondary" style="font-size: 18px;color: white" >View Customer Details</a>
         <a href="b_details_pdf" class="btn btn-secondary" style="font-size: 18px;color: white" >View Business Details</a>
         <a href="viewSales" class="btn btn-secondary" style="font-size: 18px;color: white" >View Sales</a>
-        <a href="a_login" class="btn btn-secondary" style="font-size: 18px;color: white" >Logout</a>
+        <a href="a_logout" class="btn btn-secondary" style="font-size: 18px;color: white" >Logout</a>
       </li>
       <!-- <li class="nav-item" style="margin-top: 20px;margin-left: 20px">
         <a class="" href="#"><p style="font-size: 20px;color: white">About Us</p></a>

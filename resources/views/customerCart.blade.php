@@ -16,7 +16,7 @@
 <body onload="bill()">
 <div class="container" style="float: left;">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-9">
             <div class="card">
                 <div class="card-header" style=""><h3>Your Cart</h3>
                   <!-- <div style="float: left;"><button class="btn btn-primary" id="placeOrder"> Place Order</button></div> -->
@@ -29,9 +29,9 @@
                 <div class="card-body">
                     
                    @foreach( $p_data as $row )
-          <div id="img_div"style="width: 30%;margin-top: 20px ;margin-left:20px;float: left;border: solid thin gray;height: 390px">
+          <div id="img_div"style="width: 30%;margin-top: 20px ;margin-left:20px;float: left;border: solid thin gray;min-height: 420px" >
            <img src="uploads/{{$row->p_Img_Name}}" height="150" width="100%"/><br>
-         <div style="margin-left:10px;margin-top: 5px;min-height: 170px; ">
+         <div style="margin-left:10px;margin-top: 5px;min-height: 200px; ">
           <b>Name:</b> {{$row->p_Name}} <br>
           <b>Description:</b>  {{$row->p_Desc}}<br>
           <b>Price:</b> Rs.  <span id="pro_price">{{$row->p_Price}}</span><br>
@@ -51,14 +51,15 @@
         </div>
     </div>
 </div>
-<div style="width: 350px;padding-bottom: 50px;float: left;margin-left: -100px;border: solid thin #d6d8db;border-radius: 5px"><div style="float: left;width: 100%;border: solid thin #d6d8db;background-color: #eff2f7"><br/><h2 style="margin-left: 20px">Your Bill</h2><br/>
-<h4> &nbsp Item Name &nbsp &nbsp &nbsp &nbsp Price</h4>
+<div style="width: 350px;padding-bottom: 50px;float: left;margin-left: -100px;border: solid thin #d6d8db;border-radius: 5px"><div style="float: left;width: 100%;border: solid thin #d6d8db;background-color: #eff2f7"><br/><h2 style="text-align: center;">Your Bill</h2><br/>
+<h4 style="text-align: center;"> &nbsp Item Name & &nbsp Price</h4>
 </div>
- <div style="float: left;margin-left: 7%">
+ <div style="float: left;margin-left: 6%">
  @foreach( $p_data as $row )
-
-          &nbsp &nbsp {{$row->p_Name}}<span style="margin-left: 85px">
-          Rs.  {{$row->p_Price}}</span><br>
+<div>
+          &nbsp <div><b style="color: blue;">*</b>&nbsp {{$row->p_Name}}</div>
+          <div>&nbsp  &nbsp Rs.  {{$row->p_Price}}</div>
+     </div>
          @endforeach
 
 <span style="font-size: 30px;margin-left: 10px" ><b>Total Bill: Rs. </b></span><span id="bill" style="font-size: 30px;margin-left: 10px"><b>0</b></span><br/><br/>

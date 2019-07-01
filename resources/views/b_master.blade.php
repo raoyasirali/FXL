@@ -33,7 +33,7 @@
       </li> -->
       
       <li class="nav-item" style="margin-top: 20px;margin-left: 20px">
-        <a class=" " href="{{URL::to('b_login')}}"><p style="font-size: 20px;color: white">Logout</p></a>
+        <a class=" " href="{{URL::to('b_logout')}}"><p style="font-size: 20px;color: white">Logout</p></a>
       </li>
       
     </ul>

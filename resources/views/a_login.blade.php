@@ -15,7 +15,7 @@
 
 <div  style="width: 38%;height: 355px;background-color: white;border: solid thin gray;border-radius: 10px;margin-top: 100px" class="container">
 
-<form action="{{URL::to('a_chklogin')}}" method="get" enctype="multipart/form-data">
+<form action="{{URL::to('a_chklogin')}}" method="post" enctype="multipart/form-data">
 	<div class="form-group">
 		<br/>
 	<h3 style="text-align: center;"> <b>  Admin Login</b></h3><br/>

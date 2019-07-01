@@ -6,6 +6,7 @@ use App\business;
 use App\checkout;
 use DB;
 use Excel;
+use Cookie;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Http\RedirectResponse;
@@ -35,7 +36,10 @@ class BusinessController extends Controller
         return redirect("b_menu");
     }
 
-    
+    public function b_menu(){
+      return view('b_menu');
+    }
+
     public function bregister(){
       $b = new business;
       $b->b_Name=Input::get('b_name');
@@ -83,7 +87,7 @@ class BusinessController extends Controller
         $b_count=$b_data->count();
         if( $b_count>0 ){
          session(['business_id' => $bu_id]);
-
+         Cookie::queue('email', $b_email, 60);
             return view('b_menu');
         }
         else
@@ -230,6 +234,11 @@ $results = DB::table('checkouts')
         return redirect('o_view_o');
 
           }
+
+        public function b_logout(){
+          Cookie::queue('email', '', -60);
+          return redirect('b_login');
+        }
 
 
     

@@ -14,7 +14,7 @@
 
 
 <div style="width: 38%;height: 370px;background-color: white;border: solid thin grey;border-radius: 10px;margin-top: 100px" class="container">
-<form action="{{URL::to('b_chklogin')}}" method="get" enctype="multipart/form-data">
+<form action="{{URL::to('b_chklogin')}}" method="post" enctype="multipart/form-data">
 	<div class="form-group">
         <br/>
     <h3 style="text-align: center;"> <b> Business Admin Login</b></h3>

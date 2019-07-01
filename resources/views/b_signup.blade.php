@@ -39,30 +39,27 @@
     <label><b>Restaurant Category:</b></label>
     
     <select id="b_category" name="b_category" class="form-control">
-            <option value="1">Fast Food</option>
-            <option value="2">Chinese</option>
-            <option value="3">Itaian</option>
-            <option value="5">Desi</option>
-            <option value="6">Fast Food</option>
-            <option value="7">Chinese</option>
-            <option value="8">Itaian</option>
-            <option value="9">Desi</option>
-            <option value="10">Fast Food</option>
-            <option value="11">Chinese</option>
-            <option value="12">Itaian</option>
-            <option value="13">Desi</option>
-            <option value="14">Fast Food</option>
-            <option value="15">Chinese</option>
-            <option value="16">Itaian</option>
-            <option value="17">Desi</option>
-            <option value="18">Fast Food</option>
-            <option value="19">Chinese</option>
-            <option value="20">Itaian</option>
-            <option value="21">Desi</option>
-            <option value="22">Fast Food</option>
-            <option value="23">Chinese</option>
-            <option value="24">Itaian</option>
-            <option value="25">Desi</option>
+            <option value="1">FAST FOOD</option>
+            <option value="2">DESI</option>
+            <option value="3">TURKISH</option>
+            <option value="5">JAPNESE</option>
+            <option value="6">INDIAN</option>
+            <option value="7">CHINESE</option>
+            <option value="8">AMERICAN</option>
+            <option value="9">HOMEMADE</option>
+            <option value="10">DESSERTS</option>
+            <option value="11">BAKERY</option>
+            <option value="12">AFGHANI</option>
+            <option value="13">COOKIES</option>
+            <option value="14">BARBQ</option>
+            <option value="15">DRINKS</option>
+            <option value="16">VEGETARIAN</option>
+            <option value="17">MEXICAN</option>
+            <option value="18">ITALIAN</option>
+            <option value="19">THAI</option>
+            <option value="20">FRENCH</option>
+            <option value="21">SPANISH</option>
+            <option value="22">ARABIAN</option>
 
     </select>
    </div>
@@ -77,20 +74,39 @@
     <select required  name="darea" id="darea" class="form-control">
       
       <option value="">-Select-</option>;
-      <option value="wapdatown">Wapda Town</option>;
-      <option value="township">Township</option>;
-      <option value="modeltown">Model town</option>;
+      <option value="WapdaTown">Wapda Town</option>;
+      <option value="Township">Township</option>;
+      <option value="Modeltown">Model town</option>;
       <option value="Walton">Walton</option>;
+      <option value="Allama Iqbal Town">Allama Iqbal Town</option>;
+      <option value="Izmir Town">Izmir Town</option>;
+      <option value="Bahria Town">Bahria Town</option>;
+      <option value="Shadman">Shadman</option>;
+      <option value="Muslim Town">Muslim Town</option>;
+      <option value="Jubliee Town">Jubliee Town</option>;
+      <option value="PCSIR Housing Societ">PCSIR Housing Societ</option>;
+      <option value="LDA Avenue">LDA Avenue</option>;
+      <option value="Johar Town">Johar Town</option>;
+      <option value="Barki">Barki</option>;
+      <option value="Harbanspura">Harbanspura</option>;
+      <option value="Mughalpura">Mughalpura</option>;
+      <option value="Faisal Town">Faisal Town</option>;
+      <option value="Mozang">Mozang</option>;
+      <option value="Garhi Shahu">Garhi Shahu</option>;
+      <option value="Gulberg">Gulberg</option>;
+      <option value="Garden Town">Garden Town</option>;
+      <option value="Kot Lakhpat">Kot Lakhpat</option>;
+      <option value="Gulshan e Ravi">Gulshan e Ravi</option>;
+      <option value="Sodiwal">Sodiwal</option>;
+      <option value="Multan Chungi">Multan Chungi</option>;
+      <option value="Samanabad">Samanabad</option>;
+      <option value="Mustafa Town">Mustafa Town</option>;
+      <option value="Green Town">Green Town</option>;
+      <option value="Niaz Baig">Niaz Baig</option>;
+      <option value="Chung">Chung</option>;
+      <option value="Awan Town">Awan Town</option>;
+      <option value="Valencia">Valencia</option>;
 
-       <option value="wapdatown">Wapda Town</option>;
-      <option value="township">Township</option>;
-      <option value="modeltown">Model town</option>;
-      <option value="Walton">Walton</option>;
-
-       <option value="wapdatown">Wapda Town</option>;
-      <option value="township">Township</option>;
-      <option value="modeltown">Model town</option>;
-      <option value="Walton">Walton</option>;
       
     </select>
    </div>

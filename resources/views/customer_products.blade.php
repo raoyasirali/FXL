@@ -7,11 +7,11 @@ use App\Review;
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-9">
             <div class="card">
                 <div class="card-header" style="float: left"><h5>Products of your searched category</h5>
                  <div style="float: left;"><a href="viewCart"  class="btn btn-primary">View Cart</a></div>
-                 <div style="float: left;">  <a href="home" class="btn btn-primary" style="margin-left: 470px">Back</a></div>
+                 <div style="float: left;">  <a href="home" class="btn btn-primary" style="margin-left: 620px">Back</a></div>
                 </div>
                   <div style="color: red; margin-left: 50px">
                                 @if($message = Session::get('msg'))
@@ -27,9 +27,9 @@ use App\Review;
                     $i=1;
                      ?>
                    @foreach( $p_data as $row)
-          <div id="img_div"style="width: 30%;margin-top: 20px ;margin-left:20px;float: left;border: solid thin gray;height: 450px">
+          <div id="img_div"style="width: 30%;margin-top: 20px ;margin-left:20px;float: left;border: solid thin gray;height: 470px">
            <img src="uploads/{{$row->p_Img_Name}}" height="150" width="100%"/><br>
-          <div style="margin-left:10px;margin-top: 5px;min-height: 180px; "> 
+          <div style="margin-left:10px;margin-top: 5px;min-height: 200px; "> 
           <b>Name:</b> {{$row->p_Name}} <br>
           <b>Description:</b>  {{$row->p_Desc}}<br>
           <b>Price:</b> Rs.  {{$row->p_Price}}<br>
@@ -95,7 +95,7 @@ use App\Review;
 ?>
           <br/><br/>
 
-         <a href="addToCart/{{$row->id}}" style="margin-bottom: 10px;margin-top: 10px;margin-left: 10px;float: left;" class="btn btn-primary">Add to cart</a>
+         <a href="addToCart/{{$row->id}}" style="margin-bottom: 10px;margin-top: 10px;margin-left: 12%;float: left;" class="btn btn-primary">Add to cart</a>
          <a href="Reviews/{{$row->id}}" style="margin-bottom: 10px;margin-top: 10px;margin-left: 5px;float: left;" class="btn btn-primary">Reviews</a>
 
         

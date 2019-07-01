@@ -7,6 +7,7 @@ use App\User;
 use DB;
 use PDF;
 use Excel;
+use Cookie;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Http\RedirectResponse;
@@ -28,13 +29,17 @@ class AdminController extends Controller
         
         if($a_email==$this->a_email && $a_pwd==$this->a_password)
         {
-
+            Cookie::queue('aemail', $a_email, 60);
             return view('a_menu');
         }
         else
             return view('a_login');
        
        }
+
+        public function a_menu() {
+            return view('a_menu');
+        }
 
 	   public function viewBusinesses(){
        //$b = new business;
@@ -167,7 +172,10 @@ class AdminController extends Controller
          }
 
 
-
+          public function a_logout(){
+          Cookie::queue('aemail', '', -60);
+          return redirect('a_login');
+        }
 
 
 
