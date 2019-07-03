@@ -64,7 +64,7 @@
             }
         </style>
     </head>
-    <body>
+    <body style="background-image:url(banner-bg.jpg);">
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links" style="margin-top: -55px ">
@@ -82,7 +82,7 @@
 
            
             <div style="margin-top: -250px ;background-color: " class="content">
-                <div style="font-size: 63px;color: #FFB03B ;font-family:'Righteous', cursive" class="title m-b-md">
+                <div style="font-size: 65px;color: red ;font-family:'Righteous', cursive" class="title m-b-md">
                     <b>Welcome to Food Xpress</b>
                     
                 </div>

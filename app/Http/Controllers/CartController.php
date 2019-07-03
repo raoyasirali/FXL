@@ -11,6 +11,7 @@ use App\product;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Http\RedirectResponse;
 use Stripe\Stripe;
+use Cookie;
 use Stripe\Customer;
 use Stripe\Charge;
 use App\onlinepayment;
@@ -53,8 +54,7 @@ class CartController extends Controller
             ->select('products.*','carts.p_id','carts.id', 'businesses.b_Name', 'businesses.b_Address', 'businesses.b_DArea') 
             ->where('u_id', $userId)
             ->get();
-      
-      
+
       return view('customerCart')->with('p_data',$results);
 
     }
@@ -95,7 +95,8 @@ class CartController extends Controller
           $contact =Input::get('contact');
           $bill =Input::get('tbill');
           $o_Status =Input::get('ostatus');
-          $area=session('user_area');
+          // $area=session('user_area');
+          $area=Cookie::get('user_area');
           $checkout->c_area=$area;
          $oid=$oid+1;
         // echo $oid."<br>";  
@@ -160,12 +161,12 @@ class CartController extends Controller
          $t_count=$t_data->count();
         if( $t_count>0 ){//checking if the cart is empty or not for all users
 
-            return redirect('home')->with('msg','NOTE: Order Placed Successfully! Wait for your order confirmation by the restaurant. You can see it in your previous orders as it is confirmed.');
+            return redirect('home')->with('msg','NOTE: Order Placed Successfully! Wait for your order confirmation by the restaurant. You can see it in your previous orders as it is confirmed.You can cancel it from cancel orders menu.');
         }
         else{
         //Emptying Cart table
         cart::truncate();
-        return redirect('home')->with('msg','NOTE: Order Placed Successfully! Wait for your order confirmation by the restaurant. You can see it in your previous orders as it is confirmed.');
+        return redirect('home')->with('msg','NOTE: Order Placed Successfully! Wait for your order confirmation by the restaurant. You can see it in your previous orders as it is confirmed.You can cancel it from cancel orders menu.');
         }
        // echo " alert('Order Placed Successfully!  Wait for your order confirmation by the restaurant. You can see it in your previous orders as it is confirmed.')";
         

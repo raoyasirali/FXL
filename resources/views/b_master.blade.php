@@ -32,7 +32,7 @@
         <a class="" href="" ><p style="font-size: 20px;color: white">Contact</p> </a>
       </li> -->
       
-      <li class="nav-item" style="margin-top: 20px;margin-left: 20px">
+      <li class="nav-item" style="margin-top: 20px;margin-left: 400px;">
         <a class=" " href="{{URL::to('b_logout')}}"><p style="font-size: 20px;color: white">Logout</p></a>
       </li>
       

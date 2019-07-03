@@ -12,10 +12,10 @@
   <title>Business Main Menu</title>
 
 </head>
-<body   style="max-width: 100%;height: auto;">
+<body   style="max-width: 100%;height: auto;background-image:url(b11.jpg);">
 
 
- <div style="font-size: 33px;margin-top: 60px;padding-left: 260px" class="container">Business Admin Dashboard</div>
+ <div style="font-size: 33px;margin-top: 60px;padding-left: 260px;color: white;" class="container">Business Admin Dashboard</div>
 
 
 

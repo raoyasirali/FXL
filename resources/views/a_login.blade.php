@@ -40,7 +40,7 @@
     <!-- <span style="margin-left: 45%"><b><a href="b_signup">Dont have account?</a></b></span>	<br/><br/> -->
 
     <div class="form-group">
-	<input type="submit" style="margin-left: 88%" value="Login" class="btn btn-primary"/><br/><br/>
+	<input type="submit" style="margin-left: 88%" value="Login" class="btn btn-warning"/><br/><br/>
 	<span style="color: red; margin-left: 150px"> </span>
     </div>
 </form>

@@ -8,8 +8,8 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header" style=""><h3>Previous Customer Reviews</h3>
-                  <a href="{{URL::to('yourReview')}}"><h3>Add Your Review</h3> </a>
-                  <div><a href="{{URL::to('home')}}" style="font-size: 20px">Back</a></div>
+                  <a href="{{URL::to('yourReview')}}" style="color: #FFC003"><h3>Add Your Review</h3> </a>
+                  <div><a href="{{URL::to('home')}}" style="font-size: 20px;color: #FFC003;">Back</a></div>
                  
                 </div>
 
@@ -27,10 +27,10 @@
                     @foreach( $rev as $row ) 
                               <div id="img_div"style="margin-top: 5px ;margin-left:20px;border: 1px solid  gray">
            
-           
+           <div style="margin-left: 2%;">
           <b> Name: </b> {{$row->user_name}} <br>
           <b> Review:  </b>   {{$row->review}}
-
+          </div>
         
           
                  

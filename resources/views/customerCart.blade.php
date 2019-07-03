@@ -21,7 +21,7 @@
                 <div class="card-header" style=""><h3>Your Cart</h3>
                   <!-- <div style="float: left;"><button class="btn btn-primary" id="placeOrder"> Place Order</button></div> -->
                   <!-- <div style="float: left; margin-left: 400px"><a href="viewCustMenuAgain" class="btn btn-primary">Back</a></div> -->
-                  <div style="float: right; margin-right: 20px;margin-top: -40px"><a href="viewCustMenuAgain" class="btn btn-primary">Back</a></div>
+                  <div style="float: right; margin-right: 20px;margin-top: -40px"><a href="viewCustMenuAgain" class="btn btn-warning">Back</a></div>
 
                  
                 </div>
@@ -73,17 +73,17 @@ $userId = Auth::id();
 $user = User::find($userId);
 
 
- echo " <input type='text' id='address' name='address' placeholder='Delivery Address.' required='' value=$user->address style='width: 300px;'><br/>
+ echo " <input type='text' id='address' name='address' placeholder='Delivery Address.' required='' value='$user->address' style='width: 300px;'><br/>
   <!-- <span id='errAddress' style='color: red;'></span><br/> -->
   <label><b>Contact Number:</b></label><br/>
-  <input type='text' id='contact' value=$user->mobile name='contact' placeholder='Contact Number.' required=''><br/>";
+  <input type='text' id='contact' min(0) maxlength='11' pattern='[0-9]{11}' value=$user->mobile name='contact' placeholder='Contact:03231111111' required=''><br/>";
   ?>
   <!-- <span id="errContact" style="color: red;"></span><br/> -->
   <input type="hidden" name="_token" value="{{csrf_token()}}"><br/>
   <input type="hidden" name="tbill" id="tbill">
   <input type="hidden" name="ostatus" value="0">
 
-  <input type="submit" class="btn btn-primary" value="CheckOut" style="margin-left: 45%">
+  <input type="submit" class="btn btn-warning" value="CheckOut" style="margin-left: 45%">
 </form>
 
  
@@ -91,7 +91,7 @@ $user = User::find($userId);
 <!-- <a href="onlinePay" > -->
   <form action="{{URL::to('onlinePay')}}" method="get" enctype="multipart/form-data"  onsubmit="return verify1();">
     <input type="hidden" name="t_bill" id="t_bill"  />
-  <input type="submit" value="Online Payment" style="margin-top: -60px" id="online"   class="btn btn-primary"/>
+  <input type="submit" value="Online Payment" style="margin-top: -60px" id="online"   class="btn btn-warning"/>
 </form>
 <!-- </a> -->
 </div>

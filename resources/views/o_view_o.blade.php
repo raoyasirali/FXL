@@ -10,6 +10,7 @@
 	 	<tr>
 	 		
 	 		<th>ID</th>
+	 		<th>Order ID</th>
 	 		<th>User ID</th>
 	 		<th>User Name</th>
 	 		<th>Product ID</th>
@@ -30,6 +31,7 @@
                <tr>
                	
                        <td>{{$o->id}}</td>
+                       <td>{{$o->oid}}</td>
                        <td>{{$o->u_id}}</td>
                        <td>{{$o->name}}</td>
                        <td>{{$o->p_id}}</td>

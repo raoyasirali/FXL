@@ -10,14 +10,14 @@ use App\Review;
         <div class="col-md-9">
             <div class="card">
                 <div class="card-header" style="float: left"><h5>Products of your searched category</h5>
-                 <div style="float: left;"><a href="viewCart"  class="btn btn-primary">View Cart</a></div>
-                 <div style="float: left;">  <a href="home" class="btn btn-primary" style="margin-left: 620px">Back</a></div>
+                 <div style="float: left;"><a href="viewCart"  class="btn btn-warning">View Cart</a></div>
+                 <div style="float: left;">  <a href="home" class="btn btn-warning" style="margin-left: 620px">Back</a></div>
                 </div>
-                  <div style="color: red; margin-left: 50px">
+                  <div style="color: green; margin-left: 50px">
                                 @if($message = Session::get('msg'))
                                  <div>
                                     
-                                    {{$message}}
+                                   <b> {{$message}}</b>
                                  </div>
 
                                 @endif
@@ -83,7 +83,21 @@ use App\Review;
           ";
           echo "document.getElementById('reviewid.$i').style.backgroundColor = 'blue';
           ";
-          echo "document.getElementById('reviewid.$i').title = 'More Neutral Reviews';
+          echo "document.getElementById('reviewid.$i').title = 'Neutral Reviews';
+          ";
+          echo "document.getElementById('reviewid.$i').style.color = 'white';
+          ";
+          echo "</script>";
+          }
+
+          if($negr_count == $posr_count)
+          {
+
+          echo "<script type='text/javascript'>
+          ";
+          echo "document.getElementById('reviewid.$i').style.backgroundColor = 'blue';
+          ";
+          echo "document.getElementById('reviewid.$i').title = 'Neutral Reviews';
           ";
           echo "document.getElementById('reviewid.$i').style.color = 'white';
           ";
@@ -95,8 +109,8 @@ use App\Review;
 ?>
           <br/><br/>
 
-         <a href="addToCart/{{$row->id}}" style="margin-bottom: 10px;margin-top: 10px;margin-left: 12%;float: left;" class="btn btn-primary">Add to cart</a>
-         <a href="Reviews/{{$row->id}}" style="margin-bottom: 10px;margin-top: 10px;margin-left: 5px;float: left;" class="btn btn-primary">Reviews</a>
+         <a href="addToCart/{{$row->id}}" style="margin-bottom: 10px;margin-top: 10px;margin-left: 12%;float: left;" class="btn btn-warning">Add to cart</a>
+         <a href="Reviews/{{$row->id}}" style="margin-bottom: 10px;margin-top: 10px;margin-left: 5px;float: left;" class="btn btn-warning">Reviews</a>
 
         
 

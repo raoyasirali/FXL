@@ -7,9 +7,17 @@
 	<title>Business Admin Sign Up </title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 
-				
+				<style>
+          label{
+            color: white;
+          }    
+          h3{
+          color: white;
+          }
+        </style>
+      
 </head>
-<body  style="max-width: 100%;height: auto;">
+<body  style="max-width: 100%;height: auto;background-image:url(b5.jpg);" >
 
 
 
@@ -131,7 +139,7 @@
     <input type="hidden" name="b_status" value="0">
     <input type="hidden" name="_token" value="{{csrf_token()}}">
 
-    <input style="margin-left: 83%" type="submit" value="Register" class="btn btn-primary" />
+    <input style="margin-left: 83%;" type="submit" value="Register" class="btn btn-warning" />
   </div>
 
 </form>

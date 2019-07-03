@@ -5,9 +5,20 @@
 	<meta charset="UTF-8">
 	<title>Business Password Reset</title>
 
-	<link rel="stylesheet" type="text/css" href="style.css">				
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	 <style>
+          label{
+            color: white;
+          }    
+          h3{
+          color: white;
+          }
+        </style>	
+
+
 </head>
-<body style="max-width: 100%;height: auto;">
+<body style="max-width: 100%;height: auto;background-image:url(b14.jpg);">
 	<div>
 	
 
@@ -47,7 +58,7 @@ if( !empty($_GET['msg']))
    </div>
    <div class="form-group">
 	<span style="margin-left: 77%">
-		<input type="submit" value="Reset Password" class="btn btn-primary" /><br/><br/><br/>
+		<input type="submit" value="Reset Password" class="btn btn-warning" /><br/><br/><br/>
 	<span style="color: red; margin-left: 150px"><b><?php echo $msg; ?></b> </span>
 	</span>
 </div>

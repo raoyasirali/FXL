@@ -41,7 +41,7 @@
 			<input type="hidden" name="pro_ID" value="<?=$value?>">
 			</div>
 			<span style="margin-left: 38%">
-				<input type="submit" name="send" class="btn btn-primary"></span>
+				<input type="submit" name="send" class="btn btn-warning"></span>
 
 			</div>
 		

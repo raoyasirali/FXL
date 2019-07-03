@@ -37,9 +37,11 @@
                 <div class="panel-heading display-table" >
                     <div class="row display-tr" >
                         <h3 class="panel-title display-td" >Payment Details</h3>
+                        
                         <div class="display-td" >                            
                             <img class="img-responsive pull-right" src="http://i76.imgup.net/accepted_c22e0.png">
                         </div>
+                        <a href="viewCart" class="btn btn-warning" style="margin-left: 20%;height: 30px;margin-top: 1%;">Back</a>
                     </div>                    
                 </div>
                 <div class="panel-body">
@@ -68,7 +70,7 @@
                             <div class='col-xs-12 form-group card required'>
                                 <label class='control-label'>Card Number</label> <input
                                     autocomplete='off' class='form-control card-number' size='20'
-                                    type='text'>
+                                    type='text' pattern='[0-9]{16}' maxlength='16' placeholder='1212121212121212'>
                             </div>
                         </div>
   
@@ -76,17 +78,17 @@
                             <div class='col-xs-12 col-md-4 form-group cvc required'>
                                 <label class='control-label'>CVC</label> <input autocomplete='off'
                                     class='form-control card-cvc' placeholder='ex. 311' size='4'
-                                    type='text'>
+                                    type='text' pattern='[0-9]{3}' maxlength='3'>
                             </div>
                             <div class='col-xs-12 col-md-4 form-group expiration required'>
-                                <label class='control-label'>Expiration Month</label> <input
+                                <label class='control-label'>Expiration Month</label> <input type='text' min='0' max='12' 
                                     class='form-control card-expiry-month' placeholder='MM' size='2'
-                                    type='text'>
+                                 maxlength='2' pattern='[1-12]{2}'>
                             </div>
                             <div class='col-xs-12 col-md-4 form-group expiration required'>
                                 <label class='control-label'>Expiration Year</label> <input
                                     class='form-control card-expiry-year' placeholder='YYYY' size='4'
-                                    type='text'>
+                                    type='text' min='2014' max='2024' pattern='[2014-2024]{4}' maxlength='4'>
                             </div>
                         </div>
   
@@ -106,7 +108,7 @@
 
                         <div class="row">
                             <div class="col-xs-12">
-                                <button class="btn btn-primary btn-lg btn-block" type="submit">Pay Now (Rs. {{$t_bill}})</button>
+                                <button class="btn btn-warning btn-lg btn-block" type="submit">Pay Now (Rs. {{$t_bill}})</button>
                             </div>
                         </div>
                           

@@ -12,16 +12,17 @@
   a { color: black; }
 </style>
 </head>
+<body style="background-image:url(b4.jpg);">
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Order Best food from your surrounding restaurants</div>
-                            <div style="color: red; margin-left: 50px">
+                            <div style="color: green; margin-left: 50px">
                                 @if($message = Session::get('msg'))
                                  <div>
                                     
-                                    {{$message}}
+                                   <b> {{$message}}</b>
                                  </div>
 
                                 @endif
@@ -92,7 +93,7 @@
                       this.setSelectionRange(start, end);
                     ">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    <button type="submit" style="border-top-right-radius: 15px;border-bottom-right-radius: 15px;height: 35px;width: 8%;margin-left: -5px;padding-left: 0px;" class="btn btn-primary" name="" ><i class="fa fa-search"></i></button></div>
+                    <button type="submit" style="border-top-right-radius: 15px;border-bottom-right-radius: 15px;height: 35px;width: 8%;margin-left: -5px;padding-left: 0px;" class="btn btn-warning" name="" ><i class="fa fa-search"></i></button></div>
 
                     <div class="container">
                       <div class="row"></div>
@@ -109,11 +110,11 @@
                        <div style="margin-left: 48%;"> OR</div><br>
 
                        
-                 <button class="btn btn-primary" onclick="allcat()"> View All Categories</button>
-                  <button  class="btn btn-primary" onclick="allPro()">View Items in Promotion</button>
+                 <button class="btn btn-warning" onclick="allcat()"> View All Categories</button>
+                  <button  class="btn btn-warning" onclick="allPro()">View Items in Promotion</button>
                  <!-- <a href="viewBudgetProducts" class="btn btn-primary">Want to see items with in your buduget?</a>
  -->            
-                <button class="btn btn-primary" id="budBtn" onclick="budget()">Want to see items with in your buduget?</button>   
+                <button class="btn btn-warning" id="budBtn" onclick="budget()">Want to see items with in your buduget?</button>   
                 </div><br/>
 
 
@@ -135,7 +136,7 @@
                       <label style="font-size: 18px;margin-top: 2%;"><b>Enter Budget: </b></label>
                       
                       <input type="number" name="budget" min="0" style="width: 300px;height: 35px;margin-left: 30px;" placeholder="   Enter budget:100,500,1000, ETC."/><br/>
-                      <input style="margin-left: 55%;margin-top: 2%;" type="submit" class="btn btn-primary" value="Search">
+                      <input style="margin-left: 55%;margin-top: 2%;" type="submit" class="btn btn-warning" value="Search">
 
                            </form>
                            </div>
@@ -256,4 +257,5 @@
         </div>
     </div>
 </div>
+</body>
 @endsection

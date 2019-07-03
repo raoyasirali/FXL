@@ -5,9 +5,18 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Add Product</title>
-	<!-- <link rel="stylesheet" type="text/css" href="style.css">				 -->
+	<!-- <link rel="stylesheet" type="text/css" href="style.css">
+					 -->
+
+<style>
+          label{
+            color: white;
+          }    
+          
+        </style>	
+
 </head>
-<body >
+<body style="background-image:url(b15.jpg);">
 <!-- <div style="width: 150px;height: 220px;border:solid thin black;float: left;"> -->
     <!-- <a href="" class="a" >Current Orders</a> </br></br> -->
     <!-- <a href="#"  class="w3-button w3">Add Product</a>    </br>
@@ -23,10 +32,10 @@
   // echo $value;  
 ?>
      
-<div style="width: 30%;height: 550px;margin-top:50px;border: solid 2px grey;border-radius: 10px;" class="container">
+<div style="width: 30%;height: 560px;margin-top:50px;border: solid 2px grey;border-radius: 10px;" class="container">
 <form action="{{URL::to('add_p_server')}}" method="post" enctype="multipart/form-data">
 	<div class="form-group">
-	    <span style="margin-left: 30%;font-size: 30px;color: Black"><b> Add Product</b></span><br/>
+	    <span style="margin-left: 30%;font-size: 30px;color: white"><b> Add Product</b></span><br/>
 		<div id="err" style="color: red"></div>	
 
     </div>
@@ -34,7 +43,7 @@
 	<!-- <div style="height: 100%;padding-top: 30px;padding-bottom: 80px;background-color: white"> -->
 		<div class="form-group">
 	<label><b> Item Name: </b></label>&nbsp  &nbsp
-	<input type="text" name="p_name" id="p_name" required=""  class="form-control"  onkeyup="
+	<input type="text" name="p_name" placeholder="Item Name" id="p_name" required=""  class="form-control"  onkeyup="
   var start = this.selectionStart;
   var end = this.selectionEnd;
   this.value = this.value.toUpperCase();
@@ -49,13 +58,13 @@
 
 	<div class="form-group">
 	    <span ><label><b> Price: </b></label></span>
-	    <input type="text" name="p_price" id="p_price" required="" class="form-control" /> 
+	    <input type="text" name="p_price" placeholder="Price" id="p_price" required="" class="form-control" /> 
 	    <input type="hidden" name="b_id" value='<?= $value ?>'>
     </div>
 
 	<div class="form-group">
 	    <span ><label><b> Description: </b></label></span>
-	    <input type="text" name="p_description" id="p_description" required="" class="form-control" /> 
+	    <input type="text" name="p_description" placeholder="Description" id="p_description" required="" class="form-control" /> 
     </div>
 
     <div class="form-group">
@@ -93,7 +102,7 @@
     </div>
 
     <div class="form-group">
-	<span style="margin-left: 77%"><input type="submit" class="btn btn-primary " value="Add Item" /></span>
+	<span style="margin-left: 77%"><input type="submit" class="btn btn-warning " value="Add Item" /></span>
     </div>
 </form>
 </div>
